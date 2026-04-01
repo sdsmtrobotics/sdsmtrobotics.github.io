@@ -1,0 +1,10 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+github.com	TRUE	/	FALSE	1999999999	_gh_sess	MV9MPiTrXgoaS6K0ki8gcPFEQabFIZqbMQ%2B9XeUd4vdLjOZqZxuMT84HAey08u5tOrfk%2BXHmw9Acf6Zq%2FeeUqWxr7jIhMbWXGaO7lIb%2BgTN8GzSArQsYoEdoA1yZnPCvN5pzZiyLFJrIKgcJ2N8XUof9TYqQkZPES8TiRE0QMi1%2FQL%2FPVlW6FGmchGaHwOk2oAbWH7M%2Bay4BndPV6NpsKxNNuwBq3xHOOfRG%2BI8IhO4kzmZgBDgc39xQ04ZLRTWwre6XMFJrgICxxNobDDLyIQ%3D%3D--ygdHPBd%2B9qhcaV79--%2FjOO73x4Is2IssmIJSR2UA%3D%3D
+robotics.sdsmt.edu	TRUE	/	FALSE	1999999999	grav-site-9aa1857	le58movs7s96c59t0e7b3vv5v0
+robotics.sdsmt.edu	TRUE	/	FALSE	1999999999	SameSite	Lax
+sourceforge.net	TRUE	/	FALSE	1999999999	__cf_bm	FyqxjF6LS5utWxhebHmdYFJlcE2PbLNr9sOWvNsf20E-1774728929.8486419-1.0.1.1-XUSV3E.5zg1hB39az55cz_O0Pau6eOgUIMs0jB5QSdOvEjoDnJMBAqM37FrIV059p3.O0gzb2rQeJ0BUIfQFCToBjQTOAfEzX.XiIBkTwcvDdEQhUb_0ZymbS6WrTbvL
+.github.com	TRUE	/	FALSE	1999999999	_octo	GH1.1.1031014319.1774728938
+.github.com	TRUE	/	FALSE	1999999999	logged_in	no
+github.com	TRUE	/	FALSE	1999999999	SameSite	Lax
+

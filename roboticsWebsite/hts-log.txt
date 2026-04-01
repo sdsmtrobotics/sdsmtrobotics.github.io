@@ -1,0 +1,70 @@
+HTTrack3.49-5 launched on Sat, 28 Mar 2026 13:41:25 at http://http://robotics.sdsmt.edu/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/*
+(webhttrack -q -%i -w http://http://robotics.sdsmt.edu/ -O "/home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite" -n -%P -N0 -s2 -p7 -D -a -K0 -c4 -%k -A100000 -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -%s -%u )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:11:49	Error: 	"Not Found" (404) at link http://robotics.sdsmt.edu/news/2021-nrc-competition (from http://robotics.sdsmt.edu/projects/spinnybot)
+14:12:11	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf
+14:12:11	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://ww1.microchip.com/downloads/en/DeviceDoc/doc8006.pdf
+14:12:13	Warning: 	File seems complete (same size), but there was a cache read error (4294967295): https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf
+14:12:29	Warning: 	HTML file (9742 bytes) retransferred due to lack of cache: http://robotics.sdsmt.edu/about
+14:12:30	Warning: 	HTML file (18507 bytes) retransferred due to lack of cache: http://robotics.sdsmt.edu/news/winter-2025-newsletter
+14:12:46	Warning: 	Retry after error -5 (Unable to get server's address: Name or service not known) at link https://cdn.instructables.com/ORIG/FOL/YWLI/JEOILQ5U/FOLYWLIJEOILQ5U.png?auto=webp&frame=1&width=1024&fit=bounds&md=a74a05c18f4b4d9f0db00ec63c7bc3c0 (from http://robotics.sdsmt.edu/resources/super-robo-time)
+14:12:47	Error: 	"Forbidden" (403) at link https://www.robotshop.com/media/files/pdf2/126-rb-pol-368.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:12:48	Warning: 	Retry after error -2 (Receive Time Out) at link https://www.mouser.com/datasheet/2/588/AS5134_Datasheet_EN_v4-318114.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:12:49	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://cdn.instructables.com/ORIG/FYD/V3VU/HUL8W2ZW/FYDV3VUHUL8W2ZW.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:12:50	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://cdn.instructables.com/F3W/PCEK/JVH3KZLD/F3WPCEKJVH3KZLD.LARGE.jpg?auto=webp&&frame=1&width=1024&fit=bounds (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:12:51	Warning: 	Retry after error -4 (Interrupted transfer) at link https://www.sparkfun.com/datasheets/Robotics/L298_H_Bridge.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:13:35	Error: 	"Forbidden" (403) at link https://irp.cdn-website.com/9297868f/files/uploaded/NRCContestRules2025.pdf (from http://robotics.sdsmt.edu/projects/sumobot-2025)
+14:13:35	Error: 	"Not Found" (404) at link http://robotics.sdsmt.edu/projects/igvc-year-2/Picture1.png (from http://robotics.sdsmt.edu/projects/igvc-year-2)
+14:13:35	Error: 	"" (404) at link http://robotics.sdsmt.edu/news/2021-nrc-competition (from http://robotics.sdsmt.edu/projects/spinnybot)
+14:14:02	Error: 	"Not Found" (404) at link http://robotics.sdsmt.edu/user/themes/robo-theme/images/cardCarousel/loading.gif (from http://robotics.sdsmt.edu/user/themes/robo-theme/css/cardCarousel.css)
+14:14:02	Error: 	"Not Found" (404) at link http://robotics.sdsmt.edu/user/themes/robo-theme/images/cardCarousel/play.svg (from http://robotics.sdsmt.edu/user/themes/robo-theme/css/cardCarousel.css)
+14:14:02	Error: 	"Not Found" (404) at link http://robotics.sdsmt.edu/GET (from http://robotics.sdsmt.edu/user/themes/robo-theme/js/upcomingEvents.js)
+14:14:02	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://cdn.instructables.com/ORIG/FOL/YWLI/JEOILQ5U/FOLYWLIJEOILQ5U.png?auto=webp&frame=1&width=1024&fit=bounds&md=a74a05c18f4b4d9f0db00ec63c7bc3c0 (from http://robotics.sdsmt.edu/resources/super-robo-time)
+14:15:30	Warning: 	Retry after error -2 (Receive Time Out) at link https://www.mouser.com/datasheet/2/588/AS5134_Datasheet_EN_v4-318114.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:15:30	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://cdn.instructables.com/ORIG/FYD/V3VU/HUL8W2ZW/FYDV3VUHUL8W2ZW.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:15:30	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://cdn.instructables.com/F3W/PCEK/JVH3KZLD/F3WPCEKJVH3KZLD.LARGE.jpg?auto=webp&&frame=1&width=1024&fit=bounds (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:15:30	Warning: 	Retry after error -4 (Interrupted transfer) at link https://www.sparkfun.com/datasheets/Robotics/L298_H_Bridge.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:15:33	Warning: 	Note: due to https://github.githubassets.com remote robots.txt rules, links beginning with these path will be forbidden: /*/pulse, /*/tree/, /gist/, /*/forks, /*/stars, /*/download, /*/revisions, /*/issues/new, /*/issues/search, /*/commits/, /*/commits/*?author, /*/commits/*?path, /*/branches, /*/tags, /*/contributors, /*/comments, /*/stargazers, /*/archive/, /*/blame/, /*/watchers, /*/network, /*/graphs, /*/raw/, /*/compare/, /*/cache/, /.git/, */.git/, /*.git$, /search/advanced, /search, */search, /*q=, /*.atom$, /ekansa/Open-Context-Data, /ekansa/opencontext-*, */tarball/, */zipball/, /*source=*, /*ref_cta=*, /*plan=*, /*return_to=*, /*ref_loc=*, /*setup_organization=*, /*source_repo=*, /*ref_page=*, /*source=*, /*referrer=*, /*report=*, /*author=*, /*since=*, /*until=*, /*commits?author=*, /*report-abuse?report=*, /*tab=*, /account-login, /Explodingstuff/ (see in the options to disable this)
+14:15:33	Error: 	"The requested content does not exist." (404) at link https://github.githubassets.com/ (from https://github.com/LostOracle/BigBookOfRobotics/blob/master/DesignDoc.pdf)
+14:15:34	Warning: 	Found for https://avatars.githubusercontent.com/
+14:15:34	Warning: 	File has moved from https://avatars.githubusercontent.com/ to https://github.com
+14:15:34	Warning: 	Warning: store text/html without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/avatars.githubusercontent.com/index.html
+14:15:39	Warning: 	Note: due to https://github-cloud.s3.amazonaws.com remote robots.txt rules, links beginning with these path will be forbidden: / (see in the options to disable this)
+14:15:39	Error: 	"Forbidden" (403) at link https://github-cloud.s3.amazonaws.com/ (from https://github.com/LostOracle/BigBookOfRobotics/blob/master/DesignDoc.pdf)
+14:15:40	Error: 	"Forbidden" (403) at link https://user-images.githubusercontent.com/ (from https://github.com/LostOracle/BigBookOfRobotics/blob/master/DesignDoc.pdf)
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/light-0c8222dcd7a4f9b7.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/light_high_contrast-51c0c6e0c085cc0f.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/dark-fc6eec18532c3ae0.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/dark_high_contrast-96d7b2bab5a6ae4e.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/primer-primitives-10bf9dd67e3d70bd.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/primer-0fcd9af82350aeda.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/global-a40b6ece39d70d4a.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/github-b02a278369fa132e.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/repository-6ec84ae2261fecf8.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/code-2d31826944fd3be8.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/react-core.364eade98ee7744f.module.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/primer-react-css.da05312be74eac16.module.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/96043.a4311aaf5caadfff.module.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/66205.b5045207bd90f6b9.module.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/43690.74be507a186241b9.module.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/code-view.c4eb72defe48d8c4.module.css
+14:15:40	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/notifications-subscriptions-menu.710847f5b3216d30.module.css
+14:15:40	Warning: 	Warning: store image/svg+xml without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg
+14:15:40	Warning: 	Warning: store image/svg+xml without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/favicons/favicon.svg
+14:15:41	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/keyboard-shortcuts-dialog.76a47c12aca9fa78.module.css
+14:15:41	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/appearance-settings.e36a2870affd85b8.module.css
+14:15:41	Warning: 	Warning: store text/css without scan: /home/dean/Desktop/rockerRobo/roboWebsite/roboticsWebsite/github.githubassets.com/assets/marketing-navigation.ede5f47322c3d22c.module.css
+14:15:41	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://cdn.instructables.com/ORIG/FOL/YWLI/JEOILQ5U/FOLYWLIJEOILQ5U.png?auto=webp&frame=1&width=1024&fit=bounds&md=a74a05c18f4b4d9f0db00ec63c7bc3c0 (from http://robotics.sdsmt.edu/resources/super-robo-time)
+14:17:30	Error: 	"Receive Time Out" (-2) after 2 retries at link https://www.mouser.com/datasheet/2/588/AS5134_Datasheet_EN_v4-318114.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:17:30	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://cdn.instructables.com/ORIG/FYD/V3VU/HUL8W2ZW/FYDV3VUHUL8W2ZW.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:17:30	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://cdn.instructables.com/F3W/PCEK/JVH3KZLD/F3WPCEKJVH3KZLD.LARGE.jpg?auto=webp&&frame=1&width=1024&fit=bounds (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:17:30	Error: 	"Interrupted transfer" (-4) after 2 retries at link https://www.sparkfun.com/datasheets/Robotics/L298_H_Bridge.pdf (from http://robotics.sdsmt.edu/resources/robo-parts)
+14:17:30	Error: 	"Forbidden" (403) at link https://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd (from http://robotics.sdsmt.edu/user/themes/robo-theme/images/mediaCarousel/play.svg)
+
+HTTrack Website Copier/3.49-5 mirror complete in 36 minutes 5 seconds : 400 links scanned, 586 files written (302560393 bytes overall) [168189053 bytes received at 77685 bytes/sec], 2669494 bytes transferred using HTTP compression in 59 files, ratio 22%, 1.0 requests per connection
+(17 errors, 42 warnings, 0 messages)

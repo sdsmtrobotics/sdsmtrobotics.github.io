@@ -1,0 +1,188 @@
+/*News card*/
+.news.card {
+    display: block;
+    width: 80%;
+    position: relative;
+    padding: 0;
+    margin: 10px auto;
+    vertical-align: top;
+}
+
+.cardCarousel.news .arrow {
+    display: none;
+}
+
+.cardCarousel.news .card.overflow {
+    display: none;
+}
+
+.news.card a {
+    background-color: white;
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.news.card .img {
+    width: 100%;
+    padding-top: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.card .title {
+    font-weight: bold;
+    color: rgb(7, 29, 73);
+    font-size: 17px;
+    margin: 0 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.news.card .date {
+    color: gray;
+    margin: 4px;
+    margin-top: -6px;
+    min-height: 1.7em;
+}
+
+/*Projects*/
+
+.project.card {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    vertical-align: top;
+    width: 23%;
+    margin: 10px 1%;
+}
+
+.project.card a {
+    background-color: white;
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.project.card .img {
+    width: 100%;
+    padding-top: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.project.card .description {
+    color: gray;
+    margin: 4px;
+    margin-top: -6px;
+    min-height: 1.7em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.moreLink {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: -4px;
+}
+
+#pongLink {
+    display: block;
+    width: 40px;
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* < 1024px*/
+@media all and (max-width: 1024px) {
+.cardCarousel {
+    padding: 0 14px;
+}
+
+.cardCarousel .arrow.right {
+    margin-left: -12px;
+}
+
+.cardCarousel .arrow.left {
+    margin-right: -12px;
+}
+
+}
+
+/* < 850px*/
+@media all and (max-width: 850px) {
+.news.card {
+    width: 96%;
+}
+}
+
+/* < 750px*/
+@media all and (max-width: 750px) {
+
+.project.card, .news.card {
+    display: inline-block;
+    width: 31.33%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.cardCarousel.news .card.overflow {
+    display: inline-block;
+}
+
+.cardCarousel.news .arrow {
+    display: block;
+}
+}
+
+/* < 500px*/
+@media all and (max-width: 500px) {
+
+.card .title {
+    font-size: 0.9rem;
+}
+
+.cardCarousel .card {
+    width: 36%;
+}
+
+.cardCarousel {
+    padding: 0;
+    width: 100vw;
+    margin-left: -2vw;
+}
+
+.cardCarousel .arrow {
+    display: none!important;
+}
+
+.cardCarousel .cardViewer {
+    overflow-x: scroll;
+}
+.cardCarousel .cardViewer::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display:none;
+}
+.cardCarousel .cardViewer::scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display:none;
+}
+
+.cardCarousel .cardContainer {
+    left: 0!important;
+}
+}

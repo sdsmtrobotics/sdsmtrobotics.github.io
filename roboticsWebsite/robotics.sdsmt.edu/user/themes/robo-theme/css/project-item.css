@@ -1,0 +1,60 @@
+/*for responsive sizing*/
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@-o-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+  
+
+.date {
+    font-style: italic;
+    margin-top: -10px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+}
+
+.wrapper {
+    max-width: 850px;
+}
+
+#body .card > img {
+    max-width: 100%;
+    width: 500px;
+    display: block;
+    margin: auto;
+}
+
+.mediaCarousel {
+    margin: auto;
+    margin-top: 20px;
+    width: 55%;
+    float: right;
+}
+
+.detail {
+    margin: 8px 0;
+    line-height: 1.2em;
+}
+
+.card {
+    padding-bottom: 15px;
+}
+
+/* < 750px*/
+@media all and (max-width: 750px) {
+.mediaCarousel {
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    float: none;
+}
+}

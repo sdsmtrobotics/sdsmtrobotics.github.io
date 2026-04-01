@@ -1,0 +1,27 @@
+.wrapper {
+    max-width: 850px;
+}
+
+.padding {
+    padding: 3rem 0;
+    padding-top: 1.5rem;
+}
+
+.card.events {
+    min-height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.card.calendar iframe {
+    height: 600px;
+    width: 100%;
+}
+
+
+/* < 450px*/
+@media all and (max-width: 450px) {
+.card.calendar iframe {
+    height: 400px;
+}
+}

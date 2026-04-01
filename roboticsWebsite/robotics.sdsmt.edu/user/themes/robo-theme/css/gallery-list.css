@@ -1,0 +1,125 @@
+/*for responsive sizing*/
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@-o-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+  
+
+.wrapper {
+    max-width: 1000px;
+}
+
+.padding {
+    padding: 3rem 0;
+    padding-top: 1.5rem;
+}
+
+.card {
+    padding-bottom: 35px;
+}
+
+/*Gallery card*/
+.galleryCard {
+    display: inline-block;
+    width: 25%;
+    position: relative;
+    padding: 5px;
+    padding-bottom: 10px;
+    vertical-align: top;
+}
+
+.galleryCard a {
+    background-color: rgb(238, 238, 238);
+    display: block;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 5px, rgba(0, 0, 0, 0.08) 0px 1px 5px;
+}
+
+.galleryCard .img {
+    width: 100%;
+    padding-top: 75%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.galleryCard .title {
+    font-weight: bold;
+    color: rgb(7, 29, 73);
+    font-size: 17px;
+    margin: 0 4px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.galleryCard .date {
+    color: gray;
+    margin: 4px;
+    margin-top: -2px;
+    min-height: 1.7em;
+}
+
+.imgCount {
+    color: white;
+    padding: 0px 8px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+
+.imgCount svg {
+    height: 20px;
+    width: 24px;
+    vertical-align: middle;
+}
+
+.imgCount span {
+    margin: 0;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+#memeLink {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+}
+
+/* < 800px*/
+@media all and (max-width: 800px) {
+.galleryCard {
+    width: 33%;
+}
+}
+
+/* < 500px*/
+@media all and (max-width: 500px) {
+.galleryCard {
+    width: 50%;
+}
+}
+
+/* < 400px*/
+@media all and (max-width: 400px) {
+.galleryCard .title {
+    font-size: 16px;
+}
+}

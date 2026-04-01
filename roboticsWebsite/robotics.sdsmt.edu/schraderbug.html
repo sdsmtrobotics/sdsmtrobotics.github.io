@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from robotics.sdsmt.edu/schraderbug by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 28 Mar 2026 20:04:32 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8" />
+    <title>Schraderbug | Rocker Robotics Team</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="GravCMS" />
+    <meta name="description" content="Rocker Robotics Team from SDSM&T in Rapid City, SD" />
+    <meta name="google-site-verification" content="n_T_D1BnQsTJYeGPZd-iw1RJrx-gLp8ZpwxjIBPyoew" />
+    <meta name="robots" content="noindex" />
+
+    <link rel="icon" type="image/png" href="user/themes/robo-theme/images/icon.png" />
+    <link rel="canonical" href="schraderbug.html" />
+
+    
+    
+    <link href="../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/admin-power-tools/assets/scroll_fix.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/markdown-notices/assets/notices.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/form/assets/form-styles.css" type="text/css" rel="stylesheet">
+<link href="user/plugins/login/css/login.css" type="text/css" rel="stylesheet">
+
+    <script src="system/assets/jquery/jquery-2.x.min.js"></script>
+
+</head>
+
+<body class="">
+
+<img src="images/1/8/4/e/6/184e67143254e49949316f214f91102540d32cd9-schrader.jpg" id="schrader" />
+<div class="container">
+   <button onclick="schraderSpin()">WEEEEE!!!!</button>
+</div>
+<style>
+body {
+    overflow-x: hidden;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+    margin: 50px;
+    display: block;
+}
+img {
+margin: auto;
+display: block;
+animation-name: zoomImg;
+animation-duration: 1s;
+transform-origin: center;
+transition: transform 1s ease-out 0s;
+}
+@keyframes zoomImg {
+from {transform: scale(0.01);}
+to {transform: scale(1);}
+}
+</style>
+<script>
+    angle = 0;
+    function schraderSpin() {
+        console.log("spin");
+        angle = angle + 360;
+        document.getElementById("schrader").style.transform = "rotate("+angle+"deg)";
+    }
+</script>
+
+</body>
+
+<!-- Mirrored from robotics.sdsmt.edu/schraderbug by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 28 Mar 2026 20:04:35 GMT -->
+</html>

@@ -1,0 +1,356 @@
+/*for responsive sizing*/
+@-webkit-viewport {
+  width: device-width; }
+
+@-moz-viewport {
+  width: device-width; }
+
+@-ms-viewport {
+  width: device-width; }
+
+@-o-viewport {
+  width: device-width; }
+
+@viewport {
+  width: device-width; }
+  
+
+/* Core Stuff */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #606d6e;
+    background-color: rgb(238, 238, 238);  /*light gray*/
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #454B4D;
+    margin-bottom: 2px;
+    margin: 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    border: none;
+    border-bottom: 1px solid lightgray;
+}
+
+a {
+    color: #1F8CD6;
+    text-decoration: none;
+}
+
+ul {
+    margin: 4px 0;
+}
+
+p {
+    margin-top: 2px;
+}
+
+a:hover {
+    color: #175E91;
+}
+
+img {
+    max-width: 100%;
+}
+
+pre {
+    background: #F0F0F0;
+    margin: 1rem 0;
+    border-radius: 2px;
+}
+
+blockquote {
+    border-left: 10px solid #eee;
+    margin: 0;
+    padding: 0 2rem;
+}
+
+/* Utility Classes */
+.wrapper {
+    width: 96%;
+    max-width: 850px;
+    margin: auto;
+}
+
+.padding {
+    padding: 3rem 0;
+    padding-top: 1.5rem;
+}
+
+.shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 6px, rgba(0, 0, 0, 0.3) 0px 1px 6px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Content Styling */
+.header .padding {
+    padding: 1rem 0;
+}
+
+.header {
+    color: #eee;
+}
+
+.header a, .main-nav ul li span {
+    color: rgb(179, 163, 105);  /*gold*/
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.header, #body, .footer {
+    flex-shrink: 0;
+}
+
+.mainHead {
+    font-size: 24px;
+    border-bottom: 3px solid rgb(7, 29, 73);
+    color: black;
+    line-height: 28px;
+    margin: 0px -3px;
+    margin-bottom: 10px;
+    margin-top: 4px;
+    padding: 0px 3px;
+}
+
+.footer {
+    background-color: rgb(35,35,35);    /*Dark gray*/
+    margin-top: auto;
+}
+
+.footer a img {
+    width: 18px;
+    margin-bottom: -2px;
+}
+
+.footer a img {
+    width: 18px;
+    margin-bottom: -2px;
+}
+
+.footer p, .footer a {
+    margin: 0;
+    color: rgb(210, 210, 210);  /*whiteish*/
+}
+
+/* Menu Settings */
+.main-nav ul {
+    text-align: center;
+    letter-spacing: -1em;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    letter-spacing: normal;
+}
+
+.main-nav ul li a, .main-nav ul li span {
+    position: relative;
+    display: inline-block;
+    line-height: 25px;
+    margin: 10px 20px;
+    white-space: nowrap;
+}
+
+.main-nav ul li span {
+    cursor: default;
+}
+
+.navWrapper {
+    background-color: rgb(7, 29, 73);  /*navy blue*/
+    color: rgb(179, 163, 105);  /*gold*/
+    padding: 5px; 
+}
+
+.logoWrapper {
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 6px;
+}
+
+.logo img {
+    width: 550px;
+    max-width: 90%;
+}
+
+/* Selected or hovered nav item */
+.main-nav ul li > a:hover, .main-nav ul li.selected > a, .main-nav ul li.selected > span {
+    border-bottom: 3px solid;
+    margin-bottom: 3px;
+}
+
+.main-nav ul li ul li > a:hover, .main-nav ul li ul li.selected > a {
+    border-bottom: 3px solid;
+    margin-bottom: 3px;
+}
+
+/*Active dropdown nav item */
+/*.main-nav ul li:hover > a {
+    background-color: #175E91;
+}*/
+
+/* Selected Dropdown nav item */
+/*.main-nav ul li.selected > a {
+    background-color: #fff;
+    color: #175E91;
+}*/
+
+/* Dropdown CSS */
+.main-nav ul li {position: relative;}
+
+.main-nav ul li ul {
+    position: absolute;
+    background-color: rgb(7, 29, 73);  /*navy blue*/
+    min-width: 100%;
+    text-align: left;
+    z-index: 999;
+    padding-top: 6px;
+    display: none;
+}
+
+.main-nav ul li ul li {
+    display: block;
+}
+
+.main-nav ul li ul li a {
+    margin: 6px 20px;
+}
+
+/* Dropdown CSS */
+.main-nav ul li ul ul {
+    left: 100%;
+    top: 0;
+}
+
+/* Active on Hover */
+.main-nav li:hover > ul {
+    display: block;
+}
+.main-nav li.has-children:hover > span, .main-nav li.has-children:hover > a {
+    border: none;
+}
+
+/* Child Indicator */
+/*.main-nav .has-children > a {
+    padding-right: 30px;
+}
+
+.main-nav .has-children > a:after {
+    font-family: FontAwesome;
+    content: '\f107';
+    position: absolute;
+    display: inline-block;
+    right: 8px;
+    top: 0;
+}*/
+
+.main-nav .has-children .has-children > a:after {
+    content: '\f105';
+}
+
+
+/*Body Styles*/
+.wrapper.home {
+    width: 96%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 6px;
+    background-color: white;
+    overflow: auto;
+    padding: 8px 15px;
+    margin-bottom: 30px;
+}
+.image.card {
+    padding: 0;
+}
+.image.card img {
+    display: block;
+}
+
+/*pages with sidebar*/
+.leftCol {
+    width: 72%;
+    padding-right: 30px;
+}
+.rightCol {
+    width: 28%;
+}
+.rightCol, .leftCol {
+    float: left;
+}
+.clear {
+    clear: both;
+}
+
+/* < 750px*/
+@media all and (max-width: 750px) {
+.leftCol {
+    width: 100%;
+    padding-right: 0;
+}
+.rightCol {
+    width: 100%;
+}
+.rightCol, .leftCol {
+    float: none;
+}
+}
+
+
+/* < 450px*/
+@media all and (max-width: 450px) {
+body {
+    font-size: 0.8rem;
+}
+}

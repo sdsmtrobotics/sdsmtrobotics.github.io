@@ -1,0 +1,47 @@
+.slicknav_menu {
+    background-color: rgb(7, 29, 73); /*navy blue*/
+    display: none;
+}
+
+.slicknav_btn {
+    background-color: rgb(7, 29, 73); /*navy blue*/
+}
+
+.slicknav_btn:active {
+    background-color: #ccc; /*grayish*/
+}
+
+.slicknav_nav a:hover, .slicknav_nav .slicknav_row:hover {
+    background-color: rgb(7, 29, 73); /*navy blue*/
+    color: #fff;
+}
+
+.slicknav_nav a:active, .slicknav_nav .slicknav_row:active {
+    background: #ccc;
+    color: #222;
+}
+
+.slicknav_menu * {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* < 750px*/
+@media all and (max-width: 750px) {
+nav {
+    display: none;
+}
+
+.slicknav_menu {
+    display: block;
+}
+
+.navWrapper {
+    padding: 0;
+}
+}
