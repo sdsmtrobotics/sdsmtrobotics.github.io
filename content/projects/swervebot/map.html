@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>projects/swervebot - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>projects/swervebot page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/projects/swervebot">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Robot</h2><code>[robot]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Name<code>robot.name</code></th><td>Swervebot</td></tr><tr><th>Years<code>robot.years</code></th><td>November 2018 &ndash; January 2019</td></tr><tr><th>Tag<code>robot.tag</code></th><td>ASME</td></tr><tr><th>Intro<code>robot.intro</code></th><td>A differential swerve drive drawn up for the 2019 ASME competition: two motors per wheel, no third motor for steering, and almost all of it 3D printed.</td></tr><tr><th>Fact<code>robot.fact</code></th><td><ol class="lines"><li>Built by &middot; Samuel Ryckman</li><li>Purpose &middot; Drivetrain idea for 2019 E-Fest Student Design Competition</li><li>Features &middot; Omnidirectional driving, compact, and might have even worked.</li></ol></td></tr><tr><th>File<code>robot.file</code></th><td><ol class="lines"><li>Parts list &middot; https://drive.google.com/open?id=1yQ6sbmA72I1PJnes_5qAr-n-V4XMDgf1 &middot; (Google Drive)</li><li>CAD model &middot; https://workbench.grabcad.com/workbench/projects/gchhLV_W6PDW1e95mdNcHpIaTNFo00mKQyv3qScORcmWfo#/space/gcmagp96tLXe_i_esbxxvLTwmTP3JXPfawklODXosHTMzA/folder/6895771 &middot; (GrabCAD)</li></ol></td></tr></table></section><section class="slot"><h3>Block 1</h3><div class="noimg">no image in this block</div><table><tr><th>Text<code>robot.block[1].text</code></th><td><ol class="lines"><li>Swervebot is a drivetrain idea we had for the 2019 ASME Student Design Competition. Its main feature is a differential swerve drive system for omnidirectional motion. A standard swerve drive robot works by rotating wheels about their vertical axis so that they face in the direction the robot needs to move. This differential swerve drive design is more efficient since it does not require an additional motor for rotating the wheels (both motors are used for driving the robot).</li><li>Each wheel is built inside of a differential with two DC motors serving as the inputs. When the motors are turning in equal directions with equal speed, the wheel will rotate about its vertical axis. When the motors run with equal speed and opposite directions, the wheels will spin but not rotate about their vertical axis. In summary:</li></ol></td></tr><tr><th>List<code>robot.block[1].list</code></th><td><ol class="lines"><li>Motors run in same direction &rarr; wheel pivots.</li><li>Motors run in opposite directions &rarr; wheel spins.</li><li>In general, the motion of the wheel is based on the difference between the two motors.</li></ol></td></tr></table></section><section class="slot"><h3>Block 2</h3><div class="noimg">no image in this block</div><table><tr><th>Text<code>robot.block[2].text</code></th><td><ol class="lines"><li>As it stands, the design is mostly complete and seems feasible. It uses 3D printed parts (orange pieces) for most of the components to reduce cost and difficulty of manufacturing. The wheel differentials are constructed using five rings. Each ring moves independently and has a set of ball bearings running in a groove between it and the next ring.</li><li>The primary concern with this design was whether the 3D printed components could hold up to usage at high speeds with large amounts of torque. A prototype bearing connection was printed and the motion was fairly smooth and held up to large amounts of pressure. No testing was done on the gear connections though.</li><li>The concept was eventually scrapped due to time limitations. We do still hope to finish this at some point though since it is a neat design.</li></ol></td></tr></table></section><section class="slot"><h3>Photo 1</h3><figure><img src="images/01-swervebot-1.png" alt=""><figcaption><code>01-swervebot-1.png</code><span>1282 &times; 614px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[1].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 2</h3><figure><img src="images/02-swervebot-2.png" alt=""><figcaption><code>02-swervebot-2.png</code><span>1742 &times; 889px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[2].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 3</h3><figure><img src="images/03-swervebot-3.png" alt=""><figcaption><code>03-swervebot-3.png</code><span>989 &times; 547px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[3].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 4</h3><figure><img src="images/04-swervebot-4.png" alt=""><figcaption><code>04-swervebot-4.png</code><span>914 &times; 676px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[4].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Link 1</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[1].icon</code></th><td>picture-o</td></tr><tr><th>Heading<code>robot.link[1].heading</code></th><td>Swervebot album</td></tr><tr><th>Body<code>robot.link[1].body</code></th><td>The renders of the drivetrain, inside and out.</td></tr><tr><th>Link<code>robot.link[1].link</code></th><td>/gallery/swervebot</td></tr><tr><th>Link text<code>robot.link[1].link_text</code></th><td>Open the album</td></tr></table></section><section class="slot"><h3>Link 2</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[2].icon</code></th><td>cogs</td></tr><tr><th>Heading<code>robot.link[2].heading</code></th><td>B.A.M.</td></tr><tr><th>Body<code>robot.link[2].body</code></th><td>The robot the team took to the 2019 competition instead.</td></tr><tr><th>Link<code>robot.link[2].link</code></th><td>/projects/b-a-m</td></tr><tr><th>Link text<code>robot.link[2].link_text</code></th><td>See the robot</td></tr></table></section><section class="slot"><h3>Link 3</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[3].icon</code></th><td>newspaper-o</td></tr><tr><th>Heading<code>robot.link[3].heading</code></th><td>The 2019 season</td></tr><tr><th>Body<code>robot.link[3].body</code></th><td>How the ASME Pick-and-Place Race went in Lansing.</td></tr><tr><th>Link<code>robot.link[3].link</code></th><td>/news/2019-asme-student-design-competition</td></tr><tr><th>Link text<code>robot.link[3].link_text</code></th><td>Read the write-up</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  <p class="note">Some of the wording on this page &mdash; the link back, the headings around the photos, the band at the bottom &mdash; is shared by every page in <code>content/projects/</code> and is not listed above. Change it once in <code>content/projects/config.toml</code> and every one of them follows.</p>
+</main>

@@ -1,0 +1,219 @@
+####################################################################
+#  ABOUT PAGE  (sdsmtrobotics.github.io/about)
+#
+#  Everything you can see as text on the about page is in this
+#  file. Change it here, then run:      ./build.py
+#
+#  Images live in the images/ folder next to this file. To swap one
+#  out, drop the new photo in there and put its filename below.
+#
+#  Not sure which image is which? Open  map.html  in this folder.
+#  It shows every photo and every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/about.html, not from here.
+[meta]
+description = "The South Dakota Mines Rocker Robotics Team: who we are, the competitions we enter, our outreach, and the officers who run the team."
+
+
+# --- PAGE HEAD: the banner at the top -----------------------------
+# Shorter than the landing page hero, because this page is about
+# reading rather than arriving. Set image = "" for a plain navy band.
+[page_head]
+image   = "banner.jpg"          # wide landscape photo, 1900px or wider
+eyebrow = "Who we are"
+heading = "About the team"
+body    = "We are the South Dakota Mines Rocker Robotics Team &mdash; a multidisciplinary group of students who design, build, and program a new competition machine every year."
+
+
+# --- WHO WE ARE: text on the left, team photo on the right ---------
+[who_we_are]
+image     = "team.jpg"          # portrait or landscape, 1200px or wider
+image_alt = "The Rocker Robotics team on the steps of the Mines engineering building"
+caption   = "The team outside the engineering building on the Mines campus."
+eyebrow   = "The team"
+heading   = "A student team, building from scratch"
+
+# Each line below is one paragraph. Add a line to add a paragraph.
+paragraph = [
+  "Every year we pick a competition, then design, build, and program a machine to enter it &mdash; mechanical, electrical, and software, all in house.",
+  "Because our robots are built from the frame up, the work reaches into nearly every discipline on campus, and every major is welcome on the team. No experience is required to start: turn up to a meeting or a workday and we will find you something to build.",
+  "We are part of the South Dakota Mines <strong>CAMP</strong> program, and we thank them for their support.",
+]
+
+
+# --- WHAT WE DO: photo on the left, text on the right --------------
+[what_we_do]
+image     = "lab.jpg"
+image_alt = "Team members measuring a robot frame in the lab, with computer vision code on a monitor in the foreground"
+caption   = "A working session in McLaury 101."
+eyebrow   = "How a season runs"
+heading   = "Design in the fall, compete in the spring"
+
+paragraph = [
+  "Design starts during the fall semester and competition follows in the spring. In between are the workdays: machining and fabrication, wiring, CAD revisions, and long evenings spent getting the software to agree with the hardware.",
+  "Alongside the competition robot there are seasonal builds &mdash; most visibly the trebuchet we run at the Great Downtown Pumpkin Festival on Main Street.",
+]
+
+# The row of labels under the text. Add or remove freely.
+discipline = [
+  "Mechanical design",
+  "Machining &amp; fabrication",
+  "Electronics",
+  "Embedded firmware",
+  "Computer vision",
+  "Controls &amp; autonomy",
+  "CAD",
+  "Project management",
+]
+
+
+# --- COMPETITIONS: the four cards ---------------------------------
+[competitions]
+eyebrow = "Where we compete"
+heading = "The competitions we enter"
+intro   = "Four series over the past decade, on the ground, in the ring, and now under water."
+
+# Each [[competitions.card]] block below is one card.
+#
+#   icon   - any Font Awesome 4.7 name, without the "fa-" prefix.
+#            Browse them at https://fontawesome.com/v4/icons/
+#   link   - page the card opens. Leave as "" for no link.
+
+[[competitions.card]]
+icon      = "map-signs"
+name      = "Intelligent Ground Vehicle Competition"
+years     = "IGVC &middot; 2022&ndash;24"
+blurb     = "A fully autonomous ground vehicle that has to hold a lane, avoid obstacles, and drive itself to GPS waypoints with nobody at the controls. Lidar, stereo vision, and two years of entries."
+link      = "/projects/igvc"
+link_text = "See the IGVC robots"
+
+[[competitions.card]]
+icon      = "trophy"
+name      = "National Robotics Challenge"
+years     = "NRC &middot; 2024&ndash;25"
+blurb     = "A 20&nbsp;lb autonomous sumobot: find the opponent somewhere in the ring, and push it out. No driver, no remote &mdash; it has to work out the match on its own."
+link      = "/projects/sumobot-2025"
+link_text = "See Sumobot 2025"
+
+[[competitions.card]]
+icon      = "anchor"
+name      = "RoboSub"
+years     = "2025&ndash;26"
+blurb     = "Our first autonomous underwater vehicle, taking the team below the surface for the first time and into a new class of competition. This is the machine we are building now."
+link      = ""
+link_text = "Details coming soon"
+
+[[competitions.card]]
+icon      = "cogs"
+name      = "ASME Student Design Series"
+years     = "E-Fest &middot; 2018&ndash;19"
+blurb     = "Small purpose-built machines run against teams from across the region at the ASME E-Fest engineering festival."
+link      = "/gallery/2019-asme-competition"
+link_text = "See the photos"
+
+
+# --- OUTREACH: text on the left, photo on the right ---------------
+[outreach]
+image     = "outreach.jpg"
+image_alt = "Team members demonstrating a robot to a group of school students sitting on the floor"
+caption   = "A demo at an East Middle School event."
+eyebrow   = "Outreach"
+heading   = "Robots in front of people"
+link      = "/gallery"
+link_text = "See what we do"
+
+paragraph = [
+  "We take part in outreach whenever we can. That has meant demos at middle school events, festivals, and Mines events, and mentoring FIRST Lego League teams around the Black Hills.",
+  "It is some of the best work we do. A robot on the floor of a school gym draws more questions in an afternoon than a poster ever will.",
+]
+
+
+# --- OFFICERS: the list of names ----------------------------------
+# Update this at the start of each year. Order is the order shown.
+[officers]
+eyebrow = "Who runs the team"
+heading = "Officers and advisors"
+intro   = "Come to a meeting and these are the people you will meet first."
+
+[[officers.person]]
+role = "President"
+name = "Devon Hamm"
+
+[[officers.person]]
+role = "Vice President"
+name = "Alexis Englund"
+
+[[officers.person]]
+role = "Treasurer"
+name = "Sierra Rodewald"
+
+[[officers.person]]
+role = "Secretary"
+name = "Kaylee Herndon"
+
+[[officers.person]]
+role = "Historian"
+name = "Dean Morgan"
+
+[[officers.person]]
+role = "Outreach"
+name = "Ethan Miller"
+
+[[officers.person]]
+role = "Officer Mentors"
+name = "Micheal Klingelhoefer, Steven Duong"
+
+[[officers.person]]
+role = "Advisor"
+name = "Reza Mehrabian"
+
+
+# --- JOIN US: the three info cards --------------------------------
+[join_us]
+eyebrow = "Get involved"
+heading = "Join our team"
+intro   = "No experience required, and nothing to apply for. Turn up and say hello."
+
+# icon - any Font Awesome 4.7 name, without the "fa-" prefix.
+
+# This card shows a table instead of a paragraph. Update the times here.
+[[join_us.card]]
+icon      = "calendar"
+heading   = "When we meet"
+link      = "/calendar"
+link_text = "See the calendar"
+rows      = [
+  ["Meetings", "Thursdays, 4:04&nbsp;pm &mdash; M306"],
+  ["Workdays", "Wednesdays, 5:00&nbsp;pm"],
+  ["",         "Saturdays, 12:00&nbsp;pm"],
+]
+
+[[join_us.card]]
+icon      = "map-marker"
+heading   = "Where to find us"
+body      = "Our main lab is <strong>McLaury 101</strong>, with a second lab in <strong>McLaury 107</strong>. Stop by and check us out &mdash; on a workday there is almost always someone in there."
+link      = "/gallery"
+link_text = "See the labs"
+
+[[join_us.card]]
+icon      = "envelope"
+heading   = "Get in touch"
+body      = "Questions before you come along? Email the team, or find us on Discord and at the fall org fair."
+link      = "mailto:Robotics@mines.sdsmt.edu"
+link_text = "Email the team"
+
+
+# --- CONTACT BAR: the dark band near the bottom -------------------
+[contact_bar]
+heading               = "Come build something with us"
+body                  = "Turn up to a meeting or a workday, tell us what you are curious about, and we will put a tool in your hand."
+primary_button_text   = "See the calendar"
+primary_button_link   = "/calendar"
+secondary_button_text = "Contact us"
+secondary_button_link = "mailto:Robotics@mines.sdsmt.edu"

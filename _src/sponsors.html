@@ -1,0 +1,192 @@
+<!--
+title: Sponsors
+page: sponsors
+content: sponsors
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, for the same reason as the calendar page: the list
+       of sponsors below is what the page is for, and a hero would push it
+       off the first screen. .page-head with no .has-image is a plain navy
+       band. -->
+  {{include:page-head}}
+
+  <!-- ========================================================== levels -->
+  <!-- The four levels are four blocks below rather than one repeated one,
+       because they are four separate tables in config.toml - [platinum],
+       [gold], [silver], [bronze]. That costs a little repetition here, in
+       a file nobody editing the site has to open, and buys a config where
+       adding a sponsor means copying a [[gold.sponsor]] block into the
+       level it belongs to. A level with no sponsors takes the second
+       branch and invites somebody to be the first. -->
+  <section class="band" id="levels">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{sponsors.eyebrow}}</span>
+        <h2>{{sponsors.heading}}</h2>
+        <p>{{sponsors.intro}}</p>
+      </div>
+
+      <div class="tier-list">
+
+        <!-- ---------------------------------------------------- Platinum -->
+        <div class="tier tier-platinum reveal" id="platinum">
+          <div class="tier-info">
+            <h3 class="tier-name">{{platinum.name}}</h3>
+            <span class="tier-amount">{{platinum.amount}}</span>
+            <p class="tier-perk">{{platinum.perk}}</p>
+          </div>
+
+          {{#if platinum.sponsor}}
+          <ul class="sponsor-grid">
+            {{#each platinum.sponsor}}
+            <li class="sponsor">
+              {{#if link}}
+              <a class="sponsor-frame" href="{{link}}" target="_blank" rel="noopener">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </a>
+              {{else}}
+              <div class="sponsor-frame">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </div>
+              {{/if}}
+              <span class="sponsor-name">{{name}}</span>
+            </li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <p class="tier-open">
+            <span>{{sponsors.open_text}}</span>
+            <a class="card-link" href="{{sponsors.open_link}}">{{sponsors.open_link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </p>
+          {{/if}}
+        </div>
+
+        <!-- ---------------------------------------------------- Gold -->
+        <div class="tier tier-gold reveal" id="gold">
+          <div class="tier-info">
+            <h3 class="tier-name">{{gold.name}}</h3>
+            <span class="tier-amount">{{gold.amount}}</span>
+            <p class="tier-perk">{{gold.perk}}</p>
+          </div>
+
+          {{#if gold.sponsor}}
+          <ul class="sponsor-grid">
+            {{#each gold.sponsor}}
+            <li class="sponsor">
+              {{#if link}}
+              <a class="sponsor-frame" href="{{link}}" target="_blank" rel="noopener">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </a>
+              {{else}}
+              <div class="sponsor-frame">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </div>
+              {{/if}}
+              <span class="sponsor-name">{{name}}</span>
+            </li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <p class="tier-open">
+            <span>{{sponsors.open_text}}</span>
+            <a class="card-link" href="{{sponsors.open_link}}">{{sponsors.open_link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </p>
+          {{/if}}
+        </div>
+
+        <!-- ---------------------------------------------------- Silver -->
+        <div class="tier tier-silver reveal" id="silver">
+          <div class="tier-info">
+            <h3 class="tier-name">{{silver.name}}</h3>
+            <span class="tier-amount">{{silver.amount}}</span>
+            <p class="tier-perk">{{silver.perk}}</p>
+          </div>
+
+          {{#if silver.sponsor}}
+          <ul class="sponsor-grid">
+            {{#each silver.sponsor}}
+            <li class="sponsor">
+              {{#if link}}
+              <a class="sponsor-frame" href="{{link}}" target="_blank" rel="noopener">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </a>
+              {{else}}
+              <div class="sponsor-frame">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </div>
+              {{/if}}
+              <span class="sponsor-name">{{name}}</span>
+            </li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <p class="tier-open">
+            <span>{{sponsors.open_text}}</span>
+            <a class="card-link" href="{{sponsors.open_link}}">{{sponsors.open_link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </p>
+          {{/if}}
+        </div>
+
+        <!-- ---------------------------------------------------- Bronze -->
+        <div class="tier tier-bronze reveal" id="bronze">
+          <div class="tier-info">
+            <h3 class="tier-name">{{bronze.name}}</h3>
+            <span class="tier-amount">{{bronze.amount}}</span>
+            <p class="tier-perk">{{bronze.perk}}</p>
+          </div>
+
+          {{#if bronze.sponsor}}
+          <ul class="sponsor-grid">
+            {{#each bronze.sponsor}}
+            <li class="sponsor">
+              {{#if link}}
+              <a class="sponsor-frame" href="{{link}}" target="_blank" rel="noopener">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </a>
+              {{else}}
+              <div class="sponsor-frame">
+                <img src="{{image_url}}" alt="{{image_alt}}" loading="lazy">
+              </div>
+              {{/if}}
+              <span class="sponsor-name">{{name}}</span>
+            </li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <p class="tier-open">
+            <span>{{sponsors.open_text}}</span>
+            <a class="card-link" href="{{sponsors.open_link}}">{{sponsors.open_link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          </p>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== thanks -->
+  <section class="band band-alt" id="thanks">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{thanks.eyebrow}}</span>
+        <h2>{{thanks.heading}}</h2>
+        {{#each thanks.paragraph}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

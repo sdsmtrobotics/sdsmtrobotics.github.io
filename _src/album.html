@@ -1,0 +1,64 @@
+<!--
+title: {{album.title}}
+page: gallery
+collection: albums
+output: gallery/{{slug}}.html
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  {{#if album.image_url}}
+  <section class="page-head has-image" style="background-image: url('{{album.image_url}}');">
+  {{else}}
+  <section class="page-head">
+  {{/if}}
+    <div class="shell page-head-inner">
+      <a class="back-link" href="{{back.link}}">
+        <i class="fa fa-angle-left" aria-hidden="true"></i> {{back.text}}
+      </a>
+      <span class="eyebrow eyebrow-light">{{album.tag}}</span>
+      <h1>{{album.title}}</h1>
+      <p class="page-head-meta"><time>{{album.date}}</time> &middot; {{album.season}}</p>
+      <p>{{album.intro}}</p>
+    </div>
+  </section>
+
+  <!-- ==================================================== the photographs -->
+  <section class="band" id="photos">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{photos.eyebrow}}</span>
+        <h2>{{photos.heading}}</h2>
+        <p>{{photos.hint}}</p>
+      </div>
+
+      <!-- Every tile is a plain link to the photo itself, so with JS off a
+           photo still opens. site.js upgrades the grid to an overlay that can
+           be stepped through; it needs data-lightbox to find the grid, and
+           reads the caption and the album name from the attributes below. -->
+      <div class="photo-grid" data-lightbox="{{album.title}}">
+        {{#each album.photo}}
+        <a class="photo reveal" href="{{image_url}}" data-caption="{{caption}}">
+          {{#if caption}}
+          <img src="{{image_url}}" alt="{{caption}}" loading="lazy">
+          {{else}}
+          <img src="{{image_url}}" alt="{{album.title}}, photo {{index}}" loading="lazy">
+          {{/if}}
+        </a>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

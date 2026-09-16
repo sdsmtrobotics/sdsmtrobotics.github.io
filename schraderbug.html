@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Schraderbug | Rocker Robotics</title>
+    <meta name="description" content="WEEEEE!!!!">
+
+    <!-- A hidden page, reachable only from the easter-egg link on the news page.
+         It is deliberately not part of the site's normal look, so it does not
+         use the shared header, footer or stylesheet - everything it needs is
+         in the <style> block below. Keep it that way: it has no build step,
+         and ./build.py neither generates nor touches this file. -->
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+</head>
+
+<body class="">
+
+<img src="/assets/img/eggs/schraderbug.jpg" id="schrader" />
+<div class="container">
+   <button onclick="schraderSpin()">WEEEEE!!!!</button>
+</div>
+<style>
+body {
+    overflow-x: hidden;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+    margin: 50px;
+    display: block;
+}
+img {
+margin: auto;
+display: block;
+animation-name: zoomImg;
+animation-duration: 1s;
+transform-origin: center;
+transition: transform 1s ease-out 0s;
+}
+@keyframes zoomImg {
+from {transform: scale(0.01);}
+to {transform: scale(1);}
+}
+</style>
+<script>
+    angle = 0;
+    function schraderSpin() {
+        console.log("spin");
+        angle = angle + 360;
+        document.getElementById("schrader").style.transform = "rotate("+angle+"deg)";
+    }
+</script>
+
+</body>
+
+</html>

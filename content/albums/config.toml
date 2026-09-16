@@ -1,0 +1,54 @@
+####################################################################
+#  EVERY PHOTO ALBUM PAGE  (sdsmtrobotics.github.io/gallery/...)
+#
+#  This file holds the wording the 31 album pages have in common:
+#  the link back to the gallery, the heading above the photographs,
+#  and the band at the bottom. Change it here once and every album
+#  page follows. Then run:      ./build.py
+#
+#  Each album's own words - its title, date and the sentence under
+#  the heading - and its photographs are in the folder named after
+#  it next to this file, for example:
+#
+#      content/albums/2023-igvc/config.toml
+#      content/albums/2023-igvc/images/
+#      content/albums/2023-igvc/map.html    <- what goes where
+#
+#  To add a whole new album, copy one of those folders, change the
+#  words in its config.toml, put your photos in its images/, and
+#  run ./build.py. The new page appears at /gallery/<folder name>.
+#  Add a card for it in content/gallery/config.toml as well, or
+#  nothing on the gallery page will link to it.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- THE LINK BACK ------------------------------------------------
+# Sits above the album title, at the top of every album page.
+[back]
+text = "All albums"
+link = "/gallery"
+
+
+# --- THE PHOTOGRAPHS ----------------------------------------------
+# The heading above the grid of photos.
+#
+# `hint` is the line under it. Say something true whether or not the
+# visitor has JavaScript: with it, a photo opens in an overlay that
+# can be stepped through; without it, the photo opens on its own.
+[photos]
+eyebrow = "The album"
+heading = "The photographs"
+hint    = "Choose any photo to see it full size."
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Want to be in the next album?"
+body                  = "Every photo on this site has somebody in it who turned up to a meeting not knowing much. No experience required &mdash; tell us what you are curious about and we will put a tool in your hand."
+primary_button_text   = "Join the team"
+primary_button_link   = "/about#join"
+secondary_button_text = "Back to the gallery"
+secondary_button_link = "/gallery"

@@ -1,0 +1,20 @@
+<!-- The pill row above a filtered grid. Four pages use it, each keeping
+       its own config names, so the page passes them in as include
+       arguments: noun="robots", aria="Filter robots by competition" and
+       options=robots.filter. `options` is a path into that page's own
+       config; the other two are plain text.
+
+       (Written without the surrounding braces on purpose - a real include
+       tag in this comment would make the partial include itself.)
+
+       Filters are JS-only: site.css keeps this bar hidden until site.js
+       runs, so with JS off the full list below is simply all there is. -->
+      <div class="filter-bar reveal" data-filter-bar data-filter-noun="{{noun}}">
+        <div class="filter-pills" role="group" aria-label="{{aria}}">
+          {{#each options}}
+          <button class="filter-pill" type="button" data-filter="{{value}}"
+                  aria-pressed="false">{{label}}</button>
+          {{/each}}
+        </div>
+        <p class="filter-count" data-filter-count aria-live="polite"></p>
+      </div>

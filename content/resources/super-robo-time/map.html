@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>resources/super-robo-time - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>resources/super-robo-time page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/resources/super-robo-time">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Page head</h2><code>[page_head]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Back link<code>page_head.back_link</code></th><td>/resources</td></tr><tr><th>Back text<code>page_head.back_text</code></th><td>Resources</td></tr><tr><th>Eyebrow<code>page_head.eyebrow</code></th><td>Three or four weeks, one robot</td></tr><tr><th>Heading<code>page_head.heading</code></th><td>Super Robo Time</td></tr><tr><th>Body<code>page_head.body</code></th><td>An annual event run with UAS and the 3D Print Club, where anyone who turns up builds a robot to take on a challenge. Everything a team needs while it is running is on this page.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>2</span><h2>What</h2><code>[what]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>what.eyebrow</code></th><td>The event</td></tr><tr><th>Heading<code>what.heading</code></th><td>What Super Robo Time is</td></tr><tr><th>Paragraph<code>what.paragraph</code></th><td><ol class="lines"><li>Super Robo Time &mdash; SRT &mdash; is an annual event held by the Robotics Team, UAS and the 3D Print Club. It is a chance to learn about robotics, drones and 3D printing, compete in a scavenger hunt in the labs, and build a robot to complete a challenge.</li><li>It generally runs over three to four weeks, with the main workdays on Saturdays and extra workdays and training sessions in between. You do not need to know anything going in, and you do not need to be on any of the three teams.</li></ol></td></tr></table></section></div><div class="band"><div class="bandhead"><span>3</span><h2>Feature</h2><code>[feature]</code></div><section class="slot"><h3>Section</h3><figure><img src="images/super-robo-time.jpg" alt=""><figcaption><code>super-robo-time.jpg</code><span>2560 &times; 1030px</span></figcaption></figure><table><tr><th>Heading<code>feature.heading</code></th><td>Turn up on a Saturday and build something</td></tr><tr><th>Body<code>feature.body</code></th><td>No experience assumed, no sign-up needed, and nothing to bring. The teams are put together on the first day and everything a robot needs is provided.</td></tr><tr><th>Stat<code>feature.stat</code></th><td><ol class="lines"><li>3&ndash;4 &middot; weeks long</li><li>3 &middot; clubs running it</li><li>Sat &middot; main workdays</li></ol></td></tr></table></section></div><div class="band"><div class="bandhead"><span>4</span><h2>Kit</h2><code>[kit]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>kit.eyebrow</code></th><td>During the event</td></tr><tr><th>Heading<code>kit.heading</code></th><td>What you need, in the order you need it</td></tr><tr><th>Intro<code>kit.intro</code></th><td>Install the software first &mdash; it is the slowest part and the one worth doing before the first Saturday rather than on it.</td></tr></table></section><section class="slot"><h3>Stage 1</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>kit.stage[1].icon</code></th><td>laptop</td></tr><tr><th>Heading<code>kit.stage[1].heading</code></th><td>Software</td></tr><tr><th>Body<code>kit.stage[1].body</code></th><td>Two programs, and both take a while to install. Do this at home if you can.</td></tr><tr><th>Links<code>kit.stage[1].links</code></th><td><ol class="lines"><li>SOLIDWORKS from SharePoint &middot; https://sdsmt0.sharepoint.com/:f:/r/sites/ITS-Install/Shared%20Documents/SOLIDWORKS/SOLIDWORKS%202019?csf=1&amp;web=1&amp;e=IxbYFx</li><li>Install VS Code &middot; https://code.visualstudio.com/Download</li></ol></td></tr><tr><th>Note<code>kit.stage[1].note</code></th><td><strong>SOLIDWORKS:</strong> download all three files into one folder, run the <code>.exe</code>, then run <code>SWinstall.bat</code> once the extract has finished. The older F: drive route was <code>F:\install\Solidworks\Auto SolidWorks Install\SOLIDWORKS 2019 SP3.0\</code>.</td></tr></table></section><section class="slot"><h3>Stage 2</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>kit.stage[2].icon</code></th><td>cube</td></tr><tr><th>Heading<code>kit.stage[2].heading</code></th><td>Mechanical</td></tr><tr><th>Body<code>kit.stage[2].body</code></th><td>The CAD workshop, then the guide to putting the bot together. The wheel drawing is the demonstration part &mdash; the first thing most people draw.</td></tr><tr><th>Links<code>kit.stage[2].links</code></th><td><ol class="lines"><li>Workshop guide document &middot; https://docs.google.com/document/d/1Rr3UThgfijHwgXaRdHDw8uTjcZ-XsOy7/edit?usp=sharing</li><li>Workshop CAD files &middot; https://drive.google.com/file/d/1zuo3ZcPjxxfCOl1rw60fB0bBxLoim9YP/view?usp=sharing</li><li>Bot assembly guide &middot; https://docs.google.com/document/d/1JfV8HUS_h7BRDEZkhP9dYC9aShK6T9U1/edit#heading=h.gjdgxs</li><li>Demo part - wheel drawing &middot; https://drive.google.com/file/d/1G1pMnZUxKfr1s_Gb98g4n5y-0ekNxdgo/view?usp=sharing &middot; (PDF)</li></ol></td></tr></table></section><section class="slot"><h3>Stage 3</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>kit.stage[3].icon</code></th><td>bolt</td></tr><tr><th>Heading<code>kit.stage[3].heading</code></th><td>Electrical</td></tr><tr><th>Body<code>kit.stage[3].body</code></th><td>How it all wires together, and which pin on the ESP32 is which.</td></tr><tr><th>Links<code>kit.stage[3].links</code></th><td><ol class="lines"><li>Wiring diagram &middot; https://drive.google.com/file/d/1VCt6hQFq53vnsxfThOBV153jLXwsgCha/view?usp=sharing</li><li>ESP32 pinout &middot; https://cdn.instructables.com/ORIG/FOL/YWLI/JEOILQ5U/FOLYWLIJEOILQ5U.png?auto=webp&amp;frame=1&amp;width=1024&amp;fit=bounds&amp;md=a74a05c18f4b4d9f0db00ec63c7bc3c0</li></ol></td></tr></table></section><section class="slot"><h3>Stage 4</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>kit.stage[4].icon</code></th><td>code</td></tr><tr><th>Heading<code>kit.stage[4].heading</code></th><td>Programming</td></tr><tr><th>Body<code>kit.stage[4].body</code></th><td>Start from the base code rather than an empty sketch &mdash; it already talks to the motors and the phone. The three libraries below are what it expects to find installed.</td></tr><tr><th>Links<code>kit.stage[4].links</code></th><td><ol class="lines"><li>Programming guide &middot; https://docs.google.com/document/d/1i2vVdMFBYWKeJn9s9oWgotWs1XReleNooq1EfdoCmVY/edit?usp=sharing</li><li>Base code on GitLab &middot; https://gitlab.com/sdmines/clubs/rocker-robotics/super-robo-time/super-robo-time-code</li><li>Dabble &middot; https://github.com/STEMpedia/DabbleESP32 &middot; (remote control)</li><li>L298N &middot; https://github.com/sdsmt-robotics/L298N &middot; (motor driver)</li><li>ESP32 AnalogWrite &middot; https://github.com/ERROPiX/ESP32_AnalogWrite &middot; (compatibility)</li></ol></td></tr></table></section><section class="slot"><h3>Stage 5</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>kit.stage[5].icon</code></th><td>flag-checkered</td></tr><tr><th>Heading<code>kit.stage[5].heading</code></th><td>Challenges</td></tr><tr><th>Body<code>kit.stage[5].body</code></th><td>What to try to make your robot actually do. Nobody manages all of them, and that is the point &mdash; pick the ones your team finds interesting.</td></tr><tr><th>Links<code>kit.stage[5].links</code></th><td><ol class="lines"><li>Suggested tasks &middot; https://drive.google.com/file/d/15gW0fKq-xuPnWwcbfShQ56BFavxMELlY/view?usp=sharing</li></ol></td></tr></table></section><section class="slot"><h3>Stage 6</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>kit.stage[6].icon</code></th><td>cogs</td></tr><tr><th>Heading<code>kit.stage[6].heading</code></th><td>Going further</td></tr><tr><th>Body<code>kit.stage[6].body</code></th><td>If SRT leaves you wanting to keep building, the parts reference is where the team's opinions about motors, encoders and controllers are written down &mdash; which one to reach for, and what its datasheet does not tell you.</td></tr><tr><th>Link<code>kit.stage[6].link</code></th><td>/resources/robo-parts</td></tr><tr><th>Link text<code>kit.stage[6].link_text</code></th><td>Open the parts reference</td></tr></table></section></div><div class="band"><div class="bandhead"><span>5</span><h2>Contact bar</h2><code>[contact_bar]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>contact_bar.heading</code></th><td>When is the next one?</td></tr><tr><th>Body<code>contact_bar.body</code></th><td>SRT runs once a year and the dates go on the team calendar as soon as they are set. If it is not on there yet, ask &mdash; planning usually starts well before anything is announced.</td></tr><tr><th>Primary button text<code>contact_bar.primary_button_text</code></th><td>Check the calendar</td></tr><tr><th>Primary button link<code>contact_bar.primary_button_link</code></th><td>/calendar</td></tr><tr><th>Secondary button text<code>contact_bar.secondary_button_text</code></th><td>Ask on Discord</td></tr><tr><th>Secondary button link<code>contact_bar.secondary_button_link</code></th><td>https://discord.gg/pehkuYRxh6</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  
+</main>

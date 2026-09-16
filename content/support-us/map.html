@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>support-us - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>support-us page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/sponsors/support-us">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Page head</h2><code>[page_head]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Back link<code>page_head.back_link</code></th><td>/sponsors</td></tr><tr><th>Back text<code>page_head.back_text</code></th><td>Our sponsors</td></tr><tr><th>Eyebrow<code>page_head.eyebrow</code></th><td>Sponsorship</td></tr><tr><th>Heading<code>page_head.heading</code></th><td>Support us</td></tr><tr><th>Body<code>page_head.body</code></th><td>Robots are expensive, and a student team has no revenue. Here is what support pays for, what it gets a company in return, and how to start the conversation.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>2</span><h2>Why</h2><code>[why]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>why.eyebrow</code></th><td>Where the money goes</td></tr><tr><th>Heading<code>why.heading</code></th><td>Why we ask</td></tr><tr><th>Paragraph<code>why.paragraph</code></th><td><ol class="lines"><li>Building robots is amazing work. It is also an expensive way to spend a year. We are a non-profit student organization, so the team runs on school funding, fundraisers, and outside assistance &mdash; and without the last of those, a season can end before it reaches a competition.</li><li>The competitions we enter are national. The robot that carries a company's logo is seen by students, faculty, and teams from across the country, and then by everyone who meets it at a festival, a school, or an event back home in Rapid City.</li></ol></td></tr></table></section></div><div class="band"><div class="bandhead"><span>3</span><h2>Needs</h2><code>[needs]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>needs.eyebrow</code></th><td>What helps</td></tr><tr><th>Heading<code>needs.heading</code></th><td>Three ways to support the team</td></tr><tr><th>Intro<code>needs.intro</code></th><td>Money is the flexible one, but it is not the only one. Parts and equipment are just as welcome, and often reach a build faster.</td></tr></table></section><section class="slot"><h3>Card 1</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>needs.card[1].icon</code></th><td>usd</td></tr><tr><th>Heading<code>needs.card[1].heading</code></th><td>Funds</td></tr><tr><th>Body<code>needs.card[1].body</code></th><td>Entry fees, the trailer and the fuel to get a robot to competition, and the parts a design needs that nobody has donated. This is the support that goes wherever the season needs it most.</td></tr></table></section><section class="slot"><h3>Card 2</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>needs.card[2].icon</code></th><td>wrench</td></tr><tr><th>Heading<code>needs.card[2].heading</code></th><td>Equipment</td></tr><tr><th>Body<code>needs.card[2].body</code></th><td>Tools, test gear, and machines for the lab. Equipment outlasts the students who use it &mdash; a donated instrument is still earning its keep ten teams later.</td></tr></table></section><section class="slot"><h3>Card 3</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>needs.card[3].icon</code></th><td>cubes</td></tr><tr><th>Heading<code>needs.card[3].heading</code></th><td>Parts and materials</td></tr><tr><th>Body<code>needs.card[3].body</code></th><td>Motors, sensors, electronics, filament, aluminum, and stock to cut. If your company makes it or stocks it, we can almost certainly build with it.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>4</span><h2>Levels</h2><code>[levels]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>levels.eyebrow</code></th><td>Sponsor incentives</td></tr><tr><th>Heading<code>levels.heading</code></th><td>What each level gets</td></tr><tr><th>Intro<code>levels.intro</code></th><td>Support runs for the year it is given, and every level includes everything below it.</td></tr></table></section><section class="slot"><h3>Card 1</h3><div class="noimg">no image in this block</div><table><tr><th>Level<code>levels.card[1].level</code></th><td>bronze</td></tr><tr><th>Name<code>levels.card[1].name</code></th><td>Bronze</td></tr><tr><th>Amount<code>levels.card[1].amount</code></th><td>$100 &ndash; $499</td></tr><tr><th>Benefit<code>levels.card[1].benefit</code></th><td><ol class="lines"><li>Company logo on the sponsors page of this website.</li><li>Updates on the team and its competitions twice a year, for as long as the support runs.</li></ol></td></tr></table></section><section class="slot"><h3>Card 2</h3><div class="noimg">no image in this block</div><table><tr><th>Level<code>levels.card[2].level</code></th><td>silver</td></tr><tr><th>Name<code>levels.card[2].name</code></th><td>Silver</td></tr><tr><th>Amount<code>levels.card[2].amount</code></th><td>$500 &ndash; $999</td></tr><tr><th>Benefit<code>levels.card[2].benefit</code></th><td><ol class="lines"><li>Company name and logo, small, on the robots we take to competition for the year.</li><li>Everything at the Bronze level.</li></ol></td></tr></table></section><section class="slot"><h3>Card 3</h3><div class="noimg">no image in this block</div><table><tr><th>Level<code>levels.card[3].level</code></th><td>gold</td></tr><tr><th>Name<code>levels.card[3].name</code></th><td>Gold</td></tr><tr><th>Amount<code>levels.card[3].amount</code></th><td>$1,000 &ndash; $4,999</td></tr><tr><th>Benefit<code>levels.card[3].benefit</code></th><td><ol class="lines"><li>Company name and logo, medium, on the robots we take to competition for the year.</li><li>Company name and logo on the banners we take to competitions and events for the year.</li><li>Everything at the Silver level.</li></ol></td></tr></table></section><section class="slot"><h3>Card 4</h3><div class="noimg">no image in this block</div><table><tr><th>Level<code>levels.card[4].level</code></th><td>platinum</td></tr><tr><th>Name<code>levels.card[4].name</code></th><td>Platinum</td></tr><tr><th>Amount<code>levels.card[4].amount</code></th><td>$5,000 and above</td></tr><tr><th>Benefit<code>levels.card[4].benefit</code></th><td><ol class="lines"><li>Company name and logo, large, on the robots we take to competition for the year.</li><li>An appreciation plaque.</li><li>Everything at the Gold level.</li></ol></td></tr></table></section></div><div class="band"><div class="bandhead"><span>5</span><h2>Contact bar</h2><code>[contact_bar]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>contact_bar.heading</code></th><td>Start the conversation</td></tr><tr><th>Body<code>contact_bar.body</code></th><td>Email the team and tell us what you are thinking &mdash; a level, a pallet of something useful, or a question about where it would end up. We will send you the details and, if you want them, photos of the robot it paid for.</td></tr><tr><th>Primary button text<code>contact_bar.primary_button_text</code></th><td>Email the team</td></tr><tr><th>Primary button link<code>contact_bar.primary_button_link</code></th><td>mailto:Robotics@mines.sdsmt.edu</td></tr><tr><th>Secondary button text<code>contact_bar.secondary_button_text</code></th><td>See our sponsors</td></tr><tr><th>Secondary button link<code>contact_bar.secondary_button_link</code></th><td>/sponsors</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  
+</main>

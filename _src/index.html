@@ -1,0 +1,136 @@
+<!--
+title: Home
+page: home
+content: landing
+-->
+{{include:page-top}}
+  <!-- ============================================================ hero -->
+  <section class="hero" style="background-image: url('{{hero.image_url}}');">
+    <div class="shell hero-inner">
+      <span class="hero-eyebrow"><span class="dot"></span> {{hero.eyebrow}}</span>
+      <h1>{{hero.heading}}</h1>
+      <p class="hero-meta">{{hero.body}}</p>
+      <div class="hero-actions">
+        <a class="btn btn-solid" href="{{hero.primary_button_link}}">{{hero.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{hero.secondary_button_link}}">{{hero.secondary_button_text}}</a>
+      </div>
+    </div>
+    <a class="hero-scroll" href="#robots" aria-label="Scroll to our robots">
+      <i class="fa fa-angle-down" aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ========================================================== robots -->
+  <section class="band" id="robots">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{robots.eyebrow}}</span>
+        <h2>{{robots.heading}}</h2>
+        <p>{{robots.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each robots.card}}
+        <article class="card reveal">
+          {{#if image_url}}
+          <div class="card-media">
+            <img src="{{image_url}}" alt="{{name}}" loading="lazy">
+            <span class="card-tag">{{tag}}</span>
+          </div>
+          {{else}}
+          <div class="card-media is-placeholder">
+            <div>
+              <i class="fa fa-cog" aria-hidden="true"></i>
+              <span>Photos coming soon</span>
+            </div>
+            <span class="card-tag">{{tag}}</span>
+          </div>
+          {{/if}}
+          <div class="card-body">
+            <h3>{{name}}</h3>
+            <p>{{blurb}}</p>
+            {{#if link}}
+            <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            {{else}}
+            <span class="card-link is-inert">{{link_text}}</span>
+            {{/if}}
+          </div>
+        </article>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= feature -->
+  <section class="feature" style="background-image: url('{{feature_band.image_url}}');">
+    <div class="shell feature-inner reveal">
+      <h2>{{feature_band.heading}}</h2>
+      <p>{{feature_band.body}}</p>
+      <dl class="feature-stats">
+        {{#each feature_band.stat}}
+        <div>
+          <dt>{{value}}</dt>
+          <dd>{{label}}</dd>
+        </div>
+        {{/each}}
+      </dl>
+      <a class="btn btn-solid" href="{{feature_band.button_link}}">{{feature_band.button_text}}</a>
+    </div>
+  </section>
+
+  <!-- ======================================================== join us -->
+  <section class="band band-alt" id="join">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{join_us.eyebrow}}</span>
+        <h2>{{join_us.heading}}</h2>
+        <p>{{join_us.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each join_us.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if body}}
+          <p>{{body}}</p>
+          {{/if}}
+          {{#if rows}}
+          <ul class="meet-list">
+            {{#each rows}}
+            <li><span class="when">{{this.0}}</span> <span>{{this.1}}</span></li>
+            {{/each}}
+          </ul>
+          {{/if}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{sponsor_bar.heading}}</h2>
+      <p class="reveal">{{sponsor_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{sponsor_bar.primary_button_link}}">{{sponsor_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{sponsor_bar.secondary_button_link}}">{{sponsor_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{include:footer}}
+
+<!-- Carried over from the old home page: an invisible patch in the bottom-right
+     corner of the page that opens pong.html. It is the only way to that page.
+     It sits out here, outside every section, so that body is its containing
+     block and it lands at the foot of the whole page. Kept out of the tab order
+     and the accessibility tree, so it is not read out as an unlabelled link. -->
+<a class="egg-link egg-corner" href="/pong" tabindex="-1" aria-hidden="true"></a>
+
+</body>
+</html>

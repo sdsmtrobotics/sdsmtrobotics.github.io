@@ -1,0 +1,139 @@
+####################################################################
+#  ROBOT WRITE-UP: Sumobot 2025
+#  Lives at  sdsmtrobotics.github.io/projects/sumobot-2025
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The autonomous 20 lb sumo robot built for the 2025 National Robotics Challenge: find the other robot in the ring, and push it out."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "Sumobot 2025"
+years = "September 2024 &ndash; April 2025"
+tag   = "NRC"
+intro = "An autonomous 20&nbsp;lb sumo robot for the 2025 National Robotics Challenge: find the other robot in the ring, and push it out."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+#
+# The old page also had empty Cost and Features rows. They are left
+# out here rather than printed blank; add them back when there are
+# numbers to put in them.
+fact = [
+  ["Built by", "Alexis Englund, Josiah Huntington, Aden Muzzey, Sierra Rodewald, Zane Wilson, Jacob Decker, Steven Duong, Ethan Miller, Michael Klingelhoefer, Luke Baron, Nathan Paye, Carter Moon"],
+  ["Purpose",  "To compete in the 2025 NRC sumobot competition"],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+#
+# The old page also listed a Design Report here, but the link pointed
+# at nothing, so it is not carried over. Add it back as another row
+# when there is somewhere for it to go.
+file = [
+  ["Code", "https://gitlab.com/sdmines/clubs/rocker-robotics/nrc-sumo-24-25/nrc-software/controlls_code", "(GitLab)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "The purpose of this competition is to create an autonomous 20lb robot that will be placed in a ring and must push another bot out of the ring. You can visit the competition website at <a href=\"https://www.thenrc.org/\" target=\"_blank\" rel=\"noopener\">thenrc.org</a>, and the rule book is <a href=\"https://irp.cdn-website.com/9297868f/files/uploaded/NRCContestRules2025.pdf\" target=\"_blank\" rel=\"noopener\">here</a>.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-cad-shell.png"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "newspaper-o"
+heading   = "The winter newsletter"
+body      = "How the mechanical, electrical and software sub-teams got this robot ready for Marion, Ohio."
+link      = "/news/winter-2025-newsletter"
+link_text = "Read the newsletter"
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "2025 album"
+body      = "The season in photographs, including the sumobot shell."
+link      = "/gallery/2025"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "Spinnybot"
+body      = "The last robot the team took to the National Robotics Challenge."
+link      = "/projects/spinnybot"
+link_text = "See the robot"

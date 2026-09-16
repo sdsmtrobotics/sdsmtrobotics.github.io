@@ -1,0 +1,56 @@
+<!--
+title: Links
+page: resources
+content: resources/links
+output: resources/links.html
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, the same as the resources page this sits under. -->
+  {{include:page-head}}
+
+  <!-- ========================================================== the links -->
+  <!-- Four grey buttons on the old page, with nothing to tell you which one
+       you wanted or whether you would be let in. Each card now says what is
+       behind it and `access` says who can open it, because that is the
+       question people actually had. -->
+  <section class="band" id="places">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{places.eyebrow}}</span>
+        <h2>{{places.heading}}</h2>
+        <p>{{places.intro}}</p>
+      </div>
+
+      <div class="grid grid-2">
+        {{#each places.place}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if access}}
+          <p class="info-card-meta">{{access}}</p>
+          {{/if}}
+          <p>{{body}}</p>
+          {{#if note}}
+          <p class="link-note">{{note}}</p>
+          {{/if}}
+          <a class="card-link" href="{{link}}" target="_blank" rel="noopener">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

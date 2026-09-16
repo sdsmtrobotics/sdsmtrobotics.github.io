@@ -1,0 +1,237 @@
+####################################################################
+#  NEWS PAGE  (sdsmtrobotics.github.io/news)
+#
+#  Everything you can see as text on the news page is in this
+#  file. Change it here, then run:      ./build.py
+#
+#  Images live in the images/ folder next to this file. To swap one
+#  out, drop the new photo in there and put its filename below.
+#
+#  Not sure which image is which? Open  map.html  in this folder.
+#  It shows every photo and every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/news.html, not from here.
+[meta]
+description = "News from the South Dakota Mines Rocker Robotics Team - competition results, outreach events, pumpkin chunkin, and team newsletters."
+
+
+# --- PAGE HEAD: the banner at the top -----------------------------
+# Set image = "" for a plain navy band instead of a photo.
+[page_head]
+image   = "banner.jpg"          # wide landscape photo, 1900px or wider
+eyebrow = "What we have been up to"
+heading = "News"
+body    = "Competition results, outreach events, and newsletters &mdash; a running record of what the team has built and where it has taken it."
+
+
+# --- THE POST LIST ------------------------------------------------
+[news]
+eyebrow = "The archive"
+heading = "Earlier updates"
+intro   = "Everything before the story above, newest first. Each card opens the full write-up, most of them with a photo gallery from the day."
+
+# The wording on the big band above the list, which shows whichever
+# post below is marked `featured = true`.
+featured_eyebrow = "Latest update"
+featured_link_text = "Read the full write-up"
+
+# The buttons above the cards. Each one shows only the posts whose
+# `category` matches its `value`. Leave `value = ""` for "show all".
+#
+# If you add a post in a brand new category, add a button for it
+# here too - otherwise its card only ever shows under "All updates".
+
+[[news.filter]]
+label = "All updates"
+value = ""
+
+[[news.filter]]
+label = "Competitions"
+value = "competition"
+
+[[news.filter]]
+label = "Outreach"
+value = "outreach"
+
+[[news.filter]]
+label = "Team news"
+value = "team"
+
+
+# ------------------------------------------------------------------
+#  Each [[news.post]] block below is one story, in the order they
+#  appear on the page. Copy a block to add a post, delete one to
+#  remove it. Put new ones at the TOP - the page runs newest first.
+#
+#    title     - the headline, shown as the card heading
+#    date      - the date line under the headline
+#    tag       - small gold label in the corner of the photo
+#    category  - which filter button shows this card. Must match one
+#                of the `value` settings in the buttons above.
+#    blurb     - the summary. Links are allowed.
+#    image     - filename in images/. Leave as "" to show a
+#                "photos coming soon" placeholder instead.
+#    link      - the write-up this card opens. Leave as "" for none.
+#    link_text - the words on the link at the bottom of the card
+#    featured  - set `featured = true` on ONE post and it also shows
+#                in the big band at the top of the page. Leave the
+#                line off every other post.
+# ------------------------------------------------------------------
+
+[[news.post]]
+title      = "Winter 2025 Newsletter"
+date       = "March 10, 2025"
+tag        = "Newsletter"
+category   = "team"
+featured   = true
+blurb      = "Our winter newsletter: how the mechanical, electrical, and computer science sub-teams got the NRC sumobot ready for Marion, Ohio, plus the outreach we ran alongside it."
+image      = "winter-2025-newsletter.png"
+link       = "/news/winter-2025-newsletter"
+link_text  = "Read the newsletter"
+
+[[news.post]]
+title      = "2023 IGVC Competition"
+date       = "June 5, 2023"
+tag        = "IGVC"
+category   = "competition"
+blurb      = "Our first trip to the Intelligent Ground Vehicle Competition in Rochester, Michigan. The robot took a design award and the team came home with <strong>Rookie of the Year</strong>, despite a split gearbox casing and a rough time on the course."
+image      = "igvc-2023.jpg"
+link       = "/news/2023-igvc-competition"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "2022 Trebuchet"
+date       = "September 22, 2022"
+tag        = "Pumpkin Chunkin"
+category   = "outreach"
+blurb      = "The old trebuchet was coming apart, so the team rebuilt the whole thing out of 4x4s with a new loading and firing mechanism &mdash; then <strong>won the competition</strong> with 966 points."
+image      = "trebuchet-2022.jpg"
+link       = "/news/2022-trebuchet"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "2020 Competition Cancellation and Recap of Year"
+date       = "May 11, 2020"
+tag        = "NRC"
+category   = "competition"
+blurb      = "A full-body spinning combat robot and a self-driving Traxxas running ROS on a Jetson Nano, both headed for the National Robotics Challenge &mdash; until Covid-19 halted the season mid-spring."
+image      = "nrc-2020.jpg"
+link       = "/news/2020-competition-cancellation-and-recap-of-year"
+link_text  = "Read the recap"
+
+[[news.post]]
+title      = "2019 FLL Tournament Volunteering"
+date       = "December 7, 2019"
+tag        = "Outreach"
+category   = "outreach"
+blurb      = "Members refereed the robot game and judged robot design at the regional FIRST LEGO League qualifier in Rapid City &mdash; a record 20 teams of 9 to 14 year olds."
+image      = "fll-2019.jpg"
+link       = "/news/2019-fll-tournament-volunteering"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "Super Robo Time 2019"
+date       = "October 5, 2019"
+tag        = "Super Robo Time"
+category   = "team"
+blurb      = "Our annual kick-off with UAS and the 3D Print Club: a lab scavenger hunt, then a few weeks of teams building battlebots out of the same box of parts and fighting it out in the arena."
+image      = "super-robo-time-2019.jpg"
+link       = "/news/super-robo-time-2019"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "2019 Pumpkin Chunkin Competition"
+date       = "September 11, 2019"
+tag        = "Pumpkin Chunkin"
+category   = "outreach"
+blurb      = "Efficiency work on the trebuchet got last year's distances out of roughly 30% less counterweight. A cold, rainy day and heavier pumpkins than we had practised with left us in 5th."
+image      = "pumpkin-chunkin-2019.jpg"
+link       = "/news/2019-pumpkin-chunkin-competition"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "2019 ASME Student Design Competition"
+date       = "April 6, 2019"
+tag        = "ASME"
+category   = "competition"
+blurb      = "B.A.M. &mdash; the Ball Acquisition Machine &mdash; at the Lansing E-Fest for the Pick-and-Place Race. It won its first elimination round, then stopped dead after a collision in the second."
+image      = "asme-2019.jpg"
+link       = "/news/2019-asme-student-design-competition"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "2018 Pumpkin Chunkin and Great Downtown Pumpkin Festival"
+date       = "April 11, 2018"
+tag        = "Pumpkin Chunkin"
+category   = "outreach"
+blurb      = "A booth at Main Street Square and a trebuchet at Memorial Park. Trailing going into the final throw, the team borrowed weights from a rival, threw farther than ever before, and <strong>took the trophy</strong>."
+image      = "pumpkin-festival-2018.jpg"
+link       = "/news/2018-pumpkin-chunkin-and-great-downtown-pumpkin-festival"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "2018 ASME Student Design Competition"
+date       = "March 6, 2018"
+tag        = "ASME"
+category   = "competition"
+blurb      = "Robot soccer in Pomona, California, with three bots in a 50&nbsp;cm cube: one shooter and two defenders with solenoid kickers. A solid mid-table finish against roughly 32 teams in our first year at the competition."
+image      = "asme-2018.png"
+link       = "/news/2018-asme-student-design-competition"
+link_text  = "Read the write-up"
+
+[[news.post]]
+title      = "2016 IEEE Robotics Competition"
+date       = "April 1, 2016"
+tag        = "IEEE"
+category   = "competition"
+blurb      = "11th out of 29 teams at the IEEE Robotics competition, built together with the UAS team and the 3D Printing Club. The camera never quite came together in time."
+image      = "ieee-2016.jpg"
+link       = "/news/2016-ieee-robotics-competition"
+link_text  = "Read the write-up"
+
+
+# --- MORE TO SEE: the three cards under the post list -------------
+[more]
+eyebrow = "Between write-ups"
+heading = "Where else to find us"
+intro   = "Write-ups land here a few times a year. The day-to-day happens elsewhere."
+
+# icon - any Font Awesome 4.7 name, without the "fa-" prefix.
+#        Browse them at https://fontawesome.com/v4/icons/
+
+[[more.card]]
+icon      = "instagram"
+heading   = "Follow along"
+body      = "Build photos, competition trips, and whatever is on the bench this week, posted as it happens."
+link      = "https://www.instagram.com/rockerrobotics/"
+link_text = "See our Instagram"
+
+[[more.card]]
+icon      = "camera"
+heading   = "Photos"
+body      = "Competition trips, workdays in McLaury, outreach events, and a decade of robots in various states of assembly."
+link      = "/gallery"
+link_text = "Open the gallery"
+
+[[more.card]]
+icon      = "comments"
+heading   = "Talk to us"
+body      = "Our Discord is where meetings get scheduled, questions get answered, and new members get pointed at something to build."
+link      = "https://discord.gg/pehkuYRxh6"
+link_text = "Join the Discord"
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Want to be in the next one?"
+body                  = "Every story on this page started with somebody turning up to a meeting. No experience required &mdash; tell us what you are curious about and we will put a tool in your hand."
+primary_button_text   = "Join the team"
+primary_button_link   = "/about#join"
+secondary_button_text = "Contact us"
+secondary_button_link = "mailto:Robotics@mines.sdsmt.edu"

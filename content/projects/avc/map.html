@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>projects/avc - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>projects/avc page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/projects/avc">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Robot</h2><code>[robot]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Name<code>robot.name</code></th><td>AVC Car</td></tr><tr><th>Years<code>robot.years</code></th><td>January 2020 &ndash; April 2022</td></tr><tr><th>Tag<code>robot.tag</code></th><td>NRC</td></tr><tr><th>Intro<code>robot.intro</code></th><td>A radio-control chassis turned into a self-driving car for the National Robotics Challenge Autonomous Vehicle Competition.</td></tr><tr><th>Fact<code>robot.fact</code></th><td><ol class="lines"><li>Built by &middot; Alex Frye, Rachel Lauer, Logan Vojta, Samuel Ryckman, Seth Snyder</li><li>Purpose &middot; To autonomously traverse a racecourse.</li><li>Cost &middot; ~$800</li><li>Features &middot; ROS and fusion of multiple sensors</li></ol></td></tr><tr><th>File<code>robot.file</code></th><td><ol class="lines"><li>CAD Model &middot; https://workbench.grabcad.com/workbench/projects/gczgCg2B8dCAbjKXKaCgpGbq1kBhXTb54oMDiS_w6XMp0L#/space/gcpVGRjnHs9xF9sF473iMKi3FITTZ766NTtMP_oPplg7qB &middot; (GrabCAD)</li><li>Code &middot; https://github.com/sdsmt-robotics/nrc-avc-2020 &middot; (GitHub)</li></ol></td></tr></table></section><section class="slot"><h3>Block 1</h3><div class="noimg">no image in this block</div><table><tr><th>Text<code>robot.block[1].text</code></th><td><ol class="lines"><li>This bot was built and programmed for competing in the National Robotics Challenge (NRC) Autonomous Vehicle Competition (AVC). The purpose of this competition is to build and program a self-driving car that will navigate a course in the shortest time possible. Points are awarded for speed and also for successfully navigating through obstacles.</li></ol></td></tr></table></section><section class="slot"><h3>Block 2</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>robot.block[2].heading</code></th><td>Mechanical</td></tr><tr><th>Text<code>robot.block[2].text</code></th><td><ol class="lines"><li>This robot was built on an old Traxxas RC car chassis that we had from a previous competition. This chassis is built for high speeds and difficult terrain. As such, it was extremely capable for handling the course.</li><li>The chassis was in need of repair as some parts were damaged from previous use. So the first step was replacing these components. We decided that even though we wholeheartedly trust our programming team, upgrading these parts to aluminum instead of plastic would be a good idea in case the car should ever accidentally drive into something.</li><li>Once these repairs were completed, the next challenge was coming up with a mounting solution for the electronics. Originally, the plan was to replace the old car topper with a custom 3D printed one. But due to time constraints, some maneuvering was done to allow the electronics to fit within the original plastic topper.</li><li>The electronics are mounted to 3D printed mounting plates. These are attached to an aluminum brace which is supported by the original mounts for the plastic topper. The topper is then held on by bolts which go through some 3D printed standoffs which support the electronics platform.</li></ol></td></tr></table></section><section class="slot"><h3>Block 3</h3><figure><img src="images/electrical-diagram.png" alt=""><figcaption><code>electrical-diagram.png</code><span>2004 &times; 1192px</span></figcaption></figure><table><tr><th>Heading<code>robot.block[3].heading</code></th><td>Electrical</td></tr><tr><th>Text<code>robot.block[3].text</code></th><td><ol class="lines"><li>This system is run primarily off of a Nvidia Jetson Nano. This is a small powerful single board computer. An Arduino BLE is used to interface with the various sensors and motors. Also, the BLE has a built-in IMU. Besides this IMU, the bot also relies on a GPS and a motor tachometer for measuring speed and position. A full diagram of the system is shown below.</li></ol></td></tr><tr><th>Caption<code>robot.block[3].caption</code></th><td>The full electrical system, from the two batteries to the servos.</td></tr></table></section><section class="slot"><h3>Block 4</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>robot.block[4].heading</code></th><td>Programming</td></tr><tr><th>Text<code>robot.block[4].text</code></th><td><ol class="lines"><li>For programming, there were two main components: the low-level functionality which would run on the Arduino, and the higher-level ROS functionality to run on the Jetson. Additionally, early on in the project we were planning on implementing computer vision code with OpenCV. Eventually, it was decided we could navigate the course successfully using only the other sensors, so we dedicated our resources towards those efforts.</li><li>The Arduino&rsquo;s main purpose on the bot is to control the motors and interface with the sensors. Both the main drive motor and the steering servos are controlled by PWM signals. The Arduino is connected to the tachometer and the built-in IMU. It takes values from these devices and makes them available to the Jetson. The communications between the Jetson and the Arduino are done over UART. The Arduino also regulates the speed of the main motor using a PID loop with feedback from the tachometer. The speed estimates from the tachometer are not very precise, but they are good enough for some coarse speed control.</li><li>On the Jetson side, a sensor fusion algorithm is used to combine and weight the feedback from all the various sensors. Based on the inputs, it is able to determine the car&rsquo;s current state on the course. The bot has preset waypoints on the course and is programmed to drive from one to the next. To help nail down the correct pathfinding algorithms and controls for driving, simulations within ROS were performed.</li></ol></td></tr></table></section><section class="slot"><h3>Block 5</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>robot.block[5].heading</code></th><td>Results</td></tr><tr><th>Text<code>robot.block[5].text</code></th><td><ol class="lines"><li>This bot was not taken to competition due to it being moved to virtual. But we were able to successfully complete a full run and record it for our submission. The run was not exactly blazing fast, but the bot did make it through all of the obstacles.</li></ol></td></tr></table></section><section class="slot"><h3>Photo 1</h3><figure><img src="images/01-photo.jpg" alt=""><figcaption><code>01-photo.jpg</code><span>1920 &times; 1080px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[1].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 2</h3><figure><img src="images/02-photo.jpg" alt=""><figcaption><code>02-photo.jpg</code><span>1920 &times; 1080px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[2].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 3</h3><figure><img src="images/03-racer.jpg" alt=""><figcaption><code>03-racer.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[3].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Link 1</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[1].icon</code></th><td>picture-o</td></tr><tr><th>Heading<code>robot.link[1].heading</code></th><td>AVC car album</td></tr><tr><th>Body<code>robot.link[1].body</code></th><td>The car on the bench and out on the course.</td></tr><tr><th>Link<code>robot.link[1].link</code></th><td>/gallery/2020-avc-car</td></tr><tr><th>Link text<code>robot.link[1].link_text</code></th><td>Open the album</td></tr></table></section><section class="slot"><h3>Link 2</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[2].icon</code></th><td>newspaper-o</td></tr><tr><th>Heading<code>robot.link[2].heading</code></th><td>The year it was built</td></tr><tr><th>Body<code>robot.link[2].body</code></th><td>What the pandemic did to the 2020 season, and what the team finished anyway.</td></tr><tr><th>Link<code>robot.link[2].link</code></th><td>/news/2020-competition-cancellation-and-recap-of-year</td></tr><tr><th>Link text<code>robot.link[2].link_text</code></th><td>Read the recap</td></tr></table></section><section class="slot"><h3>Link 3</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[3].icon</code></th><td>cogs</td></tr><tr><th>Heading<code>robot.link[3].heading</code></th><td>Spinnybot</td></tr><tr><th>Body<code>robot.link[3].body</code></th><td>The combat robot built for the same NRC competition, in the same two years.</td></tr><tr><th>Link<code>robot.link[3].link</code></th><td>/projects/spinnybot</td></tr><tr><th>Link text<code>robot.link[3].link_text</code></th><td>See the robot</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  <p class="note">Some of the wording on this page &mdash; the link back, the headings around the photos, the band at the bottom &mdash; is shared by every page in <code>content/projects/</code> and is not listed above. Change it once in <code>content/projects/config.toml</code> and every one of them follows.</p>
+</main>

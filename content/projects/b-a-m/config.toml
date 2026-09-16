@@ -1,0 +1,174 @@
+####################################################################
+#  ROBOT WRITE-UP: B.A.M.
+#  Lives at  sdsmtrobotics.github.io/projects/b-a-m
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "B.A.M., the Ball Acquisition Machine: the omnidirectional robot built for the 2019 ASME Student Design Competition, and redesigned 20 minutes before the first qualifying round."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "B.A.M."
+years = "October 2018 &ndash; April 2019"
+tag   = "ASME"
+intro = "The Ball Acquisition Machine: a fast omnidirectional robot built for the 2019 ASME Student Design Competition, and rebuilt on the spot when its collection system would not co-operate."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Alex Gronlund, Joseph Allen, Dillon Smith, Jordan Pasker, Samuel Ryckman, Dustin Richards, Zane Brandt, Rachel Lauer, Christian Weaver, Brooke Bialas"],
+  ["Purpose",  "Ball Acquiring Machine (B.A.M.) for use in the 2019 ASME Student Design Competition"],
+  ["Cost",     "$1,500ish"],
+  ["Features", "Scary fast omnidirectional drivetrain, efficient ball collection system, overly aggressive ball release fence that frightens children."],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["CAD",                            "https://workbench.grabcad.com/workbench/projects/gchhLV_W6PDW1e95mdNcHpIaTNFo00mKQyv3qScORcmWfo#/space/gcmagp96tLXe_i_esbxxvLTwmTP3JXPfawklODXosHTMzA/folder/7510486", "(GrabCAD)"],
+  ["Code",                           "https://github.com/sdsmt-robotics/ASME-2019", "(GitHub)"],
+  ["RGB strip Arduino library",      "https://github.com/sdsmt-robotics/ASME-2019/tree/master/led_strip_control", "(GitHub)"],
+  ["Victor SPX control example",     "https://drive.google.com/uc?export=download&amp;id=1W-uEAFp4nGJc5fGpmllG1D0LpPFe7rdI", "(downloads)"],
+  ["Power distribution board",       "https://github.com/sdsmt-robotics/Power-Distribution", "(GitHub)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "B.A.M. (Ball Acquisition Machine) is a robot constructed for the 2019 ASME Student Design Competition. The goal of the competition was to collect balls of various sizes from 20cm tall tubes and dispense them into a 50cm x 50cm scoring area.",
+]
+image   = "bam-cad.png"
+caption = "The CAD model of B.A.M., with the release fence folded out at the back."
+
+[[robot.block]]
+heading = "Mechanical"
+text = [
+  "The original design was as follows. A basket on the side of the robot would be used to collect balls. The basket would have a rotating flap to whack balls into the basket. A laser tripwire would be in front of the basket to sense when a ball was within hitting range and the flap would automatically collect the ball. Once a basket full of balls was collected, the basket would raise on a chain driven elevator, pivot over the top, and dump the balls into the storage area. Inside of the storage area a grate would sort the smaller balls into the bottom and leave the large ones in the top area. To score the balls, a corral would drop to keep balls from rolling away and the doors would open to release the balls. There would be separate doors for the small and large balls so that they could be released separately.",
+  "Due to a rushed schedule for constructing B.A.M., the team didn&rsquo;t have enough time to work out some of the kinks with the ball collection system. One such issue was with the elevator. The motors were able to raise and lower the basket but were not able to swing it over the top in a controlled manner. The team fought with this issue until 20 minutes before the start of the first qualifying round at the competition. At that point they decided to redesign the ball collection system on the fly by removing the basket and the sorting system and creating a hole in the front of the robot so that B.A.M. could drive directly into the balls and they would fall directly into the storage area of the bot. This worked surprisingly well considering how rushed it was.",
+]
+
+[[robot.block]]
+heading = "Electrical and programming"
+text = [
+  "As with most of our bots, B.A.M. runs off of an Arduino Mega. It is controlled using input from one of our custom controllers using Xbees for communications. The motors are driven using Vex Victor SPX motor controllers which use the CAN protocol for communications. This was our first time using these controllers and since there are no Arduino libraries readily available for them we had to figure out how to communicate with them largely on our own. An example of the control code is in the links at the top of this page. We also modded an RGB light strip from Home Depot to be controlled by the Arduino to add a swag factor. The Arduino library for this is up there too.",
+  "For power distribution, we developed a custom power distribution board. This included a relay for on/off control (since we were dealing with large currents) and fuse protection for each connected device. It also included 3.3v and 5v outputs for powering other devices on the robot.",
+  "For driving, we used RS-550s with 28:1 planetary gear boxes. This resulted in very fast motion (some would say a bit too fast). We attempted to get more accurate control by adding some encoders (CUI AMT102-V) but hit some roadblocks and ended up running out of time.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "05-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "06-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "07-bam.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "B.A.M. album"
+body      = "The build, the drivetrain, and the machine at the E-Fest."
+link      = "/gallery/b-a-m"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "newspaper-o"
+heading   = "How it did"
+body      = "The Pick-and-Place Race in Lansing: one elimination round won, and one ended by a collision."
+link      = "/news/2019-asme-student-design-competition"
+link_text = "Read the write-up"
+
+[[robot.link]]
+icon      = "gamepad"
+heading   = "Controller v2"
+body      = "The controller designed alongside B.A.M., for driving it."
+link      = "/projects/controller-v2"
+link_text = "See the hardware"

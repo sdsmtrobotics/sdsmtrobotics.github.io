@@ -1,0 +1,170 @@
+####################################################################
+#  SOFTWARE AND GUIDES  (sdsmtrobotics.github.io/resources/software-and-guides)
+#
+#  Everything you can see as text on this page is in this file.
+#  Change it here, then run:      ./build.py
+#
+#  Not sure which setting is which? Open  map.html  in this folder.
+#  It shows every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+#
+#  LINKS ROT. This page is almost entirely links to other people's
+#  websites, and they move. It is worth clicking through the whole
+#  page once a year - see README.md in this folder.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/software-and-guides.html.
+[meta]
+description = "The software the Rocker Robotics team uses - Git, ROS, OpenCV, Fusion 360, SOLIDWORKS, Eagle, VS Code and Mathcad - with a download link and a guide for each."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# No banner photo, like the resources page this sits under. The
+# setting stays so one can be added later without touching any HTML.
+[page_head]
+image     = ""
+back_link = "/resources"
+back_text = "Resources"
+eyebrow   = "Install it, then learn it"
+heading   = "Software and guides"
+body      = "Everything the team builds with, and where to learn it. All of it is free for students, though a few of them want a Mines account or a machine on the campus network."
+
+
+# --- THE BOOK: the block at the top -------------------------------
+# The team's own guide book, which led the old version of this page.
+[book]
+eyebrow   = "Written by the team"
+heading   = "How to Robot Book"
+paragraph = [
+  "A guide book written by members of the team: an introduction to robotics through a series of lab exercises. It is meant for engineering students starting out who want to learn the art and the tools behind mobile robotics, and it assumes nothing beyond that.",
+  "It is the best thing to read first if you are new. Everything else on this page is a program the book will eventually ask you to install.",
+]
+link      = "https://drive.google.com/file/d/1YWmxVO6tZ4JcvjuzhBmIqSkxyoNEcC9t/view?usp=sharing"
+link_text = "Download the book"
+
+
+# --- THE PROGRAMS: the cards below --------------------------------
+#
+#  Each [[software.tool]] is one card. The settings are:
+#
+#    icon   any Font Awesome 4.7 name, without the "fa-" prefix.
+#           Browse them at https://fontawesome.com/v4/icons/
+#    meta   the small grey line under the heading - what it is for
+#    body   the sentence or two explaining it
+#    links  the list of links. Each one is [ "the words", "the address" ]
+#           and can take a third entry, shown in grey after the link:
+#           [ "Part 1 - Intro", "https://...", "(~13 min)" ]
+#    note   plain instructions that are not a link, e.g. an install
+#           path on the school's drive. Optional - leave it out and
+#           nothing is shown.
+#
+#  To add a program, copy a whole [[software.tool]] block. To reorder
+#  the cards, move the blocks. Order on the page is order in here.
+[software]
+eyebrow = "What we build with"
+heading = "The programs"
+intro   = "Roughly in the order a new member meets them: version control first, then whichever of the CAD and code tools their part of the robot needs."
+
+[[software.tool]]
+icon    = "code-fork"
+heading = "Git"
+meta    = "Version control"
+body    = "A distributed version-control system for tracking changes in source code. The team uses it for every project, so it is the one program on this page that everybody ends up needing."
+links   = [
+  ["Install for Linux",   "https://git-scm.com/download/linux"],
+  ["Install for Windows", "https://gitforwindows.org/"],
+  ["Cheat sheet",         "https://education.github.com/git-cheat-sheet-education.pdf", "(PDF)"],
+]
+
+[[software.tool]]
+icon    = "sitemap"
+heading = "ROS"
+meta    = "Robot operating system"
+body    = "An open-source meta-operating system for robots. It provides a great deal of what a robotics project needs anyway &mdash; message passing, drivers, mapping, navigation &mdash; so the team's autonomous vehicles are built on it."
+links   = [
+  ["Computer setup guide",       "https://github.com/sdsmt-robotics/AVC-Documentation/blob/master/ros_setup/computer_setup.md"],
+  ["Single board setup guide",   "https://github.com/sdsmt-robotics/AVC-Documentation/blob/master/ros_setup/single_board_setup.md"],
+  ["How to Build a ROS Robot",   "https://drive.google.com/file/d/1_Ju4uU7uLnEgXfFB5b5iY9CIUOJBYAwe/view?usp=sharing"],
+  ["Official ROS documentation", "http://wiki.ros.org/ROS/Introduction"],
+]
+
+[[software.tool]]
+icon    = "eye"
+heading = "OpenCV"
+meta    = "Computer vision"
+body    = "A library of programming functions aimed mainly at real-time computer vision. If a robot has to work out what it is looking at, this is usually what is doing it."
+links   = [
+  ["OpenCV-Python tutorials", "https://docs.opencv.org/master/d6/d00/tutorial_py_root.html"],
+]
+
+[[software.tool]]
+icon    = "cube"
+heading = "Fusion 360"
+meta    = "CAD"
+body    = "A capable CAD program that is free for personal and student use, which makes it the easiest one to get started in. The team ran a workshop on it and the whole thing is below, guide and video."
+links   = [
+  ["Guide document",                            "https://drive.google.com/file/d/1LekjrpZqOgHoR75B_RVuNX338_4Kk9gn/view?usp=sharing"],
+  ["Accompanying CAD files",                    "https://drive.google.com/file/d/1LxzfjwUfjYmrhwtFyQp0vnyXRWVlNoES/view?usp=sharing"],
+  ["Part 1 &mdash; Intro and basic navigation", "https://drive.google.com/file/d/1__BMDwfq5XIZCNiQwnY2sxKy38AxwS1R/view?usp=sharing", "(~13 min)"],
+  ["Part 2 &mdash; Objects and construction geometry", "https://drive.google.com/file/d/1t30iNQkwmPicBfi-BMiCaUkhh1SsEGay/view?usp=sharing", "(~5 min)"],
+  ["Part 3 &mdash; Sketching",                  "https://drive.google.com/file/d/1wzWG-aYheHRPI9FM4ZazhXvTBuNZpwWO/view?usp=sharing", "(~17 min)"],
+  ["Part 4 &mdash; 3D features",                "https://drive.google.com/file/d/1tnmWsmm6kXagXQ5B0avEg7RV-TCuzs3t/view?usp=sharing", "(~19 min)"],
+  ["Part 5 &mdash; Assembling components",      "https://drive.google.com/file/d/1uTE_rUyRdteMsySka1cVPtGmtuKWaRSD/view?usp=sharing", "(~27 min)"],
+]
+
+[[software.tool]]
+icon    = "cubes"
+heading = "SOLIDWORKS"
+meta    = "CAD"
+body    = "One of the leading CAD programs, and the one most of the team's mechanical work is done in. The school licenses it, so the install comes from Mines rather than from the vendor."
+links   = [
+  ["Download from SharePoint",     "https://sdsmt0.sharepoint.com/:f:/r/sites/ITS-Install/Shared%20Documents/SOLIDWORKS/SOLIDWORKS%202019?csf=1&amp;web=1&amp;e=IxbYFx"],
+  ["SOLIDWORKS robotics tutorials", "https://www.solidworks.com/sw/education/9931_ENU_HTML.htm"],
+  ["Workshop guide document",      "https://docs.google.com/document/d/1Rr3UThgfijHwgXaRdHDw8uTjcZ-XsOy7/edit?usp=sharing"],
+  ["Workshop CAD files",           "https://drive.google.com/file/d/1zuo3ZcPjxxfCOl1rw60fB0bBxLoim9YP/view?usp=sharing"],
+]
+note    = "<strong>Installing:</strong> download all three files from SharePoint into one folder, run the <code>.exe</code>, then run <code>SWinstall.bat</code> once it has finished extracting. The older route was the F: drive, at <code>F:\\install\\Solidworks\\Auto SolidWorks Install\\SOLIDWORKS 2019 SP3.0\\</code>."
+
+[[software.tool]]
+icon    = "bolt"
+heading = "Eagle"
+meta    = "PCB design"
+body    = "A PCB design program the team has a long-running love-hate relationship with. It is free and it mostly works, which has so far been enough."
+links   = [
+  ["Download Eagle",              "https://www.autodesk.com/products/eagle/free-download"],
+  ["Sparkfun - using Eagle guide", "https://learn.sparkfun.com/tutorials/using-eagle-schematic"],
+]
+
+[[software.tool]]
+icon    = "code"
+heading = "VS Code"
+meta    = "Code editor"
+body    = "A very good code editor, not to be confused with Visual Studio. It runs on Windows and Linux, which is why the team settled on it."
+links   = [
+  ["Download VS Code", "https://code.visualstudio.com/download"],
+]
+
+[[software.tool]]
+icon    = "calculator"
+heading = "Mathcad"
+meta    = "Engineering calculations"
+body    = "For working through calculations visually. The equations look like equations, it tracks units for you, and it does the arithmetic &mdash; which makes a design calculation something you can hand to somebody else and have them follow."
+links   = [
+  ["Guide",               "https://drive.google.com/uc?export=download&amp;id=1GMNzRcAKhgqoNbo2-ndao-gnix8RApXF"],
+  ["Shortcut reference",  "https://drive.google.com/uc?export=download&amp;id=1U_3rRLLXxafuNhixOEjA7Prqzp1Yxe12"],
+]
+note    = "<strong>Installing:</strong> the student version is on the school's F: drive at <code>F:\\install\\MathCad</code> &mdash; pick a version and run the installer. The school also holds a few keys for the full version; ask around and you can usually get one."
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Stuck getting something installed?"
+body                  = "Half of these want a Mines account, a campus network connection, or a batch file run in the right order. Ask &mdash; somebody has almost certainly hit the same wall."
+primary_button_text   = "Ask on Discord"
+primary_button_link   = "https://discord.gg/pehkuYRxh6"
+secondary_button_text = "Back to resources"
+secondary_button_link = "/resources"

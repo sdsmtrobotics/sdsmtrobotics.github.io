@@ -1,0 +1,590 @@
+#!/usr/bin/env python3
+"""Assemble pages from _src/ + _partials/ + content/ into the site root.
+
+Deliberately dependency-free: contributors need Python 3.11 or newer and
+nothing else, and GitHub Pages serves the committed output as plain static
+files with no build step on its side.
+
+    ./build.py            build every page, refresh every map
+    ./build.py --check    verify committed output is current, write nothing
+
+WHERE THINGS LIVE
+    content/<page>/config.toml   all the words and image choices  <- edit this
+    content/<page>/images/       the photos for that page         <- and this
+    content/<page>/map.html      generated guide to both
+    content/site/config.toml     the few settings every page shares
+    _src/<page>.html             the page's HTML structure
+    _partials/*.html             the markup every page shares
+    <page>.html                  generated output, do not edit
+
+THE SHARED PARTIALS
+    page-top     doctype, <head>, the header, the opening <main> - every
+                 page source starts with {{include:page-top}}
+    page-bottom  closing </main>, the footer, </body></html>
+    head         the <head> contents, pulled in by page-top
+    header       the top navigation      } pulled in by page-top
+    footer       the site footer         } and page-bottom
+    page-head    the banner band under the navigation
+    filter-bar   the row of filter pills above a filtered grid
+
+    A page source is therefore mostly its own content: page-top, the bands
+    that are actually this page, page-bottom.
+
+SITE-WIDE SETTINGS
+    content/site/config.toml is optional and holds only what the shared header
+    and footer need - something no single page's config can supply, because
+    every page has to agree on it. Its tables arrive in every template under
+    `site`, so {{site.scoreboard.nav_label}} reads nav_label from
+
+        [scoreboard]
+        nav_label = "Scoreboard"
+
+    `site` is therefore a reserved name: a page config with its own [site]
+    table would shadow it.
+
+PAGE SOURCE FORMAT
+    _src/<name>.html opens with a front-matter comment:
+
+        <!--
+        title: Home
+        page: home
+        content: landing
+        -->
+
+    Each key becomes a {{key}} substitution. `page` also lands on
+    <body data-page="..."> so CSS can highlight the matching nav link.
+    `content` names the folder under content/ holding this page's config.
+
+COLLECTIONS
+    Some pages are one page each of the same shape - the photo albums are 31 of
+    them. Rather than 31 near-identical sources, one source builds them all:
+
+        <!--
+        title: {{album.title}}
+        page: gallery
+        collection: albums
+        output: gallery/{{slug}}.html
+        -->
+
+    `collection` names a folder under content/. Every subfolder of it holding a
+    config.toml becomes one page, with {{slug}} set to that folder's name, and
+    `output` says where the built page lands. Front-matter values are read
+    against the config, which is how `title` above picks up each album's own.
+
+    A config.toml sitting in the collection folder itself - beside the
+    subfolders rather than inside one - holds the wording every page in the
+    collection shares. An item's own config.toml wins wherever both set a key.
+
+TEMPLATE SYNTAX
+    {{include:header}}          pull in _partials/header.html
+    {{hero.heading}}            value from config.toml (dotted path)
+    {{#if hero.image}}...{{else}}...{{/if}}
+    {{#each robots.card}}...{{/each}}
+
+    Inside {{#each}}, {{index}} counts 1, 2, 3... and {{index0}} from zero.
+
+    Config text is inserted as written, so basic HTML in config.toml works.
+
+    A partial can include another partial - page-top pulls in head - so
+    includes are expanded repeatedly until none are left. A partial that
+    mentions its own include tag inside an HTML comment would therefore
+    include itself forever; write such an example without the braces.
+
+INCLUDE ARGUMENTS
+    An include can take arguments, which is what lets one partial serve
+    pages that each keep their own names for things:
+
+        {{include:filter-bar noun="robots"
+                             aria="Filter robots by competition"
+                             options=robots.filter}}
+
+    A quoted argument is literal text. An unquoted one is a dotted path
+    read from this page's config, so `options` above arrives as that
+    page's list of filters and the partial can say {{#each options}}
+    without knowing which page it is serving.
+
+    Arguments are visible to that partial only, and they shadow anything
+    of the same name in the page's config.
+
+    Without arguments the partial is spliced in as plain text, which is
+    all header, footer, page-top and page-bottom need.
+"""
+import html
+import pathlib
+import re
+import struct
+import sys
+import tomllib
+
+ROOT = pathlib.Path(__file__).resolve().parent
+SRC = ROOT / '_src'
+PARTIALS = ROOT / '_partials'
+CONTENT = ROOT / 'content'
+
+BANNER = ('<!-- GENERATED by build.py from _src/{name} - do not edit this file '
+          'directly. Text and images live in content/{content}/, page structure '
+          'in _src/{name}. Re-run ./build.py after changing either. -->\n')
+
+FRONT_MATTER = re.compile(r'\A\s*<!--(.*?)-->\s*', re.S)
+INCLUDE = re.compile(
+    r'\{\{include:([a-z0-9_-]+)'
+    r'((?:\s+[a-zA-Z0-9_]+=(?:"[^"]*"|[a-zA-Z0-9_.]+))*)\s*\}\}')
+ARG = re.compile(r'([a-zA-Z0-9_]+)=(?:"([^"]*)"|([a-zA-Z0-9_.]+))')
+BLOCK = re.compile(r'\{\{#(each|if)\s+([a-zA-Z0-9_.]+)\}\}')
+VAR = re.compile(r'\{\{([a-zA-Z0-9_.]+)\}\}')
+
+
+# --------------------------------------------------------------- config ----
+
+def load_config(name):
+    """Read content/<name>/config.toml and annotate image fields with URLs."""
+    if not name:
+        return {}
+    path = CONTENT / name / 'config.toml'
+    if not path.is_file():
+        raise SystemExit(f'missing config: {path.relative_to(ROOT)}')
+    with path.open('rb') as fh:
+        data = tomllib.load(fh)
+    _add_image_urls(data, f'/content/{name}/images')
+    return data
+
+
+def load_site_config():
+    """The settings the shared header and footer need, or {} if there are none.
+
+    Unlike a page's config this one is optional: a checkout with no
+    content/site/config.toml builds every page exactly as before, with the
+    {{site....}} slots coming out empty.
+    """
+    path = CONTENT / 'site' / 'config.toml'
+    if not path.is_file():
+        return {}
+    with path.open('rb') as fh:
+        data = tomllib.load(fh)
+    _add_image_urls(data, '/content/site/images')
+    return data
+
+
+def _add_image_urls(node, base):
+    """Give every table with an `image` key a matching `image_url`.
+
+    Empty means "no image chosen", which templates test with {{#if}}.
+    """
+    if isinstance(node, dict):
+        if isinstance(node.get('image'), str):
+            img = node['image'].strip()
+            node['image_url'] = f'{base}/{img}' if img else ''
+        for v in node.values():
+            _add_image_urls(v, base)
+    elif isinstance(node, list):
+        for v in node:
+            _add_image_urls(v, base)
+
+
+def lookup(ctx, path):
+    node = ctx
+    for part in path.split('.'):
+        if isinstance(node, dict) and part in node:
+            node = node[part]
+        elif isinstance(node, (list, tuple)) and part.isdigit():
+            # lets a table row be read as {{this.0}} / {{this.1}}
+            idx = int(part)
+            if idx >= len(node):
+                return None
+            node = node[idx]
+        else:
+            return None
+    return node
+
+
+# ------------------------------------------------------------- rendering ---
+
+def _match_block(tpl, start, kind):
+    """Find this block's {{else}} and its matching {{/kind}}.
+
+    Depth has to count every block type, not just `kind`: an {{else}} belonging
+    to an {{#if}} nested inside an {{#each}} must not be mistaken for the
+    {{#each}}'s own {{else}}.
+    """
+    tag = re.compile(r'\{\{(?:#(each|if)\s+[a-zA-Z0-9_.]+|/(each|if)|(else))\}\}')
+    depth = 0
+    else_at = None
+
+    for m in tag.finditer(tpl, start):
+        opened, closed, is_else = m.group(1), m.group(2), m.group(3)
+        if opened:
+            depth += 1
+        elif closed:
+            if depth == 0:
+                if closed != kind:
+                    raise SystemExit(
+                        f'template block mismatch: {{{{#{kind}}}}} closed by {{{{/{closed}}}}}')
+                body = tpl[start:else_at.start()] if else_at else tpl[start:m.start()]
+                alt = tpl[else_at.end():m.start()] if else_at else ''
+                return body, alt, m.end()
+            depth -= 1
+        elif is_else and depth == 0 and else_at is None:
+            else_at = m
+
+    raise SystemExit(f'unclosed {{{{#{kind}}}}} block in template')
+
+
+def render(tpl, ctx, depth=0):
+    if depth > 12:
+        raise SystemExit('template nesting too deep - circular include?')
+
+    # includes first, so partials can use the same syntax
+    def sub_include(m):
+        p = PARTIALS / f'{m.group(1)}.html'
+        if not p.is_file():
+            raise SystemExit(f'missing partial: {p.relative_to(ROOT)}')
+        text = p.read_text(encoding='utf-8')
+        if not m.group(2).strip():
+            return text
+        # An include with arguments is rendered here and now, against the
+        # page's context plus those arguments. That is what lets one partial
+        # serve four pages that each keep their own config names: the page
+        # says options=robots.filter and the partial reads {{#each options}}.
+        scope = dict(ctx)
+        for a in ARG.finditer(m.group(2)):
+            key, literal, path = a.group(1), a.group(2), a.group(3)
+            scope[key] = literal if literal is not None else lookup(ctx, path)
+        return render(text, scope, depth + 1)
+
+    # Expanded in a loop, not a single pass: a partial may pull in another -
+    # page-top pulls in head - and re.sub does not rescan what it inserted.
+    for _ in range(12):
+        expanded = INCLUDE.sub(sub_include, tpl)
+        if expanded == tpl:
+            break
+        tpl = expanded
+    else:
+        raise SystemExit('include nesting too deep - circular include?')
+
+    out = []
+    i = 0
+    while True:
+        m = BLOCK.search(tpl, i)
+        if not m:
+            out.append(_vars(tpl[i:], ctx))
+            break
+        out.append(_vars(tpl[i:m.start()], ctx))
+        kind, path = m.group(1), m.group(2)
+        body, alt, end = _match_block(tpl, m.end(), kind)
+        value = lookup(ctx, path)
+
+        if kind == 'each':
+            for n, item in enumerate(value or []):
+                scope = dict(ctx)
+                # set before the item, so a config that spells out its own
+                # `index` still wins
+                scope['index'], scope['index0'] = n + 1, n
+                if isinstance(item, dict):
+                    scope.update(item)
+                else:
+                    scope['this'] = item
+                out.append(render(body, scope, depth + 1))
+        else:  # if
+            chosen = body if value not in (None, '', False, [], {}) else alt
+            out.append(render(chosen, ctx, depth + 1))
+        i = end
+    return ''.join(out)
+
+
+def _vars(text, ctx):
+    def sub(m):
+        v = lookup(ctx, m.group(1))
+        return '' if v is None else str(v)
+    return VAR.sub(sub, text)
+
+
+def parse_front_matter(text):
+    m = FRONT_MATTER.match(text)
+    if not m:
+        return {}, text
+    meta = {}
+    for line in m.group(1).strip().splitlines():
+        line = line.strip()
+        if line and ':' in line:
+            k, v = line.split(':', 1)
+            meta[k.strip()] = v.strip()
+    return meta, text[m.end():]
+
+
+def build_page(src):
+    """Every page this source produces: one, or one per item in a collection."""
+    meta, body = parse_front_matter(src.read_text(encoding='utf-8'))
+    meta.setdefault('page', src.stem)
+    collection = meta.get('collection', '')
+    if not collection:
+        return [_render_one(src, meta, body, meta.get('content', ''))]
+
+    folder = CONTENT / collection
+    if not folder.is_dir():
+        raise SystemExit(f'missing collection: content/{collection}')
+    # a config.toml in the collection folder itself is the shared wording, not
+    # an item; items are the subfolders that have one of their own
+    items = [d for d in sorted(folder.iterdir()) if (d / 'config.toml').is_file()]
+    if not items:
+        raise SystemExit(f'collection has no items: content/{collection}')
+    shared = collection if (folder / 'config.toml').is_file() else ''
+    return [_render_one(src, meta, body, f'{collection}/{d.name}',
+                        slug=d.name, shared=shared) for d in items]
+
+
+def _render_one(src, meta, body, content_name, slug=None, shared=''):
+    own = load_config(content_name)       # this page's own words
+    ctx = {'site': load_site_config()}    # the handful every page shares
+    ctx.update(load_config(shared) if shared else {})
+    ctx.update(own)                       # which win over the shared ones
+    if slug is not None:
+        ctx['slug'] = slug
+    # front matter is read against the config, so `title: {{album.title}}` in a
+    # collection source picks up each item's own
+    meta = {k: _vars(v, ctx) for k, v in meta.items()}
+    ctx.update(meta)                      # front matter wins on key clashes
+
+    out = ROOT / meta.get('output', src.name)
+    if not out.resolve().is_relative_to(ROOT):
+        raise SystemExit(f'output escapes the site folder: {meta.get("output")}')
+    banner = BANNER.format(name=src.name, content=content_name or '-')
+    return out, banner + render(body, ctx), content_name, own, shared
+
+
+# ------------------------------------------------------------------ map ----
+
+def image_size(path):
+    """Width/height of a JPEG or PNG, without pulling in a library."""
+    try:
+        with path.open('rb') as b:
+            head = b.read(2)
+            if head == b'\xff\xd8':                       # JPEG
+                while True:
+                    mk = b.read(2)
+                    if len(mk) < 2 or mk[0] != 0xFF:
+                        return None
+                    if mk[1] in (0xC0, 0xC1, 0xC2, 0xC3):
+                        b.read(3)
+                        h, w = struct.unpack('>HH', b.read(4))
+                        return w, h
+                    b.seek(struct.unpack('>H', b.read(2))[0] - 2, 1)
+            b.seek(0)
+            if b.read(8) == b'\x89PNG\r\n\x1a\n':          # PNG
+                b.seek(16)
+                w, h = struct.unpack('>II', b.read(8))
+                return w, h
+    except Exception:
+        return None
+    return None
+
+
+def _label(key):
+    return key.replace('_', ' ').capitalize()
+
+
+def _slot(title, table, key_prefix, content_name):
+    """One entry in the map: a section or a card within one."""
+    img_html = '<div class="noimg">no image in this block</div>'
+    img_name = table.get('image') if isinstance(table, dict) else None
+    if img_name:
+        f = CONTENT / content_name / 'images' / img_name
+        size = image_size(f)
+        if size:
+            dim, warn = f'{size[0]} &times; {size[1]}px', ''
+        elif f.is_file():
+            # a vector logo has no pixel size to report, and neither does any
+            # other format image_size does not read - but the file is there,
+            # so this is not the missing-image warning
+            dim = 'vector &mdash; any size' if f.suffix.lower() == '.svg' else 'size unknown'
+            warn = ''
+        else:
+            dim, warn = 'missing from images/', ' class="missing"'
+        img_html = (f'<figure{warn}><img src="images/{html.escape(img_name)}" alt="">'
+                    f'<figcaption><code>{html.escape(img_name)}</code><span>{dim}</span>'
+                    f'</figcaption></figure>')
+    elif isinstance(table, dict) and 'image' in table:
+        img_html = '<div class="noimg">placeholder shown &mdash; no photo set</div>'
+
+    rows = []
+    for k, v in (table.items() if isinstance(table, dict) else []):
+        if k in ('image', 'image_url'):
+            continue
+        # show a flag the way it has to be typed in config.toml, not the way
+        # Python prints it
+        if isinstance(v, bool):
+            v = 'true' if v else 'false'
+        # a list of plain strings is repeated text - paragraphs, labels - so
+        # show every entry rather than dropping the whole field from the map
+        elif isinstance(v, list) and v and all(isinstance(x, str) for x in v):
+            v = '<ol class="lines">' + ''.join(f'<li>{x}</li>' for x in v) + '</ol>'
+        # a list of short lists is a little table written inline - the meeting
+        # times on the calendar page, a card's links on the resources pages.
+        # Without this they fall through to the skip below and the map stops
+        # being a complete account of the page.
+        elif (isinstance(v, list) and v and all(
+                isinstance(x, list) and all(isinstance(c, str) for c in x) for x in v)):
+            lines = ''.join('<li>' + ' &middot; '.join(cells) + '</li>' for cells in v)
+            v = f'<ol class="lines">{lines}</ol>'
+        elif isinstance(v, (dict, list)):
+            continue
+        rows.append(f'<tr><th>{html.escape(_label(k))}<code>{html.escape(key_prefix + k)}'
+                    f'</code></th><td>{v}</td></tr>')
+    table_html = f'<table>{"".join(rows)}</table>' if rows else ''
+    return f'<section class="slot"><h3>{html.escape(title)}</h3>{img_html}{table_html}</section>'
+
+
+def page_url(out):
+    """The address a built file is served at, for the "open the live page" link."""
+    rel = out.relative_to(ROOT).as_posix()
+    if rel == 'index.html':
+        return '/'
+    if rel.endswith('.html'):
+        rel = rel[:-len('.html')]         # the server resolves /about to about.html
+    return '/' + rel
+
+
+def build_map(content_name, config, url='/', shared=''):
+    """Write content/<name>/map.html - every image and text field, in page order."""
+    parts = []
+    order = 0
+    for section, table in config.items():
+        if section == 'meta' or not isinstance(table, dict):
+            continue
+        order += 1
+        parts.append(f'<div class="band"><div class="bandhead"><span>{order}</span>'
+                     f'<h2>{html.escape(_label(section))}</h2>'
+                     f'<code>[{html.escape(section)}]</code></div>')
+        parts.append(_slot('Section', table, f'{section}.', content_name))
+        for key, value in table.items():
+            if isinstance(value, list) and value and isinstance(value[0], dict):
+                for n, item in enumerate(value, 1):
+                    parts.append(_slot(f'{_label(key)} {n}', item,
+                                       f'{section}.{key}[{n}].', content_name))
+        parts.append('</div>')
+
+    # a collection item shares some of its wording with every other item, and
+    # that wording is not in this folder, so say where it is instead
+    shared_note = ''
+    if shared:
+        shared_note = (
+            f'<p class="note">Some of the wording on this page &mdash; the link back, the '
+            f'headings around the photos, the band at the bottom &mdash; is shared by every '
+            f'page in <code>content/{html.escape(shared)}/</code> and is not listed above. '
+            f'Change it once in <code>content/{html.escape(shared)}/config.toml</code> and '
+            f'every one of them follows.</p>')
+
+    page = f"""<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{html.escape(content_name)} - what goes where</title>
+<style>
+ :root {{ --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }}
+ * {{ box-sizing:border-box }}
+ body {{ margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }}
+ header {{ background:var(--navy); color:#fff; padding:2.2rem 1.5rem }}
+ header div {{ max-width:1100px; margin:auto }}
+ header h1 {{ margin:0 0 .4rem; font-weight:500; font-size:1.6rem }}
+ header p {{ margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }}
+ header code {{ background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }}
+ main {{ max-width:1100px; margin:auto; padding:0 1.5rem }}
+ .band {{ margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }}
+ .bandhead {{ display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }}
+ .bandhead span {{ display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }}
+ .bandhead h2 {{ margin:0; font-size:1.05rem; font-weight:600; flex:1 }}
+ .bandhead code {{ font-size:.8rem; color:var(--gold) }}
+ .slot {{ display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }}
+ .slot h3 {{ grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }}
+ figure {{ margin:0 }}
+ figure img {{ width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }}
+ figure.missing img {{ outline:2px solid #c0392b }}
+ figcaption {{ margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }}
+ figcaption code {{ color:var(--navy); font-weight:600 }}
+ .noimg {{ display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }}
+ table {{ width:100%; border-collapse:collapse }}
+ th {{ width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }}
+ th code {{ display:block; font-weight:400; font-size:.75rem; color:#8b929c }}
+ td {{ vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }}
+ td .lines {{ margin:0; padding-left:1.2rem }}
+ td .lines li {{ margin-bottom:.4rem }}
+ td .lines li:last-child {{ margin-bottom:0 }}
+ .note {{ margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }}
+ .note code {{ color:var(--navy); font-weight:600 }}
+ header .links {{ margin-top:.9rem }}
+ header .links a {{ color:var(--gold); font-weight:600 }}
+ @media (max-width:720px) {{ .slot {{ grid-template-columns:1fr }} }}
+</style>
+<header><div>
+  <h1>{html.escape(content_name)} page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="{html.escape(url)}">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main>{''.join(parts)}
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  {shared_note}
+</main>
+"""
+    return page
+
+
+# ----------------------------------------------------------------- main ----
+
+def main():
+    check = '--check' in sys.argv
+    if not SRC.is_dir():
+        raise SystemExit('no _src/ directory')
+
+    stale, written = [], []
+    for src in sorted(SRC.glob('*.html')):
+        for out, page, content_name, own, shared in build_page(src):
+            targets = [(out, page)]
+            if content_name:
+                targets.append((CONTENT / content_name / 'map.html',
+                                build_map(content_name, own, page_url(out), shared)))
+
+            for dest, text in targets:
+                current = dest.read_text(encoding='utf-8') if dest.is_file() else None
+                if text == current:
+                    continue
+                rel = dest.relative_to(ROOT)
+                if check:
+                    stale.append(str(rel))
+                else:
+                    dest.parent.mkdir(parents=True, exist_ok=True)
+                    # newline='' keeps LF on Windows too, so a rebuild there does
+                    # not turn every generated file into a whole-file CRLF diff
+                    dest.write_text(text, encoding='utf-8', newline='')
+                    written.append(str(rel))
+
+    if check:
+        if stale:
+            print('out of date (run ./build.py): ' + ', '.join(stale))
+            return 1
+        print('all pages up to date')
+        return 0
+
+    print(f'built {len(written)} file(s)' +
+          (': ' + ', '.join(written) if written else ' (no changes)'))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

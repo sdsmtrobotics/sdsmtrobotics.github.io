@@ -1,0 +1,80 @@
+####################################################################
+#  EVERY ROBOT WRITE-UP  (sdsmtrobotics.github.io/projects/...)
+#
+#  This file holds the wording the 12 robot pages have in common:
+#  the link back to the robots page, the two headings on the cards
+#  at the top, the heading above the photographs, the heading above
+#  the "where this carries on" cards, and the band at the bottom.
+#  Change it here once and every robot page follows. Then run:
+#
+#      ./build.py
+#
+#  Each robot's own words and its photographs are in the folder
+#  named after it next to this file, for example:
+#
+#      content/projects/spinnybot/config.toml
+#      content/projects/spinnybot/images/
+#      content/projects/spinnybot/map.html   <- what goes where
+#
+#  To add a whole new robot, copy one of those folders, change the
+#  words in its config.toml, put your photos in its images/, and run
+#  ./build.py. The new page appears at /projects/<folder name>. Add a
+#  card for it in content/robots/config.toml as well, or nothing on
+#  the robots page will link to it.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- THE LINK BACK ------------------------------------------------
+# Sits above the robot's name, at the top of every write-up.
+[back]
+text = "All robots"
+link = "/projects"
+
+
+# --- THE TWO CARDS AT THE TOP -------------------------------------
+# The facts about the machine, and where its CAD, code and reports
+# live. The rows and the links themselves are per robot, set as
+# `fact` and `file` in its own config.toml; these are only the
+# headings on the two cards. A robot with no `file` list gets the
+# details card on its own, full width.
+[details]
+heading = "Details"
+
+[files]
+heading = "Files and code"
+
+
+# --- THE PHOTOGRAPHS ----------------------------------------------
+# The heading above the grid of photos. A robot with no
+# [[robot.photo]] blocks skips this whole band, heading and all.
+#
+# `hint` is the line under it. Say something true whether or not the
+# visitor has JavaScript: with it, a photo opens in an overlay that
+# can be stepped through; without it, the photo opens on its own.
+[photos]
+eyebrow = "In the shop"
+heading = "Photographs"
+hint    = "Choose any photo to see it full size."
+
+
+# --- WHERE THIS CARRIES ON ----------------------------------------
+# The heading above the cards at the foot of a write-up. The cards
+# themselves are per robot, set as [[robot.link]] blocks in its own
+# config.toml, and a robot with none of those skips this band too.
+[more]
+eyebrow = "Keep going"
+heading = "Where this robot carries on"
+intro   = "The album, the story from the season it competed in, and the machines either side of it."
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Want to build the next one?"
+body                  = "Every robot on this site was built by students who started out not knowing how. No experience required &mdash; turn up to a meeting or a workday, tell us what you are curious about, and we will put a tool in your hand."
+primary_button_text   = "Join the team"
+primary_button_link   = "/about#join"
+secondary_button_text = "Back to the robots"
+secondary_button_link = "/projects"

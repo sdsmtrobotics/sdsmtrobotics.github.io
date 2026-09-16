@@ -1,0 +1,161 @@
+####################################################################
+#  ROBOT WRITE-UP: Soccerbots
+#  Lives at  sdsmtrobotics.github.io/projects/soccerbots
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "Three robots built for the 2018 ASME Student Design Competition - one offensive bot with a tennis ball shooter and two defensive bots with solenoid kickers - all folding into an 18-inch cube."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "Soccerbots"
+years = "September 2017 &ndash; March 2018"
+tag   = "ASME"
+intro = "Three robots for the 2018 ASME Student Design Competition &mdash; one to score and two to defend &mdash; designed to pack together inside an 18&rdquo; cube."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Alex Gronlund, Jeremiah Scott, Jordan Morrison, Samuel Ryckman, Jordan Pasker, Dustin Richards, Rachel Lauer, Brooke Bialas, Zane Brandt"],
+  ["Purpose",  "Compete in the 2018 ASME Student Design Competition"],
+  ["Cost",     "$800ish"],
+  ["Features", "Shoot and kick tennis balls"],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["CAD &ndash; Shooterbot",         "https://drive.google.com/drive/folders/1a-4wcjbu6WwSuU5Pa0tAFnXLFXiBb8Eq?usp=sharing", "(Google Drive)"],
+  ["CAD &ndash; Orange defense bot", "https://drive.google.com/drive/folders/1xqQYbUz53Tx0mHQ5c2PRXzjoT2j_KQu0?usp=sharing", "(Google Drive)"],
+  ["Code",                           "https://github.com/sdsmt-robotics/ASME-2018", "(GitHub)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "Robots created to compete in the 2018 ASME Student Design Competition. For this competition, we created three bots: two for defense and one for offense. The three robots were designed to fit together inside of an 18&rdquo; cube to meet the size requirements in the rules.",
+]
+
+[[robot.block]]
+heading = "Shooterbot"
+text = [
+  "Shooterbot is the offensive bot. It features a tennis ball shooter capable of launching a tennis ball approximately 40ft when set to &ldquo;kill mode&rdquo;. It also has a mecanum drivetrain for maneuverability, front flappers for guiding tennis balls, a scoop for loading tennis balls, and a laser for lining up shots.",
+]
+
+[[robot.block]]
+heading = "Blue defense bot"
+text = [
+  "This bot&rsquo;s main purpose is defense and it has a large wall on the side for that purpose. It does have scoring capabilities as well. In the front is a solenoid powered kicker as well as two guides for moving tennis balls. The drive system is a tank drive configuration with two DC motors connected to the four wheels through belt and pulleys on each side.",
+]
+
+[[robot.block]]
+heading = "Orange defense bot"
+text = [
+  "This bot accomplishes the same purposes as the other defense bot but with a different implementation. It also has a large wall for defense, a solenoid kicker, and uses a tank drive configuration for driving. The only real difference is that it is larger and uses four DC motors for driving instead of two. Also, it is orange.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-asme-2017-2018.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-three-bots.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "newspaper-o"
+heading   = "How they did"
+body      = "The 2018 competition in Fargo: three bots, one 18&rdquo; cube, and the rounds that followed."
+link      = "/news/2018-asme-student-design-competition"
+link_text = "Read the write-up"
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "Soccerbots album"
+body      = "The three bots together, and the shooter at full tilt."
+link      = "/gallery/soccerbots"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "gamepad"
+heading   = "The controller"
+body      = "Built alongside these robots, to drive them and everything after."
+link      = "/projects/controller"
+link_text = "See the hardware"

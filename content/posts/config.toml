@@ -1,0 +1,65 @@
+####################################################################
+#  EVERY NEWS WRITE-UP  (sdsmtrobotics.github.io/news/...)
+#
+#  This file holds the wording the individual news pages have in
+#  common: the link back to the news list, the heading above the
+#  photographs, the heading above the "where this carries on" cards,
+#  and the band at the bottom. Change it here once and every write-up
+#  follows. Then run:      ./build.py
+#
+#  Each story's own words and its photographs are in the folder named
+#  after it next to this file, for example:
+#
+#      content/posts/2023-igvc-competition/config.toml
+#      content/posts/2023-igvc-competition/images/
+#      content/posts/2023-igvc-competition/map.html   <- what goes where
+#
+#  To add a whole new story, copy one of those folders, change the
+#  words in its config.toml, put your photos in its images/, and run
+#  ./build.py. The new page appears at /news/<folder name>. Add a card
+#  for it in content/news/config.toml as well, or nothing on the news
+#  page will link to it.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- THE LINK BACK ------------------------------------------------
+# Sits above the headline, at the top of every write-up.
+[back]
+text = "All news"
+link = "/news"
+
+
+# --- THE PHOTOGRAPHS ----------------------------------------------
+# The heading above the grid of photos from the day. A story with no
+# [[post.photo]] blocks skips this whole band, heading and all.
+#
+# `hint` is the line under it. Say something true whether or not the
+# visitor has JavaScript: with it, a photo opens in an overlay that
+# can be stepped through; without it, the photo opens on its own.
+[photos]
+eyebrow = "From the day"
+heading = "Photographs"
+hint    = "Choose any photo to see it full size."
+
+
+# --- WHERE THIS CARRIES ON ----------------------------------------
+# The heading above the cards at the foot of a write-up. The cards
+# themselves are per story, set as [[post.link]] blocks in its own
+# config.toml, and a story with none of those skips this band too.
+[more]
+eyebrow = "Keep going"
+heading = "Where this carries on"
+intro   = "The album from the day, the robot's own write-up, and the rest of the record."
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Want to be in the next one of these?"
+body                  = "Every story on this site started with somebody turning up to a meeting not knowing much. No experience required &mdash; tell us what you are curious about and we will put a tool in your hand."
+primary_button_text   = "Join the team"
+primary_button_link   = "/about#join"
+secondary_button_text = "Back to the news"
+secondary_button_link = "/news"

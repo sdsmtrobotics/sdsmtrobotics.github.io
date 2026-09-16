@@ -1,0 +1,141 @@
+####################################################################
+#  CALENDAR PAGE  (sdsmtrobotics.github.io/calendar)
+#
+#  Everything you can see as text on the calendar page is in this
+#  file. Change it here, then run:      ./build.py
+#
+#  The events themselves are NOT in this file. They come straight
+#  from the team's Google Calendar - add an event there and it shows
+#  up here on its own. See README.md in this folder.
+#
+#  Not sure which setting is which? Open  map.html  in this folder.
+#  It shows every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/calendar.html, not from here.
+[meta]
+description = "Meetings, workdays, and competition dates for the South Dakota Mines Rocker Robotics Team, straight from the team calendar."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# This page deliberately has no banner photo - the calendar itself is
+# the thing you came for, so it starts as high up the page as it can.
+# Setting an image here would push it below the fold.
+[page_head]
+image   = ""
+eyebrow = "Meetings, workdays, and competitions"
+heading = "Calendar"
+body    = "Everything the team has scheduled, in one place. Meetings and workdays repeat every week during the semester; competition and outreach dates are added as they are confirmed."
+
+
+# --- THE EMBEDDED CALENDAR ----------------------------------------
+# This is the Google Calendar grid in the middle of the page.
+[calendar]
+eyebrow = "The full schedule"
+heading = "What is on"
+intro   = "Click any event for the details. The calendar is public, so you can add it to your own phone or laptop with the button underneath and it will keep itself up to date."
+
+# The team calendar. This is the shared robotics account, and the
+# calendar is public - that is what lets it be shown here at all.
+calendar_id = "robotics@mines.sdsmt.edu"
+timezone    = "America/Denver"
+
+# Which view the grid opens on: MONTH, WEEK or AGENDA.
+default_view = "MONTH"
+
+# The colour of the events in the grid, as a hex code with no "#".
+# Google only accepts a colour it recognises; if the grid comes up
+# blank after changing this, put it back to 7986CB.
+color = "7986CB"
+
+# Wording on the subscribe button under the grid.
+subscribe_text = "Add this calendar to your own"
+subscribe_note = "Opens Google Calendar and asks whether to subscribe. On an iPhone or Mac, use the same button and choose &ldquo;Add to Calendar&rdquo; when prompted."
+
+
+# --- NEXT UP: the short list beside the calendar -------------------
+# This list is built in the browser from the same Google Calendar, so
+# there is nothing to update here except the wording.
+[upcoming]
+heading  = "Next up"
+count    = 6                    # how many events to list
+# Shown while the list is loading, and left in place if it cannot be
+# reached at all - so the page never has an empty hole in it.
+loading  = "Loading the next few events&hellip;"
+failed   = "The next few events could not be loaded. Everything is in the calendar above."
+none     = "Nothing on the calendar right now. Term-time meetings are listed below."
+
+# --- The Google API key --------------------------------------------
+# READ THIS BEFORE CHANGING IT.
+#
+# The "Next up" list asks Google for the team's events, and Google
+# wants a key with the question. This key is not a password and it is
+# not a secret: it is delivered to every visitor's browser as part of
+# the page, and there is no way to publish this list without it being
+# readable. That is how Google designed browser keys to work.
+#
+# What DOES matter is that the key is restricted, in the Google Cloud
+# console that owns it, to:
+#
+#   * Application restriction -> Websites, allowing only
+#       sdsmtrobotics.github.io/*
+#   * API restriction -> Google Calendar API, and nothing else
+#
+# Without those two restrictions anyone can copy the key out of this
+# page and spend the project's quota on it. With them, a copied key
+# is worth nothing to whoever copies it.
+#
+# If you ever need to replace the key, change it here and run
+# ./build.py - this is the only place in the repository it appears.
+api_key = "AIzaSyCoAZJp84r-5Tk-nbqvnGZY2ZYip4vBRno"
+
+
+# --- WHEN WE MEET: the cards under the calendar -------------------
+[meet]
+eyebrow = "If you are new"
+heading = "Where to start"
+intro   = "The calendar is the exact schedule, but almost everything on it is one of these three. You do not need to sign up for anything &mdash; turn up to any of them."
+
+# icon - any Font Awesome 4.7 name, without the "fa-" prefix.
+#        Browse them at https://fontawesome.com/v4/icons/
+
+[[meet.card]]
+icon      = "calendar"
+heading   = "The weekly rhythm"
+link      = "/about#join"
+link_text = "More about joining"
+rows      = [
+  ["Meetings", "Thursdays, 4:04&nbsp;pm &mdash; M306"],
+  ["Workdays", "Wednesdays, 5:00&nbsp;pm"],
+  ["",         "Saturdays, 12:00&nbsp;pm"],
+  ["Labs",     "McLaury 101 &amp; 107"],
+]
+
+[[meet.card]]
+icon      = "map-marker"
+heading   = "Where to find us"
+body      = "Our main lab is <strong>McLaury 101</strong>, with a second lab in <strong>McLaury 107</strong>. On a workday there is almost always someone in there, whether or not anything is on the calendar."
+link      = "/about"
+link_text = "About the team"
+
+[[meet.card]]
+icon      = "trophy"
+heading   = "Competition season"
+body      = "Design work runs through the fall and competitions follow in the spring. Those dates land on the calendar as soon as they are confirmed, and the travel ones are worth planning around early."
+link      = "/projects"
+link_text = "See the robots"
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Not sure which one to turn up to?"
+body                  = "A Wednesday workday is the easiest place to start &mdash; there is no agenda to walk in on, and someone will be in the lab building something. Send us a message and we will tell you what is on this week."
+primary_button_text   = "Email the team"
+primary_button_link   = "mailto:Robotics@mines.sdsmt.edu"
+secondary_button_text = "Join us on Discord"
+secondary_button_link = "https://discord.gg/pehkuYRxh6"

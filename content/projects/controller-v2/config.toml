@@ -1,0 +1,156 @@
+####################################################################
+#  ROBOT WRITE-UP: Controller v2
+#  Lives at  sdsmtrobotics.github.io/projects/controller-v2
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The second version of the team's custom controller: longer battery life, a charger built in, a more ergonomic case, and triggers and bumpers."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "Controller v2"
+years = "September 2018 &ndash; March 2020"
+tag   = "Hardware"
+intro = "A redesign of the team's <a href=\"/projects/controller\">first controller</a>: longer battery life, a charger built in, a case that fits the hand, and triggers and bumpers."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Pratik Sinai Kunkolienker, Samuel Ryckman, Micah Runner, Dustin Richards"],
+  ["Purpose",  "Improve upon the previous controller"],
+  ["Cost",     "$100ish"],
+  ["Features", "Improved battery life, battery charging system, more ergonomic, triggers and bumpers"],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["Board design", "https://github.com/sdsmt-robotics/Controller", "(GitHub)"],
+  ["CAD model",    "https://workbench.grabcad.com/workbench/projects/gchhLV_W6PDW1e95mdNcHpIaTNFo00mKQyv3qScORcmWfo#/space/gcmagp96tLXe_i_esbxxvLTwmTP3JXPfawklODXosHTMzA/folder/7510644", "(GrabCAD)"],
+  ["Code",         "https://github.com/sdsmt-robotics/Controller/tree/master/Code", "(GitHub)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "Redesign of the previous controller. The goal of this version was to fix some of the issues with the previous version while adding some new features. Some of the improvements include: better battery life, integrated battery charger, more ergonomic case, and triggers and bumpers.",
+  "The controller was initially designed during the 2018&ndash;2019 season for use with B.A.M. in the ASME Student Design Competition, but there were some unforeseen issues with the PCB which weren&rsquo;t able to be solved prior to competition. These issues were eventually resolved however, and the controller is now fully functional.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "05-controller-trans1.png"
+caption = ""
+
+[[robot.photo]]
+image   = "06-controller-trans2.png"
+caption = ""
+
+[[robot.photo]]
+image   = "07-photo.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "Controller v2 album"
+body      = "The boards, the printed case, and the finished controller."
+link      = "/gallery/controller-v2"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "gamepad"
+heading   = "The first controller"
+body      = "The 2018 version this one set out to fix."
+link      = "/projects/controller"
+link_text = "See the hardware"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "B.A.M."
+body      = "The robot it was designed alongside, for the 2019 ASME competition."
+link      = "/projects/b-a-m"
+link_text = "See the robot"

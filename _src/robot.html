@@ -1,0 +1,177 @@
+<!--
+title: {{robot.name}}
+page: projects
+collection: projects
+output: projects/{{slug}}.html
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  {{#if robot.image_url}}
+  <section class="page-head has-image" style="background-image: url('{{robot.image_url}}');">
+  {{else}}
+  <section class="page-head">
+  {{/if}}
+    <div class="shell page-head-inner">
+      <a class="back-link" href="{{back.link}}">
+        <i class="fa fa-angle-left" aria-hidden="true"></i> {{back.text}}
+      </a>
+      <span class="eyebrow eyebrow-light">{{robot.tag}}</span>
+      <h1>{{robot.name}}</h1>
+      <p class="page-head-meta"><time>{{robot.years}}</time></p>
+      <p>{{robot.intro}}</p>
+    </div>
+  </section>
+
+  <!-- ============================================== the spec sheet -->
+  <!-- What the old page called Details and Links, side by side: the facts
+       about the machine, and where its CAD, code and reports live. Both are
+       the same two-column tables the rest of the site already uses - the
+       meeting times on the about page, the link lists on the resources
+       pages - so a robot with no links simply gets the one card. -->
+  <section class="band" id="build">
+    <div class="shell">
+      <div class="grid grid-2">
+        {{#if robot.fact}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-wrench" aria-hidden="true"></i>
+          <h3>{{details.heading}}</h3>
+          <ul class="meet-list spec-list">
+            {{#each robot.fact}}
+            <li><span class="when">{{this.0}}</span> <span>{{this.1}}</span></li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/if}}
+
+        {{#if robot.file}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-folder-open-o" aria-hidden="true"></i>
+          <h3>{{files.heading}}</h3>
+          <ul class="link-list">
+            {{#each robot.file}}
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <a href="{{this.1}}" target="_blank" rel="noopener">{{this.0}}</a>
+              {{#if this.2}}<span class="note">{{this.2}}</span>{{/if}}
+            </li>
+            {{/each}}
+          </ul>
+          {{#if files.note}}
+          <p class="link-note">{{files.note}}</p>
+          {{/if}}
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== the write-up -->
+  <!-- The same block loop as a news write-up: one {{#if}} per kind of thing
+       a block can hold, so a block can be a heading, some paragraphs, a
+       list, a picture, or any combination, and the config decides which. -->
+  {{#if robot.block}}
+  <section class="band band-alt" id="story">
+    <div class="shell">
+      <article class="post-body">
+        {{#each robot.block}}
+        {{#if heading}}
+        <h2 class="reveal">{{heading}}</h2>
+        {{/if}}
+        {{#each text}}
+        <p class="reveal">{{this}}</p>
+        {{/each}}
+        {{#if list}}
+        <ul class="post-list reveal">
+          {{#each list}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+        {{#if image_url}}
+        <figure class="post-figure reveal">
+          <img src="{{image_url}}" alt="{{caption}}" loading="lazy">
+          {{#if caption}}
+          <figcaption>{{caption}}</figcaption>
+          {{/if}}
+        </figure>
+        {{/if}}
+        {{/each}}
+      </article>
+    </div>
+  </section>
+  {{/if}}
+
+  <!-- ==================================================== the photographs -->
+  <!-- The old page opened with a carousel; this is the same grid and the
+       same overlay the album and news pages use. A robot with no
+       [[robot.photo]] blocks does not get this band. -->
+  {{#if robot.photo}}
+  <section class="band" id="photos">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{photos.eyebrow}}</span>
+        <h2>{{photos.heading}}</h2>
+        <p>{{photos.hint}}</p>
+      </div>
+
+      <!-- Every tile is a plain link to the photo itself, so with JS off a
+           photo still opens. site.js upgrades the grid to an overlay that can
+           be stepped through; it needs data-lightbox to find the grid, and
+           reads the caption and the robot's name from the attributes below. -->
+      <div class="photo-grid" data-lightbox="{{robot.name}}">
+        {{#each robot.photo}}
+        <a class="photo reveal" href="{{image_url}}" data-caption="{{caption}}">
+          {{#if caption}}
+          <img src="{{image_url}}" alt="{{caption}}" loading="lazy">
+          {{else}}
+          <img src="{{image_url}}" alt="{{robot.name}}, photo {{index}}" loading="lazy">
+          {{/if}}
+        </a>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+  {{/if}}
+
+  <!-- ==================================================== more to see -->
+  <!-- Where this robot carries on: its album, the story from the season it
+       competed in, the machine it grew out of. The heading is shared by
+       every robot; the cards are not. -->
+  {{#if robot.link}}
+  <section class="band band-alt" id="more">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{more.eyebrow}}</span>
+        <h2>{{more.heading}}</h2>
+        <p>{{more.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each robot.link}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if body}}
+          <p>{{body}}</p>
+          {{/if}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+  {{/if}}
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

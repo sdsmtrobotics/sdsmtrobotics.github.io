@@ -1,0 +1,115 @@
+####################################################################
+#  NEWS WRITE-UP: 2016 IEEE Robotics Competition
+#  Lives at  sdsmtrobotics.github.io/news/2016-ieee-robotics-competition
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[post.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every write-up shares - the link back to the news
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/posts/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the headline below.
+[meta]
+description = "The Rocker Robotics Team placed 11th out of 29 teams at the 2016 IEEE Robotics competition, alongside the UAS team and the 3D Printing Club."
+
+
+# --- THE STORY ----------------------------------------------------
+#   title  - the headline. Also the browser tab title.
+#   date   - the date line under the headline.
+#   tag    - the small gold label above the headline.
+#   intro  - the sentence under the headline. Links are allowed.
+#   image  - a banner photo behind the headline: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the story starts higher up.
+#
+#   Keep title, date and intro in step with this story's card on the
+#   news page, which is set in content/news/config.toml.
+[post]
+title = "2016 IEEE Robotics Competition"
+date  = "April 1, 2016"
+tag   = "IEEE"
+intro = "11th out of 29 teams at the IEEE Robotics competition, built together with the UAS team and the 3D Printing Club. The camera never quite came together in time."
+image = ""
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[post.block]] is one piece of the story and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown full width
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[post.block]]
+text = [
+  "The SDSMT Robotics team represented well at the 2016 IEEE Robotics competition. The team placed 11th out of 29 teams. The camera wasn't quite working in time, but had it been, the robot would have been even more competitive with the winning robots.",
+  "Congratulations to everyone who played a role in the making of this robot. This feat wouldn't have been possible without all of the wonderful teamwork, time, and effort that went into this robot. A big thank-you to our advisers, everyone on the Robotics team, the UAS team, and the 3D Printing Club who made this year's success possible.",
+  "This year's team has set a good foundation on which to build upon next year.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear on the page.
+#
+#    image   - a filename in the images/ folder next to this file.
+#    caption - shown under the photo when it is opened full size,
+#              and read out to screen readers. Empty is fine; the
+#              page falls back to "<headline>, photo 2".
+#
+#  Delete every one of these blocks and the photo band disappears.
+# ------------------------------------------------------------------
+
+[[post.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[post.link]]
+icon      = "picture-o"
+heading   = "2016 IEEE album"
+body      = "The photographs from the build and the competition floor."
+link      = "/gallery/2016-ieee"
+link_text = "Open the album"
+
+[[post.link]]
+icon      = "newspaper-o"
+heading   = "Everything else"
+body      = "Competition results, outreach and newsletters, newest first."
+link      = "/news"
+link_text = "Back to the news"

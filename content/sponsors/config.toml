@@ -1,0 +1,132 @@
+####################################################################
+#  SPONSORS PAGE  (sdsmtrobotics.github.io/sponsors)
+#
+#  Everything you can see as text on the sponsors page is in this
+#  file. Change it here, then run:      ./build.py
+#
+#  The sponsor logos live in the images/ folder next to this file.
+#  To add a sponsor, drop their logo in there and copy one of the
+#  [[gold.sponsor]] blocks below. See README.md in this folder.
+#
+#  Not sure which logo is which? Open  map.html  in this folder.
+#  It shows every logo and every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/sponsors.html, not from here.
+[meta]
+description = "The companies that support the South Dakota Mines Rocker Robotics Team, and the four levels they support us at."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# Like the calendar, this page deliberately has no banner photo. The
+# thing you came for is the list of sponsors, and a banner would push
+# it below the fold. The [page_head] block still has an image setting,
+# so a wide photo dropped in images/ and named here would be picked up.
+[page_head]
+image   = ""
+eyebrow = "The companies behind the robots"
+heading = "Our sponsors"
+body    = "Everything the team builds is paid for by somebody. These are the companies whose money, parts, and software make a season possible &mdash; and the levels they support us at."
+
+
+# --- THE LEVELS ---------------------------------------------------
+# Wording around the four levels below. The levels themselves are the
+# four blocks after this one.
+[sponsors]
+eyebrow = "Thank you"
+heading = "The people who make it possible"
+intro   = "Four levels, from a hundred dollars to five thousand and up. Every one of them ends up on a robot, in a lab, or on a trailer heading to a competition."
+
+# Shown in place of the logos on a level nobody has taken yet. This
+# wording is shared by all four levels, so it is only written once.
+open_text      = "This level is open."
+open_link      = "/sponsors/support-us"
+open_link_text = "Be the first to support us here"
+
+
+# --- PLATINUM -----------------------------------------------------
+# The four levels are shown in the order they appear in this file,
+# highest first. Each one lists the sponsors underneath it; a level
+# with no [[<level>.sponsor]] blocks shows the open-level note above
+# instead, which is why the empty levels below look bare.
+[platinum]
+name   = "Platinum"
+amount = "$5,000 and above"
+perk   = "Large logo on the competition robot, on every banner we travel with, and an appreciation plaque."
+
+
+# --- GOLD ---------------------------------------------------------
+[gold]
+name   = "Gold"
+amount = "$1,000 &ndash; $4,999"
+perk   = "Medium logo on the competition robot, and on the banners we take to competitions and events."
+
+# Each [[gold.sponsor]] block below is one logo, in the order shown.
+#
+#   name      - the company, shown under the logo
+#   image     - filename in images/ (PNG with a transparent background,
+#               or an SVG, works best)
+#   image_alt - what the logo says, for screen readers and for when
+#               the image fails to load
+#   link      - the company's website. Leave "" for no link.
+
+[[gold.sponsor]]
+name      = "SolidWorks"
+image     = "solidworks.svg"
+image_alt = "SolidWorks"
+link      = "https://www.solidworks.com/"
+
+[[gold.sponsor]]
+name      = "Knecht Home Center"
+image     = "knecht-home-center.png"
+image_alt = "Knecht Home Center, a Mead Lumber company"
+link      = "https://meadlumber.com/locations/knecht-home-center-of-rapid-city/"
+
+
+# --- SILVER -------------------------------------------------------
+[silver]
+name   = "Silver"
+amount = "$500 &ndash; $999"
+perk   = "Small logo on the competition robot for the year, in front of every team we compete against."
+
+
+# --- BRONZE -------------------------------------------------------
+[bronze]
+name   = "Bronze"
+amount = "$100 &ndash; $499"
+perk   = "Logo on this page, and updates on the team and its competitions twice a year."
+
+[[bronze.sponsor]]
+name      = "Polymaker"
+image     = "polymaker.png"
+image_alt = "Polymaker"
+link      = "https://polymaker.com/"
+
+
+# --- THE REST OF IT: the band under the levels --------------------
+# Not every kind of support comes with a level attached, and this is
+# where the rest of it gets said.
+[thanks]
+eyebrow = "And everyone else"
+heading = "Support that does not fit a level"
+
+# Each line below is one paragraph. Add a line to add a paragraph.
+paragraph = [
+  "We are a student organization and a non-profit, so the team runs on school funding, fundraisers, and outside help. A box of filament, a length of aluminum, or an afternoon on somebody's machine keeps a build moving just as surely as a check does.",
+  "We are part of the South Dakota Mines <strong>CAMP</strong> program, and we thank them for their support.",
+]
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Put your name on the robot"
+body                  = "Support starts at $100, and every level puts a company in front of the students, schools, and teams we meet at national competitions. Tell us what you have in mind and we will send you the details."
+primary_button_text   = "How sponsorship works"
+primary_button_link   = "/sponsors/support-us"
+secondary_button_text = "Email the team"
+secondary_button_link = "mailto:Robotics@mines.sdsmt.edu"

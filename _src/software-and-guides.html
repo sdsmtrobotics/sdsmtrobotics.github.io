@@ -1,0 +1,93 @@
+<!--
+title: Software and Guides
+page: resources
+content: resources/software-and-guides
+output: resources/software-and-guides.html
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, the same as the resources page this sits under. The
+       back link goes above the heading, in the flow, so it never lands on
+       top of the title on a narrow screen - same as the support-us page. -->
+  {{include:page-head}}
+
+  <!-- ============================================================ book -->
+  <!-- The book is the team's own, and it led the old page, so it keeps the
+       top of this one rather than becoming the first of nine equal cards.
+       .band-head is the only child of the shell, which is what stops it
+       leaving a gap under itself. -->
+  <section class="band" id="book">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{book.eyebrow}}</span>
+        <h2>{{book.heading}}</h2>
+        {{#each book.paragraph}}
+        <p>{{this}}</p>
+        {{/each}}
+        <p>
+          <a class="btn btn-outline" href="{{book.link}}" target="_blank" rel="noopener">
+            <i class="fa fa-download" aria-hidden="true"></i> {{book.link_text}}
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== software -->
+  <!-- One card per program. `links` is a list of [text, address] pairs
+       rather than a table of its own, so adding a tutorial to a program is
+       one line in config.toml. `note` under them is for the things that are
+       instructions rather than links - the install paths on the school's
+       drive, which are not something you can put in an href. -->
+  <section class="band band-alt" id="software">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{software.eyebrow}}</span>
+        <h2>{{software.heading}}</h2>
+        <p>{{software.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each software.tool}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if meta}}
+          <p class="info-card-meta">{{meta}}</p>
+          {{/if}}
+          <p>{{body}}</p>
+
+          {{#if links}}
+          <ul class="link-list">
+            {{#each links}}
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <a href="{{this.1}}" target="_blank" rel="noopener">{{this.0}}</a>
+              {{#if this.2}}<span class="note">{{this.2}}</span>{{/if}}
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+
+          {{#if note}}
+          <p class="link-note">{{note}}</p>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

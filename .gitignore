@@ -1,0 +1,24 @@
+# Python bytecode (serve.py imports build.py)
+__pycache__/
+*.pyc
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Jekyll, if the rebuild adopts it
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+# anchored with a leading slash: assets/vendor/ is real, committed content
+/vendor/bundle/
+
+# Node, if the rebuild adopts it
+node_modules/
+
+# Claude Code local dev config
+.claude/

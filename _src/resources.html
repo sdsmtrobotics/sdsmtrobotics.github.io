@@ -1,0 +1,84 @@
+<!--
+title: Resources
+page: resources
+content: resources
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, the same as the calendar and sponsors pages: the four
+       cards below are the whole point of this page, and a hero would push
+       them off the first screen. .page-head with no .has-image is a plain
+       navy band. -->
+  {{include:page-head}}
+
+  <!-- ========================================================== the four -->
+  <!-- This page is a signpost and nothing else, so the cards are the page.
+       Each one is a section of the site rather than a single link, which is
+       why they carry a sentence saying what is behind them - the old page
+       had four grey buttons with nothing to choose between them. -->
+  <section class="band" id="sections">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{sections.eyebrow}}</span>
+        <h2>{{sections.heading}}</h2>
+        <p>{{sections.intro}}</p>
+      </div>
+
+      <div class="grid grid-2">
+        {{#each sections.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          <p>{{body}}</p>
+          {{#if holds}}
+          <ul class="link-list">
+            {{#each holds}}
+            <li><i class="fa fa-angle-right" aria-hidden="true"></i>{{this}}</li>
+            {{/each}}
+          </ul>
+          {{/if}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== elsewhere ------ -->
+  <!-- The things people come to this page looking for that are not filed
+       under Resources at all - the code on GitHub, the write-ups, the
+       calendar. Cheaper than duplicating them into a fifth section. -->
+  <section class="band band-alt" id="elsewhere">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{elsewhere.eyebrow}}</span>
+        <h2>{{elsewhere.heading}}</h2>
+        <p>{{elsewhere.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each elsewhere.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          <p>{{body}}</p>
+          <a class="card-link" href="{{link}}"{{#if external}} target="_blank" rel="noopener"{{/if}}>{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

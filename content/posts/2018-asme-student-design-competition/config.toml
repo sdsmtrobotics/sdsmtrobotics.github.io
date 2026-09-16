@@ -1,0 +1,165 @@
+####################################################################
+#  NEWS WRITE-UP: 2018 ASME Student Design Competition
+#  Lives at  sdsmtrobotics.github.io/news/2018-asme-student-design-competition
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[post.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every write-up shares - the link back to the news
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/posts/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the headline below.
+[meta]
+description = "Robot soccer in Pomona, California: three bots in a 50 cm cube, one shooter and two defenders, at the 2018 ASME Student Design Competition."
+
+
+# --- THE STORY ----------------------------------------------------
+#   title  - the headline. Also the browser tab title.
+#   date   - the date line under the headline.
+#   tag    - the small gold label above the headline.
+#   intro  - the sentence under the headline. Links are allowed.
+#   image  - a banner photo behind the headline: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the story starts higher up.
+#
+#   Keep title, date and intro in step with this story's card on the
+#   news page, which is set in content/news/config.toml.
+[post]
+title = "2018 ASME Student Design Competition"
+date  = "March 6, 2018"
+tag   = "ASME"
+intro = "Robot soccer in Pomona, California, with three bots in a 50&nbsp;cm cube: one shooter and two defenders with solenoid kickers. A solid mid-table finish against roughly 32 teams in our first year at the competition."
+image = ""
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[post.block]] is one piece of the story and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown full width
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[post.block]]
+text = [
+  "For the 2017-2018 season, the team chose the ASME Student Design Competition as the season's challenge.",
+  "The challenge for the year was robot soccer. Four teams would compete against eachother to score goals using tennis balls. Each team could have any number of robots as long as they all fit within a 50cm cube. The field was comprised of a 5m x 5m playing surface with a team's goal on each wall. Eight tennis balls would start in the middle. Each game consisted of two 5 minute halves. Scoring was as follows:",
+]
+list = [
+  "Scoring ball into same colored goal: <strong>5pts</strong>",
+  "Scoring ball into differenct colored goas: <strong>2pts</strong>",
+  "Goal scored on team: <strong>-1pts</strong>",
+]
+
+[[post.block]]
+text = [
+  "The complete rules can be found <a href=\"https://drive.google.com/file/d/1H1pg4VSXc3St6fuMCnHlgxHrEbWVTcjm/view?usp=sharing\" target=\"_blank\" rel=\"noopener\">here</a>.",
+]
+image   = "field-layout.png"
+caption = "The playing field: a goal on each wall, and eight tennis balls in the middle."
+
+[[post.block]]
+text = [
+  "The team developed three robots for use in the competition - one for offense and two for defense. The offensive bot had a tennis ball shooter for scoring balls and the two defensive bots each had a wall for blocking shots and a solenoid kicker. More details about these bots can be found on the <a href=\"/projects/soccerbots\">Soccerbots write-up</a>.",
+  "The competition took place at Pamona California. The team drove there and arrived the day before competition. As is the custom with robotics competitions, the night before was a mad scramble to get things working. All robots were assembled and wired, and the defense bots were running as intended. But the offensive bot was not working. After a few hours and some somewhat aggresive threats directed the way of the offensive bot, of the team did successfully get it running and even had some time to do some practice in the hotel lobby.",
+  "At the competition the next day, things mostly went smoothly. There were approximatly 32 teams at the competition. Through the preliminary rounds, we were fairly successful and generally one of the higher scoring teams. We found that we did have some issues with speed though. Some teams employed the swarm strategy and used a large number of small fast robots. This was difficult for our team to defend against since our robots were mostly on the slower side and we only had three of them. At the end of the qualifying rounds, our score left us near the middle of the pack. Since only the top eight teams continued on, that ended the competition for our team.",
+  "Even though we would have liked to place better, this was still a solid showing considering this was our first year at this competition. The members of our team worked really hard this year and did a great job. We are excited for next year!",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear on the page.
+#
+#    image   - a filename in the images/ folder next to this file.
+#    caption - shown under the photo when it is opened full size,
+#              and read out to screen readers. Empty is fine; the
+#              page falls back to "<headline>, photo 2".
+#
+#  Delete every one of these blocks and the photo band disappears.
+# ------------------------------------------------------------------
+
+[[post.photo]]
+image   = "01-shooterbotshooting.png"
+caption = ""
+
+[[post.photo]]
+image   = "02-beforeround.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "03-minesbots.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "04-minesteams.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "05-ourbots.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "06-roboticsteam.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "07-beach.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "08-testingshooterbot.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[post.link]]
+icon      = "cogs"
+heading   = "The Soccerbots"
+body      = "How the shooter and the two defenders were built, in their own write-up."
+link      = "/projects/soccerbots"
+link_text = "See the robots"
+
+[[post.link]]
+icon      = "picture-o"
+heading   = "2018 ASME album"
+body      = "The photographs from Pomona, and from the testing before it."
+link      = "/gallery/2018-asme-competition"
+link_text = "Open the album"
+
+[[post.link]]
+icon      = "newspaper-o"
+heading   = "Everything else"
+body      = "Competition results, outreach and newsletters, newest first."
+link      = "/news"
+link_text = "Back to the news"

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>projects/soccerbots - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>projects/soccerbots page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/projects/soccerbots">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Robot</h2><code>[robot]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Name<code>robot.name</code></th><td>Soccerbots</td></tr><tr><th>Years<code>robot.years</code></th><td>September 2017 &ndash; March 2018</td></tr><tr><th>Tag<code>robot.tag</code></th><td>ASME</td></tr><tr><th>Intro<code>robot.intro</code></th><td>Three robots for the 2018 ASME Student Design Competition &mdash; one to score and two to defend &mdash; designed to pack together inside an 18&rdquo; cube.</td></tr><tr><th>Fact<code>robot.fact</code></th><td><ol class="lines"><li>Built by &middot; Alex Gronlund, Jeremiah Scott, Jordan Morrison, Samuel Ryckman, Jordan Pasker, Dustin Richards, Rachel Lauer, Brooke Bialas, Zane Brandt</li><li>Purpose &middot; Compete in the 2018 ASME Student Design Competition</li><li>Cost &middot; $800ish</li><li>Features &middot; Shoot and kick tennis balls</li></ol></td></tr><tr><th>File<code>robot.file</code></th><td><ol class="lines"><li>CAD &ndash; Shooterbot &middot; https://drive.google.com/drive/folders/1a-4wcjbu6WwSuU5Pa0tAFnXLFXiBb8Eq?usp=sharing &middot; (Google Drive)</li><li>CAD &ndash; Orange defense bot &middot; https://drive.google.com/drive/folders/1xqQYbUz53Tx0mHQ5c2PRXzjoT2j_KQu0?usp=sharing &middot; (Google Drive)</li><li>Code &middot; https://github.com/sdsmt-robotics/ASME-2018 &middot; (GitHub)</li></ol></td></tr></table></section><section class="slot"><h3>Block 1</h3><div class="noimg">no image in this block</div><table><tr><th>Text<code>robot.block[1].text</code></th><td><ol class="lines"><li>Robots created to compete in the 2018 ASME Student Design Competition. For this competition, we created three bots: two for defense and one for offense. The three robots were designed to fit together inside of an 18&rdquo; cube to meet the size requirements in the rules.</li></ol></td></tr></table></section><section class="slot"><h3>Block 2</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>robot.block[2].heading</code></th><td>Shooterbot</td></tr><tr><th>Text<code>robot.block[2].text</code></th><td><ol class="lines"><li>Shooterbot is the offensive bot. It features a tennis ball shooter capable of launching a tennis ball approximately 40ft when set to &ldquo;kill mode&rdquo;. It also has a mecanum drivetrain for maneuverability, front flappers for guiding tennis balls, a scoop for loading tennis balls, and a laser for lining up shots.</li></ol></td></tr></table></section><section class="slot"><h3>Block 3</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>robot.block[3].heading</code></th><td>Blue defense bot</td></tr><tr><th>Text<code>robot.block[3].text</code></th><td><ol class="lines"><li>This bot&rsquo;s main purpose is defense and it has a large wall on the side for that purpose. It does have scoring capabilities as well. In the front is a solenoid powered kicker as well as two guides for moving tennis balls. The drive system is a tank drive configuration with two DC motors connected to the four wheels through belt and pulleys on each side.</li></ol></td></tr></table></section><section class="slot"><h3>Block 4</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>robot.block[4].heading</code></th><td>Orange defense bot</td></tr><tr><th>Text<code>robot.block[4].text</code></th><td><ol class="lines"><li>This bot accomplishes the same purposes as the other defense bot but with a different implementation. It also has a large wall for defense, a solenoid kicker, and uses a tank drive configuration for driving. The only real difference is that it is larger and uses four DC motors for driving instead of two. Also, it is orange.</li></ol></td></tr></table></section><section class="slot"><h3>Photo 1</h3><figure><img src="images/01-photo.jpg" alt=""><figcaption><code>01-photo.jpg</code><span>2110 &times; 1440px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[1].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 2</h3><figure><img src="images/02-photo.jpg" alt=""><figcaption><code>02-photo.jpg</code><span>2560 &times; 1440px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[2].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 3</h3><figure><img src="images/03-asme-2017-2018.jpg" alt=""><figcaption><code>03-asme-2017-2018.jpg</code><span>1917 &times; 1440px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[3].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 4</h3><figure><img src="images/04-three-bots.jpg" alt=""><figcaption><code>04-three-bots.jpg</code><span>2560 &times; 1440px</span></figcaption></figure><table><tr><th>Caption<code>robot.photo[4].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Link 1</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[1].icon</code></th><td>newspaper-o</td></tr><tr><th>Heading<code>robot.link[1].heading</code></th><td>How they did</td></tr><tr><th>Body<code>robot.link[1].body</code></th><td>The 2018 competition in Fargo: three bots, one 18&rdquo; cube, and the rounds that followed.</td></tr><tr><th>Link<code>robot.link[1].link</code></th><td>/news/2018-asme-student-design-competition</td></tr><tr><th>Link text<code>robot.link[1].link_text</code></th><td>Read the write-up</td></tr></table></section><section class="slot"><h3>Link 2</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[2].icon</code></th><td>picture-o</td></tr><tr><th>Heading<code>robot.link[2].heading</code></th><td>Soccerbots album</td></tr><tr><th>Body<code>robot.link[2].body</code></th><td>The three bots together, and the shooter at full tilt.</td></tr><tr><th>Link<code>robot.link[2].link</code></th><td>/gallery/soccerbots</td></tr><tr><th>Link text<code>robot.link[2].link_text</code></th><td>Open the album</td></tr></table></section><section class="slot"><h3>Link 3</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>robot.link[3].icon</code></th><td>gamepad</td></tr><tr><th>Heading<code>robot.link[3].heading</code></th><td>The controller</td></tr><tr><th>Body<code>robot.link[3].body</code></th><td>Built alongside these robots, to drive them and everything after.</td></tr><tr><th>Link<code>robot.link[3].link</code></th><td>/projects/controller</td></tr><tr><th>Link text<code>robot.link[3].link_text</code></th><td>See the hardware</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  <p class="note">Some of the wording on this page &mdash; the link back, the headings around the photos, the band at the bottom &mdash; is shared by every page in <code>content/projects/</code> and is not listed above. Change it once in <code>content/projects/config.toml</code> and every one of them follows.</p>
+</main>

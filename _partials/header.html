@@ -1,0 +1,44 @@
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="Rocker Robotics home">
+      <img src="/assets/img/logo.png" alt="Rocker Robotics">
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a data-nav="merch"     href="https://rocker-robotics-shop.fourthwall.com/">Merch</a></li>
+        <li><a data-nav="about"     href="/about">About</a></li>
+        <li><a data-nav="projects"  href="/projects">Robots</a></li>
+        <li><a data-nav="news"      href="/news">News</a></li>
+        <li><a data-nav="gallery"   href="/gallery">Gallery</a></li>
+        <li><a data-nav="calendar"  href="/calendar">Calendar</a></li>
+        <li><a data-nav="sponsors"  href="/sponsors">Sponsors</a></li>
+        <li><a data-nav="resources" href="/resources">Resources</a></li>
+      </ul>
+
+      <!-- Only here during the event. It ships hidden, and site.js reveals it
+           when the scoreboard's Google Sheet says Visible: TRUE - see
+           content/site/config.toml. With no sheet set, or no JavaScript, it
+           stays hidden, which is the state we want the rest of the year. -->
+      <a class="btn btn-sm btn-navy nav-cta nav-scoreboard"
+         href="{{site.scoreboard.nav_link}}"
+         data-scoreboard-link
+         data-sheet="{{site.scoreboard.sheet_url}}"
+         data-gid="{{site.scoreboard.gid}}"
+         hidden>
+        <span class="live-dot" aria-hidden="true"></span>{{site.scoreboard.nav_label}}
+      </a>
+
+      <a class="btn btn-sm btn-solid nav-cta" href="/sponsors/support-us">Support Us</a>
+    </nav>
+  </div>
+</header>

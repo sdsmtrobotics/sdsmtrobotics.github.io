@@ -1,0 +1,106 @@
+<!--
+title: Gallery
+page: gallery
+content: gallery
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  {{include:page-head}}
+
+  <!-- ===================================================== album list -->
+  <section class="band" id="albums">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{gallery.eyebrow}}</span>
+        <h2>{{gallery.heading}}</h2>
+        <p>{{gallery.intro}}</p>
+      </div>
+
+      <!-- Filters are JS-only: site.css keeps this bar hidden until site.js
+           runs, so with JS off the full list below is simply all there is. -->
+      {{include:filter-bar noun="albums" aria="Filter albums by subject" options=gallery.filter}}
+
+      <div class="grid grid-2" data-filter-target>
+        {{#each gallery.album}}
+        <article class="card reveal" data-category="{{category}}">
+          {{#if image_url}}
+          <div class="card-media">
+            <img src="{{image_url}}" alt="{{title}}" loading="lazy">
+            <span class="card-tag">{{tag}}</span>
+            <!-- how many photos are inside, carried over from the old page -->
+            <span class="card-count"><i class="fa fa-picture-o" aria-hidden="true"></i> {{count}} photos</span>
+          </div>
+          {{else}}
+          <div class="card-media is-placeholder">
+            <div>
+              <i class="fa fa-picture-o" aria-hidden="true"></i>
+              <span>Photos coming soon</span>
+            </div>
+            <span class="card-tag">{{tag}}</span>
+          </div>
+          {{/if}}
+          <div class="card-body">
+            <h3>{{title}}</h3>
+            <p class="card-meta"><time>{{date}}</time> &middot; {{season}}</p>
+            <p>{{blurb}}</p>
+            {{#if link}}
+            <a class="card-link" href="{{link}}">{{gallery.link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            {{else}}
+            <span class="card-link is-inert">{{gallery.link_text}}</span>
+            {{/if}}
+          </div>
+        </article>
+        {{/each}}
+      </div>
+
+      <p class="filter-empty" data-filter-empty hidden>
+        Nothing photographed under that one yet. <button class="link-button" type="button" data-filter-reset>Show every album</button>
+      </p>
+
+      <!-- Carried over from the old gallery page, where a 4px strip under the
+           last row of albums was the only route to memes.html. This page is
+           still the only route, so the link has to survive the rebuild or that
+           page becomes unreachable. Kept out of the tab order and the
+           accessibility tree, so it is not read out as an unlabelled link. -->
+      <a class="egg-link" href="/memes" target="_blank" rel="noopener"
+         tabindex="-1" aria-hidden="true"></a>
+    </div>
+  </section>
+
+  <!-- ==================================================== more to see -->
+  <section class="band band-alt" id="more">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{more.eyebrow}}</span>
+        <h2>{{more.heading}}</h2>
+        <p>{{more.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each more.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if body}}
+          <p>{{body}}</p>
+          {{/if}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

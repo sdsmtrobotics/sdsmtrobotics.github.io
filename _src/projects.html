@@ -1,0 +1,96 @@
+<!--
+title: Robots
+page: projects
+content: robots
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  {{include:page-head}}
+
+  <!-- ==================================================== robot list -->
+  <section class="band" id="robots">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{robots.eyebrow}}</span>
+        <h2>{{robots.heading}}</h2>
+        <p>{{robots.intro}}</p>
+      </div>
+
+      <!-- Filters are JS-only: site.css keeps this bar hidden until site.js
+           runs, so with JS off the full list below is simply all there is. -->
+      {{include:filter-bar noun="robots" aria="Filter robots by competition" options=robots.filter}}
+
+      <div class="grid grid-2" data-filter-target>
+        {{#each robots.card}}
+        <article class="card reveal" data-category="{{category}}">
+          {{#if image_url}}
+          <div class="card-media">
+            <img src="{{image_url}}" alt="{{name}}" loading="lazy">
+            <span class="card-tag">{{tag}}</span>
+          </div>
+          {{else}}
+          <div class="card-media is-placeholder">
+            <div>
+              <i class="fa fa-cog" aria-hidden="true"></i>
+              <span>Photos coming soon</span>
+            </div>
+            <span class="card-tag">{{tag}}</span>
+          </div>
+          {{/if}}
+          <div class="card-body">
+            <h3>{{name}}</h3>
+            <p class="card-meta">{{years}}</p>
+            <p>{{blurb}}</p>
+            {{#if link}}
+            <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            {{else}}
+            <span class="card-link is-inert">{{link_text}}</span>
+            {{/if}}
+          </div>
+        </article>
+        {{/each}}
+      </div>
+
+      <p class="filter-empty" data-filter-empty hidden>
+        Nothing built for that one yet. <button class="link-button" type="button" data-filter-reset>Show every robot</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================================================== more to see -->
+  <section class="band band-alt" id="more">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{more.eyebrow}}</span>
+        <h2>{{more.heading}}</h2>
+        <p>{{more.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each more.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if body}}
+          <p>{{body}}</p>
+          {{/if}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

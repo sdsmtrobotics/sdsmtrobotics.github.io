@@ -1,0 +1,473 @@
+####################################################################
+#  GALLERY PAGE  (sdsmtrobotics.github.io/gallery)
+#
+#  Everything you can see as text on the gallery page is in this
+#  file. Change it here, then run:      ./build.py
+#
+#  Images live in the images/ folder next to this file. To swap one
+#  out, drop the new photo in there and put its filename below.
+#
+#  Not sure which image is which? Open  map.html  in this folder.
+#  It shows every photo and every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/gallery.html, not from here.
+[meta]
+description = "Photos from the South Dakota Mines Rocker Robotics Team - competition trips, outreach events, and a decade of robots in the workshop."
+
+
+# --- PAGE HEAD: the banner at the top -----------------------------
+# Set image = "" for a plain navy band instead of a photo.
+[page_head]
+image   = "banner.jpg"          # wide landscape photo, 1900px or wider
+eyebrow = "A decade in photographs"
+heading = "Gallery"
+body    = "Thirty-one albums from the workshop, the competition floor, and everywhere the robots have been carried since 2015."
+
+
+# --- THE ALBUM LIST -----------------------------------------------
+[gallery]
+eyebrow = "Every album"
+heading = "Browse the archive"
+intro   = "Newest first. Each card opens the album's own page, where the photos are shown full size."
+
+# The wording on the link at the bottom of every card. Unlike the
+# news and robots pages, every card here opens the same kind of
+# thing, so there is one setting rather than one per card.
+link_text = "Open the album"
+
+# The buttons above the cards. Each one shows only the albums whose
+# `category` matches its `value`. Leave `value = ""` for "show all".
+#
+# If you add an album in a brand new category, add a button for it
+# here too - otherwise its card only ever shows under "All albums".
+
+[[gallery.filter]]
+label = "All albums"
+value = ""
+
+[[gallery.filter]]
+label = "Competitions"
+value = "competition"
+
+[[gallery.filter]]
+label = "Outreach"
+value = "outreach"
+
+[[gallery.filter]]
+label = "Robots"
+value = "robots"
+
+[[gallery.filter]]
+label = "Team"
+value = "team"
+
+
+# ------------------------------------------------------------------
+#  Each [[gallery.album]] block below is one album, in the order they
+#  appear on the page. Copy a block to add an album, delete one to
+#  remove it. Put new ones at the TOP - the page runs newest first.
+#
+#    title     - the album name, shown as the card heading
+#    date      - the date line under the name
+#    season    - the school year, shown after the date. The old page
+#                grouped the albums under these; now each card
+#                carries its own.
+#    tag       - small gold label in the corner of the photo
+#    category  - which filter button shows this card. Must match one
+#                of the `value` settings in the buttons above.
+#    count     - how many photos are in the album. Shown as the
+#                badge in the corner of the cover photo, so keep it
+#                in step with the album page itself.
+#    blurb     - the summary. Links are allowed.
+#    image     - the cover photo: a filename in images/. Leave as ""
+#                to show a "photos coming soon" placeholder instead.
+#    link      - the album page this card opens.
+# ------------------------------------------------------------------
+
+[[gallery.album]]
+title    = "2025 Sumobot"
+date     = "January 9, 2025"
+season   = "2024 &ndash; 2025"
+tag      = "NRC"
+category = "robots"
+count    = 2
+blurb    = "The 20&nbsp;lb autonomous sumobot built for the National Robotics Challenge, with the CAD of its shell."
+image    = "sumobot-2025.jpg"
+link     = "/gallery/2025"
+
+[[gallery.album]]
+title    = "2024 IGVC"
+date     = "June 1, 2024"
+season   = "2023 &ndash; 2024"
+tag      = "IGVC"
+category = "competition"
+count    = 6
+blurb    = "Our second year at the Intelligent Ground Vehicle Competition in Rochester, Michigan &mdash; the chassis, the pits, and the team at work on site."
+image    = "igvc-2024.jpg"
+link     = "/gallery/2024-igvc"
+
+[[gallery.album]]
+title    = "2023 IGVC"
+date     = "June 3, 2023"
+season   = "2022 &ndash; 2023"
+tag      = "IGVC"
+category = "competition"
+count    = 7
+blurb    = "Our first Intelligent Ground Vehicle Competition, where the robot took a design award and the team came home <strong>Rookie of the Year</strong>."
+image    = "igvc-2023.jpg"
+link     = "/gallery/2023-igvc"
+
+[[gallery.album]]
+title    = "2022 Spinnybot"
+date     = "April 1, 2022"
+season   = "2021 &ndash; 2022"
+tag      = "NRC"
+category = "robots"
+count    = 7
+blurb    = "The full-body spinning combat robot in its final build year, photographed through machining, wiring, and assembly."
+image    = "spinnybot-2022.jpg"
+link     = "/gallery/2022-spinnybot"
+
+[[gallery.album]]
+title    = "2021 Paint the Town"
+date     = "August 28, 2021"
+season   = "2021 &ndash; 2022"
+tag      = "Outreach"
+category = "outreach"
+count    = 4
+blurb    = "A morning downtown with Rapid City's Paint the Town, brushes instead of soldering irons for once."
+image    = "paint-the-town-2021.jpg"
+link     = "/gallery/2021-paint-the-town"
+
+[[gallery.album]]
+title    = "2021 AVC Car"
+date     = "August 7, 2021"
+season   = "2021 &ndash; 2022"
+tag      = "NRC"
+category = "robots"
+count    = 3
+blurb    = "The self-driving car built for the National Robotics Challenge Autonomous Vehicle Competition."
+image    = "avc-car-2021.jpg"
+link     = "/gallery/2020-avc-car"
+
+[[gallery.album]]
+title    = "2020 Pumpkin Chunkin"
+date     = "September 5, 2020"
+season   = "2020 &ndash; 2021"
+tag      = "Pumpkin Chunkin"
+category = "outreach"
+count    = 3
+blurb    = "The trebuchet at the 2020 pumpkin chunkin competition."
+image    = "pumpkin-chunkin-2020.jpg"
+link     = "/gallery/2020-pumpkin-chunkin"
+
+[[gallery.album]]
+title    = "2020 Super Robo Time"
+date     = "August 22, 2020"
+season   = "2020 &ndash; 2021"
+tag      = "Super Robo Time"
+category = "team"
+count    = 3
+blurb    = "Our annual kick-off and battlebot build, the 2020 edition."
+image    = "super-robo-time-2020.jpg"
+link     = "/gallery/2020-srt"
+
+[[gallery.album]]
+title    = "T-Shirt Cannon"
+date     = "August 1, 2020"
+season   = "2020 &ndash; 2021"
+tag      = "Outreach"
+category = "robots"
+count    = 5
+blurb    = "The robot built to fire team t-shirts into the crowd at Mines events, from the first prototype cannon onwards."
+image    = "t-shirt-cannon.jpg"
+link     = "/gallery/t-shirt-cannon"
+
+[[gallery.album]]
+title    = "2020 Competition Cancellation and Recap of Year"
+date     = "May 4, 2020"
+season   = "2019 &ndash; 2020"
+tag      = "NRC"
+category = "competition"
+count    = 5
+blurb    = "Spinnybot and the AVC racer, both ready for the National Robotics Challenge, in the season Covid-19 cut short."
+image    = "nrc-2020-recap.jpg"
+link     = "/gallery/2020-competition-cancellation-and-recap-of-year"
+
+[[gallery.album]]
+title    = "Spinnybot"
+date     = "May 1, 2020"
+season   = "2019 &ndash; 2020"
+tag      = "NRC"
+category = "robots"
+count    = 4
+blurb    = "The mechanical, electrical, and controller prototypes behind the 3&nbsp;lb full-body spinner."
+image    = "spinnybot.png"
+link     = "/gallery/spinnybot"
+
+[[gallery.album]]
+title    = "2020 Boy Scouts Robotics Merit Badge"
+date     = "March 7, 2020"
+season   = "2019 &ndash; 2020"
+tag      = "Outreach"
+category = "outreach"
+count    = 5
+blurb    = "A day helping a troop of Scouts work through the Robotics merit badge."
+image    = "boy-scouts-2020.jpg"
+link     = "/gallery/2020-boy-scouts-robotics-merit-badge"
+
+[[gallery.album]]
+title    = "2020 Engineering &amp; Science Day"
+date     = "February 2, 2020"
+season   = "2019 &ndash; 2020"
+tag      = "Outreach"
+category = "outreach"
+count    = 5
+blurb    = "Running demos for visiting students at Mines' Engineering and Science Day."
+image    = "engineering-science-day-2020.jpg"
+link     = "/gallery/2020-engineering-and-science-day"
+
+[[gallery.album]]
+title    = "2019 FLL Tournament Volunteering"
+date     = "December 7, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Outreach"
+category = "outreach"
+count    = 7
+blurb    = "Building the field and refereeing at the regional FIRST LEGO League qualifier in Rapid City."
+image    = "fll-2019.jpg"
+link     = "/gallery/2019-fll-tournament-volunteering"
+
+[[gallery.album]]
+title    = "2019 Parade of Trees"
+date     = "December 6, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Outreach"
+category = "outreach"
+count    = 2
+blurb    = "The team at the Parade of Trees."
+image    = "parade-of-trees-2019.jpg"
+link     = "/gallery/2019-parade-of-trees"
+
+[[gallery.album]]
+title    = "Halloween Party 2019"
+date     = "October 31, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Team"
+category = "team"
+count    = 3
+blurb    = "Costumes and robots at the team's Halloween party."
+image    = "halloween-2019.jpg"
+link     = "/gallery/halloween-party-2019"
+
+[[gallery.album]]
+title    = "East Middle School Event"
+date     = "October 30, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Outreach"
+category = "outreach"
+count    = 3
+blurb    = "An afternoon of robot demos at East Middle School."
+image    = "east-middle-school-2019.jpg"
+link     = "/gallery/east-middle-school-event"
+
+[[gallery.album]]
+title    = "Super Robo Time 2019"
+date     = "October 5, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Super Robo Time"
+category = "team"
+count    = 10
+blurb    = "Our kick-off with UAS and the 3D Print Club: weeks of building battlebots out of the same box of parts, then fighting them out in the arena."
+image    = "super-robo-time-2019.jpg"
+link     = "/gallery/super-robo-time2019"
+
+[[gallery.album]]
+title    = "2019 Pumpkin Chunkin Competition"
+date     = "September 28, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Pumpkin Chunkin"
+category = "outreach"
+count    = 4
+blurb    = "The trebuchet and the testing area, on a cold, wet day that left us in 5th."
+image    = "pumpkin-chunkin-2019.jpg"
+link     = "/gallery/2019-pumpkin-chunkin-competition"
+
+[[gallery.album]]
+title    = "Fall 2019 Org Fair"
+date     = "August 24, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Team"
+category = "team"
+count    = 3
+blurb    = "The recruiting table at the fall org fair, robots included."
+image    = "org-fair-2019.jpg"
+link     = "/gallery/fall-2019-org-fair"
+
+[[gallery.album]]
+title    = "Main Street Square Hardrocker Night"
+date     = "August 9, 2019"
+season   = "2019 &ndash; 2020"
+tag      = "Outreach"
+category = "outreach"
+count    = 2
+blurb    = "Robots out on Main Street Square for Hardrocker Night."
+image    = "hardrocker-night-2019.jpg"
+link     = "/gallery/main-street-square-hardrocker-night"
+
+[[gallery.album]]
+title    = "B.A.M."
+date     = "April 8, 2019"
+season   = "2018 &ndash; 2019"
+tag      = "ASME"
+category = "robots"
+count    = 7
+blurb    = "B.A.M. &mdash; the Ball Acquisition Machine &mdash; from bare frame to finished robot ahead of the 2019 ASME competition."
+image    = "bam.jpg"
+link     = "/gallery/b-a-m"
+
+[[gallery.album]]
+title    = "2019 ASME Competition"
+date     = "April 8, 2019"
+season   = "2018 &ndash; 2019"
+tag      = "ASME"
+category = "competition"
+count    = 7
+blurb    = "B.A.M. at the Lansing E-Fest for the ASME Pick-and-Place Race."
+image    = "asme-2019.jpg"
+link     = "/gallery/2019-asme-competition"
+
+[[gallery.album]]
+title    = "Swervebot"
+date     = "March 1, 2019"
+season   = "2018 &ndash; 2019"
+tag      = "ASME"
+category = "robots"
+count    = 4
+blurb    = "The differential swerve drive built as a drivetrain idea for the 2019 ASME competition."
+image    = "swervebot.png"
+link     = "/gallery/swervebot"
+
+[[gallery.album]]
+title    = "2018 Pumpkin Chunkin"
+date     = "September 18, 2018"
+season   = "2018 &ndash; 2019"
+tag      = "Pumpkin Chunkin"
+category = "outreach"
+count    = 5
+blurb    = "The trebuchet at Memorial Park and the booth downtown, from the year the team borrowed a rival's weights and <strong>took the trophy</strong>."
+image    = "pumpkin-chunkin-2018.jpg"
+link     = "/gallery/2018-pumpkin-chunkin"
+
+[[gallery.album]]
+title    = "Controller v2"
+date     = "September 1, 2018"
+season   = "2018 &ndash; 2019"
+tag      = "Hardware"
+category = "robots"
+count    = 7
+blurb    = "The second-generation custom controller: a more ergonomic case, an integrated charger, and triggers and bumpers."
+image    = "controller-v2.jpg"
+link     = "/gallery/controller-v2"
+
+[[gallery.album]]
+title    = "Soccerbots"
+date     = "March 24, 2018"
+season   = "2017 &ndash; 2018"
+tag      = "ASME"
+category = "robots"
+count    = 4
+blurb    = "The three robots &mdash; one shooter, two defenders &mdash; built for robot soccer at the 2018 ASME competition."
+image    = "soccerbots.jpg"
+link     = "/gallery/soccerbots"
+
+[[gallery.album]]
+title    = "2018 ASME Competition"
+date     = "March 1, 2018"
+season   = "2017 &ndash; 2018"
+tag      = "ASME"
+category = "competition"
+count    = 8
+blurb    = "Robot soccer in Pomona, California, at the team's first ASME Student Design Competition."
+image    = "asme-2018.png"
+link     = "/gallery/2018-asme-competition"
+
+[[gallery.album]]
+title    = "Controller"
+date     = "April 1, 2017"
+season   = "2016 &ndash; 2017"
+tag      = "Hardware"
+category = "robots"
+count    = 4
+blurb    = "The first custom controller, built around an ATMEGA328P and an XBee radio so it could drive any of our robots."
+image    = "controller.jpg"
+link     = "/gallery/controller"
+
+[[gallery.album]]
+title    = "2016 IEEE"
+date     = "August 6, 2016"
+season   = "2016 &ndash; 2017"
+tag      = "IEEE"
+category = "competition"
+count    = 2
+blurb    = "The IEEE Robotics competition robot, built together with the UAS team and the 3D Printing Club."
+image    = "ieee-2016.jpg"
+link     = "/gallery/2016-ieee"
+
+[[gallery.album]]
+title    = "SMP and Mecanumbot"
+date     = "August 8, 2015"
+season   = "2015 &ndash; 2016"
+tag      = "Platforms"
+category = "robots"
+count    = 6
+blurb    = "The Surface Mobility Platforms and the Mecanumbot, built for learning, research, and demos."
+image    = "smp-mecanumbot.jpg"
+link     = "/gallery/smp-and-mecanumbot"
+
+
+# --- MORE TO SEE: the three cards under the album list ------------
+[more]
+eyebrow = "Beyond the photos"
+heading = "The stories behind them"
+intro   = "Most of these albums have a write-up somewhere else on the site, and the newest photos never make it here first."
+
+# icon - any Font Awesome 4.7 name, without the "fa-" prefix.
+#        Browse them at https://fontawesome.com/v4/icons/
+
+[[more.card]]
+icon      = "newspaper-o"
+heading   = "News"
+body      = "Competition results, outreach events, and newsletters &mdash; the written record that goes with these photographs."
+link      = "/news"
+link_text = "Read the news"
+
+[[more.card]]
+icon      = "cog"
+heading   = "Robots"
+body      = "Every machine the team has built since 2015, with a write-up on how each one was designed and how it fared."
+link      = "/projects"
+link_text = "See the robots"
+
+[[more.card]]
+icon      = "instagram"
+heading   = "Follow along"
+body      = "Build photos, competition trips, and whatever is on the bench this week, posted as it happens rather than at the end of the season."
+link      = "https://www.instagram.com/rockerrobotics/"
+link_text = "See our Instagram"
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Want to be in the next album?"
+body                  = "Every photo on this page has somebody in it who turned up to a meeting not knowing much. No experience required &mdash; tell us what you are curious about and we will put a tool in your hand."
+primary_button_text   = "Join the team"
+primary_button_link   = "/about#join"
+secondary_button_text = "Contact us"
+secondary_button_link = "mailto:Robotics@mines.sdsmt.edu"

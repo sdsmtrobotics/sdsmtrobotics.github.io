@@ -1,0 +1,124 @@
+####################################################################
+#  NEWS WRITE-UP: 2022 Trebuchet
+#  Lives at  sdsmtrobotics.github.io/news/2022-trebuchet
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[post.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every write-up shares - the link back to the news
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/posts/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the headline below.
+[meta]
+description = "The old trebuchet was coming apart, so the team rebuilt it out of 4x4s with a new loading and firing mechanism, then won the 2022 competition with 966 points."
+
+
+# --- THE STORY ----------------------------------------------------
+#   title  - the headline. Also the browser tab title.
+#   date   - the date line under the headline.
+#   tag    - the small gold label above the headline.
+#   intro  - the sentence under the headline. Links are allowed.
+#   image  - a banner photo behind the headline: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the story starts higher up.
+#
+#   Keep title, date and intro in step with this story's card on the
+#   news page, which is set in content/news/config.toml.
+[post]
+title = "2022 Trebuchet"
+date  = "September 22, 2022"
+tag   = "Pumpkin Chunkin"
+intro = "The old trebuchet was coming apart, so the team rebuilt the whole thing out of 4x4s with a new loading and firing mechanism &mdash; then <strong>won the competition</strong> with 966 points."
+image = ""
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[post.block]] is one piece of the story and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown full width
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+# the photo led the old page, so it leads this one: a block with a
+# picture and no words of its own
+[[post.block]]
+image   = "team-with-trebuchet.jpg"
+caption = "The team at Memorial Park with the rebuilt trebuchet."
+
+[[post.block]]
+text = [
+  "Once again, the team participated in the annual Pumpkin Chunkin&rsquo; competition during the Rapid City Pumpkin Festival. This year required a lot more work than the previous few years, as the team made the decision to rebuild the entire trebuchet. The wood on the old trebuchet was starting to break down, and would soon make the trebuchet not structurally sound. Several boards had been broken during previous test fires. The wood was also getting old and fairly dry.",
+  "The design for the new trebuchet was similar to the previous one but was simplified for ease of building. The new trebuchet was build using 4x4's instead of the 2x4's we have used in the past. This change made our trebuchet a lot sturdier. A new loading and firing mechanism was also designed, which helped to prevent misfires and critical failures.",
+  "At the event, the trebuchet performed as well as in previous years, if not better. The team won the competition with a total score of 966 points! While work on the trebuchet is on hold right now in favor of working on the competition robot, there are plans to improve the new design and make the trebuchet more efficient and powerful for next year&rsquo;s competition.",
+]
+image   = "scoreboard.png"
+caption = "The final scores: 966 points, nearly twice the next team's."
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear on the page.
+#
+#  There is no photo band on this page: the old post had only the two
+#  pictures in the story above, so there is nothing left to put in a
+#  grid. Add [[post.photo]] blocks here and the band appears, with
+#  the heading set in content/posts/config.toml.
+#
+#    image   - a filename in the images/ folder next to this file.
+#    caption - shown under the photo when it is opened full size,
+#              and read out to screen readers.
+# ------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[post.link]]
+icon      = "history"
+heading   = "The trebuchet before this"
+body      = "The 2019 competition, on the machine this one replaced."
+link      = "/news/2019-pumpkin-chunkin-competition"
+link_text = "Read the write-up"
+
+[[post.link]]
+icon      = "trophy"
+heading   = "The year after"
+body      = "1069 points and another win, in the winter 2025 newsletter."
+link      = "/news/winter-2025-newsletter"
+link_text = "Read the newsletter"
+
+[[post.link]]
+icon      = "newspaper-o"
+heading   = "Everything else"
+body      = "Competition results, outreach and newsletters, newest first."
+link      = "/news"
+link_text = "Back to the news"

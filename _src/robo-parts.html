@@ -1,0 +1,116 @@
+<!--
+title: Robo Parts
+page: resources
+content: resources/robo-parts
+output: resources/robo-parts.html
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, the same as the resources page this sits under. -->
+  {{include:page-head}}
+
+  <!-- =========================================================== parts -->
+  <!-- The old page held this as a three-column table - part, one line about
+       it, and a stack of links crammed into the last cell. Cards give the
+       links room and let the "Info" column become a real sentence, which is
+       the part of this page worth reading. The filter bar is the same one
+       the robots and news pages use; with JS off every card ships anyway,
+       so the page is still the complete list. -->
+  <section class="band" id="parts">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{parts.eyebrow}}</span>
+        <h2>{{parts.heading}}</h2>
+        <p>{{parts.intro}}</p>
+      </div>
+
+      {{include:filter-bar noun="parts" aria="Filter parts by kind" options=parts.filter}}
+
+      <div class="grid grid-3" data-filter-target>
+        {{#each parts.part}}
+        <div class="info-card reveal" data-category="{{category}}">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if meta}}
+          <p class="info-card-meta">{{meta}}</p>
+          {{/if}}
+          <p>{{body}}</p>
+
+          {{#if links}}
+          <ul class="link-list">
+            {{#each links}}
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <a href="{{this.1}}" target="_blank" rel="noopener">{{this.0}}</a>
+              {{#if this.2}}<span class="note">{{this.2}}</span>{{/if}}
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+
+      <p class="filter-empty" data-filter-empty hidden>
+        Nothing under that one yet. <button class="link-button" type="button" data-filter-reset>Show every part</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================= microcontrollers -->
+  <!-- Two tables on the old page - bare chips, then the Arduino boards
+       built around them - which is a distinction that only matters once you
+       already know it. One list, with the board cards saying which chip
+       they carry. -->
+  <section class="band band-alt" id="chips">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{chips.eyebrow}}</span>
+        <h2>{{chips.heading}}</h2>
+        <p>{{chips.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each chips.chip}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if meta}}
+          <p class="info-card-meta">{{meta}}</p>
+          {{/if}}
+          <p>{{body}}</p>
+
+          {{#if links}}
+          <ul class="link-list">
+            {{#each links}}
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <a href="{{this.1}}" target="_blank" rel="noopener">{{this.0}}</a>
+              {{#if this.2}}<span class="note">{{this.2}}</span>{{/if}}
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+
+      {{#if chips.note}}
+      <p class="link-note reveal">{{chips.note}}</p>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

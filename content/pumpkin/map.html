@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pumpkin - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>pumpkin page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/pumpkin">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Page head</h2><code>[page_head]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Eyebrow<code>page_head.eyebrow</code></th><td>Pumpkin chunkin</td></tr><tr><th>Heading<code>page_head.heading</code></th><td>Trebuchet Scoreboard</td></tr><tr><th>Body<code>page_head.body</code></th><td>Every round as it is measured and written down, straight from the scoring sheet at the field. The page keeps itself up to date, so you can leave it open.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>2</span><h2>Board</h2><code>[board]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>board.eyebrow</code></th><td>Live results</td></tr><tr><th>Heading<code>board.heading</code></th><td>This year's standings</td></tr><tr><th>Intro<code>board.intro</code></th><td>Teams throw at a target distance in each accuracy round &mdash; the closer to the mark, the more points. Tap any heading to sort by it.</td></tr><tr><th>Footnote<code>board.footnote</code></th><td>Scores are as recorded by the judges at the field. A round still being measured or reviewed will not be here yet.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>3</span><h2>Sheet</h2><code>[sheet]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Type row label<code>sheet.type_row_label</code></th><td>Rnd Type</td></tr><tr><th>Target row label<code>sheet.target_row_label</code></th><td>Rnd Dist</td></tr><tr><th>Team row label<code>sheet.team_row_label</code></th><td>Team</td></tr><tr><th>Unit<code>sheet.unit</code></th><td>ft</td></tr><tr><th>Refresh seconds<code>sheet.refresh_seconds</code></th><td>60</td></tr><tr><th>Highlight top<code>sheet.highlight_top</code></th><td>3</td></tr><tr><th>Low score wins<code>sheet.low_score_wins</code></th><td>false</td></tr><tr><th>Dq column label<code>sheet.dq_column_label</code></th><td>DQ</td></tr><tr><th>Dq out answer<code>sheet.dq_out_answer</code></th><td>true</td></tr></table></section></div><div class="band"><div class="bandhead"><span>4</span><h2>Table</h2><code>[table]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Team heading<code>table.team_heading</code></th><td>Team</td></tr><tr><th>Total heading<code>table.total_heading</code></th><td>Total</td></tr><tr><th>Dq label<code>table.dq_label</code></th><td>DQ</td></tr><tr><th>Threw prefix<code>table.threw_prefix</code></th><td>threw</td></tr></table></section></div><div class="band"><div class="bandhead"><span>5</span><h2>Podium</h2><code>[podium]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Show<code>podium.show</code></th><td>true</td></tr><tr><th>Heading<code>podium.heading</code></th><td>Leading teams</td></tr><tr><th>Points label<code>podium.points_label</code></th><td>pts</td></tr></table></section></div><div class="band"><div class="bandhead"><span>6</span><h2>Messages</h2><code>[messages]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Loading<code>messages.loading</code></th><td>Loading the latest scores&hellip;</td></tr><tr><th>Failed<code>messages.failed</code></th><td>Could not reach the scoring sheet just now. It will keep trying &mdash; or use the Refresh button.</td></tr><tr><th>Empty<code>messages.empty</code></th><td>No scores recorded yet. Teams appear here as their rounds are measured.</td></tr><tr><th>Unset<code>messages.unset</code></th><td>The scoreboard is not set up yet. Check back when the competition is on.</td></tr><tr><th>Hidden heading<code>messages.hidden_heading</code></th><td>The scoreboard is closed</td></tr><tr><th>Hidden body<code>messages.hidden_body</code></th><td>Results are only shown while the competition is running. Come back on the day &mdash; or read how previous years went.</td></tr><tr><th>Hidden link<code>messages.hidden_link</code></th><td>/news</td></tr><tr><th>Hidden link text<code>messages.hidden_link_text</code></th><td>Past competitions</td></tr><tr><th>Updated<code>messages.updated</code></th><td>Updated {time}</td></tr><tr><th>Entries<code>messages.entries</code></th><td>{count} teams scored</td></tr><tr><th>Entries one<code>messages.entries_one</code></th><td>{count} team scored</td></tr><tr><th>Refresh<code>messages.refresh</code></th><td>Refresh</td></tr><tr><th>Noscript<code>messages.noscript</code></th><td>This scoreboard needs JavaScript to read the scoring sheet.</td></tr><tr><th>Noscript link text<code>messages.noscript_link_text</code></th><td>Open the scoring sheet directly</td></tr></table></section></div><div class="band"><div class="bandhead"><span>7</span><h2>Contact bar</h2><code>[contact_bar]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>contact_bar.heading</code></th><td>Want to build the next one?</td></tr><tr><th>Body<code>contact_bar.body</code></th><td>The trebuchet is designed, welded, and tuned by students. No experience needed to start &mdash; come to a meeting and find out where you fit.</td></tr><tr><th>Primary button text<code>contact_bar.primary_button_text</code></th><td>Join the team</td></tr><tr><th>Primary button link<code>contact_bar.primary_button_link</code></th><td>/calendar</td></tr><tr><th>Secondary button text<code>contact_bar.secondary_button_text</code></th><td>See our robots</td></tr><tr><th>Secondary button link<code>contact_bar.secondary_button_link</code></th><td>/projects</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  
+</main>

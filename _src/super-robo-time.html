@@ -1,0 +1,111 @@
+<!--
+title: Super Robo Time
+page: resources
+content: resources/super-robo-time
+output: resources/super-robo-time.html
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, the same as the resources page this sits under. The
+       old page did put the SRT photo across the top; it is now the .feature
+       band further down, where it can be a wide photo without pushing the
+       week-by-week material off the first screen. -->
+  {{include:page-head}}
+
+  <!-- =========================================================== what -->
+  <section class="band" id="what">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{what.eyebrow}}</span>
+        <h2>{{what.heading}}</h2>
+        {{#each what.paragraph}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================= feature -->
+  <!-- The photo the old page carried at the top. .feature lays its own navy
+       gradient over the image, so the text stays readable whatever photo is
+       named in config.toml. With no image set it is a plain navy band and
+       still reads correctly. -->
+  <section class="feature" style="background-image: url('{{feature.image_url}}');">
+    <div class="shell">
+      <div class="feature-inner reveal">
+        <h2>{{feature.heading}}</h2>
+        <p>{{feature.body}}</p>
+        <dl class="feature-stats">
+          {{#each feature.stat}}
+          <div>
+            <dt>{{this.0}}</dt>
+            <dd>{{this.1}}</dd>
+          </div>
+          {{/each}}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= kit -->
+  <!-- What a team needs while the event is running, in the order they need
+       it: install the software, build the thing, wire it, program it, then
+       find out what it has to do. -->
+  <section class="band band-alt" id="kit">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{kit.eyebrow}}</span>
+        <h2>{{kit.heading}}</h2>
+        <p>{{kit.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each kit.stage}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if body}}
+          <p>{{body}}</p>
+          {{/if}}
+
+          {{#if links}}
+          <ul class="link-list">
+            {{#each links}}
+            <li>
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+              <a href="{{this.1}}" target="_blank" rel="noopener">{{this.0}}</a>
+              {{#if this.2}}<span class="note">{{this.2}}</span>{{/if}}
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+
+          {{#if note}}
+          <p class="link-note">{{note}}</p>
+          {{/if}}
+
+          <!-- a card can end with one link back into the rest of the site.
+               Kept separate from `links` above because those all open in a
+               new tab, which is wrong for a page on this site. -->
+          {{#if link}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

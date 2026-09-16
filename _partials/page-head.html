@@ -1,0 +1,19 @@
+<!-- Banner band. Three shapes, all chosen by the page's own config rather
+       than by separate copies of this markup: a photo if [page_head] sets
+       image, a plain navy band if it sets image = "", and a back link above
+       the heading if it sets back_link.
+
+       The {{#if}} tags sit at the end of the line before, and the {{/if}}
+       at the start of the line after, so that closing a branch does not
+       leave a blank line behind in the built page. -->
+{{#if page_head.image_url}}  <section class="page-head has-image" style="background-image: url('{{page_head.image_url}}');">
+{{else}}  <section class="page-head">
+{{/if}}    <div class="shell page-head-inner">
+{{#if page_head.back_link}}      <a class="back-link" href="{{page_head.back_link}}">
+        <i class="fa fa-angle-left" aria-hidden="true"></i> {{page_head.back_text}}
+      </a>
+{{/if}}      <span class="eyebrow eyebrow-light">{{page_head.eyebrow}}</span>
+      <h1>{{page_head.heading}}</h1>
+      <p>{{page_head.body}}</p>
+    </div>
+  </section>

@@ -1,0 +1,148 @@
+####################################################################
+#  ROBOT WRITE-UP: T-Shirt Cannon Robot
+#  Lives at  sdsmtrobotics.github.io/projects/t-shirt-cannon
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The remote-controlled robot being built to fire t-shirts into the crowd at Mines events: a pneumatic cannon, an Arduino Mega, and a shell ejection system."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "T-Shirt Cannon Robot"
+years = "September 2020 &ndash; ongoing"
+tag   = "Outreach"
+intro = "A remote-controlled robot built to fire t-shirts into the crowd at Mines events. Still being built: the cannon works, the chassis is coming together."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Heath Beur, Josiah Huntington, Ashley Schnetzer, John McIntosh, Kaylee Herndon, Dean Morgan, Deron Graf, Devon Hamm"],
+  ["Purpose",  "Promotion of school and team"],
+  ["Cost",     "$2500ish"],
+  ["Features", "Remote control, pneumatic firing and ejection system."],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["Main code", "https://github.com/sdsmt-robotics/T-shirt-Cannon", "(GitHub)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "What better way is there to promote our robotics team and our engineering school than to use a robot to shoot t-shirts into the crowd at promotional events? This robot is being designed exactly for that purpose: promoting the South Dakota School of Mines and Technology.",
+  "Design began Fall of 2020, but construction was delayed due to a pandemic and all that jazz. Construction began Fall of 2021 where a prototype cannon was designed and constructed for testing effectiveness of the design. The cannon has been designed and updated to run remotely using an electrical system controlled by an Arduino Mega to control solenoid valves to fill the ballast tank and release the compressed air to fire a t-shirt. In order to allow for repeated firing, a pneumatic system has been set up to eject the shell allowing a new shell to fall into place.",
+  "A basic test code was created but will be revised and updated as the bot takes form and the final sensors and drive system are implemented.",
+  "Currently the tilt mechanism is being designed, and we are working on assembling the chassis and figuring out how we will mount the cannon.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "05-photo.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "T-shirt cannon album"
+body      = "The prototype cannon, the test firings, and the chassis coming together."
+link      = "/gallery/t-shirt-cannon"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "users"
+heading   = "Outreach"
+body      = "Where this robot is headed: the events the team turns up to."
+link      = "/about#outreach"
+link_text = "About the team"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "Every robot"
+body      = "The whole shelf, newest first."
+link      = "/projects"
+link_text = "Back to the robots"

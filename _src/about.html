@@ -1,0 +1,173 @@
+<!--
+title: About
+page: about
+content: about
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  {{include:page-head}}
+
+  <!-- ==================================================== who we are -->
+  <section class="band" id="who-we-are">
+    <div class="shell split">
+      <div class="split-text reveal">
+        <span class="eyebrow">{{who_we_are.eyebrow}}</span>
+        <h2>{{who_we_are.heading}}</h2>
+        {{#each who_we_are.paragraph}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
+      {{#if who_we_are.image_url}}
+      <figure class="split-media reveal">
+        <img src="{{who_we_are.image_url}}" alt="{{who_we_are.image_alt}}" loading="lazy">
+        {{#if who_we_are.caption}}
+        <figcaption>{{who_we_are.caption}}</figcaption>
+        {{/if}}
+      </figure>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- ==================================================== what we do -->
+  <section class="band band-alt" id="what-we-do">
+    <div class="shell split split-reverse">
+      <div class="split-text reveal">
+        <span class="eyebrow">{{what_we_do.eyebrow}}</span>
+        <h2>{{what_we_do.heading}}</h2>
+        {{#each what_we_do.paragraph}}
+        <p>{{this}}</p>
+        {{/each}}
+        {{#if what_we_do.discipline}}
+        <ul class="tag-list">
+          {{#each what_we_do.discipline}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+      </div>
+      {{#if what_we_do.image_url}}
+      <figure class="split-media reveal">
+        <img src="{{what_we_do.image_url}}" alt="{{what_we_do.image_alt}}" loading="lazy">
+        {{#if what_we_do.caption}}
+        <figcaption>{{what_we_do.caption}}</figcaption>
+        {{/if}}
+      </figure>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- ================================================= competitions -->
+  <section class="band" id="competitions">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{competitions.eyebrow}}</span>
+        <h2>{{competitions.heading}}</h2>
+        <p>{{competitions.intro}}</p>
+      </div>
+
+      <div class="grid grid-2">
+        {{#each competitions.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{name}}</h3>
+          <p class="info-card-meta">{{years}}</p>
+          <p>{{blurb}}</p>
+          {{#if link}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          {{else}}
+          <span class="card-link is-inert">{{link_text}}</span>
+          {{/if}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== outreach -->
+  <section class="band band-alt" id="outreach">
+    <div class="shell split">
+      <div class="split-text reveal">
+        <span class="eyebrow">{{outreach.eyebrow}}</span>
+        <h2>{{outreach.heading}}</h2>
+        {{#each outreach.paragraph}}
+        <p>{{this}}</p>
+        {{/each}}
+        {{#if outreach.link}}
+        <a class="card-link" href="{{outreach.link}}">{{outreach.link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        {{/if}}
+      </div>
+      {{#if outreach.image_url}}
+      <figure class="split-media reveal">
+        <img src="{{outreach.image_url}}" alt="{{outreach.image_alt}}" loading="lazy">
+        {{#if outreach.caption}}
+        <figcaption>{{outreach.caption}}</figcaption>
+        {{/if}}
+      </figure>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- ====================================================== officers -->
+  <section class="band" id="officers">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{officers.eyebrow}}</span>
+        <h2>{{officers.heading}}</h2>
+        <p>{{officers.intro}}</p>
+      </div>
+
+      <ul class="roster">
+        {{#each officers.person}}
+        <li class="person reveal">
+          <span class="person-role">{{role}}</span>
+          <span class="person-name">{{name}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ======================================================== join us -->
+  <section class="band band-alt" id="join">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{join_us.eyebrow}}</span>
+        <h2>{{join_us.heading}}</h2>
+        <p>{{join_us.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each join_us.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if body}}
+          <p>{{body}}</p>
+          {{/if}}
+          {{#if rows}}
+          <ul class="meet-list">
+            {{#each rows}}
+            <li><span class="when">{{this.0}}</span> <span>{{this.1}}</span></li>
+            {{/each}}
+          </ul>
+          {{/if}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sponsors - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>sponsors page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/sponsors">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Page head</h2><code>[page_head]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Eyebrow<code>page_head.eyebrow</code></th><td>The companies behind the robots</td></tr><tr><th>Heading<code>page_head.heading</code></th><td>Our sponsors</td></tr><tr><th>Body<code>page_head.body</code></th><td>Everything the team builds is paid for by somebody. These are the companies whose money, parts, and software make a season possible &mdash; and the levels they support us at.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>2</span><h2>Sponsors</h2><code>[sponsors]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>sponsors.eyebrow</code></th><td>Thank you</td></tr><tr><th>Heading<code>sponsors.heading</code></th><td>The people who make it possible</td></tr><tr><th>Intro<code>sponsors.intro</code></th><td>Four levels, from a hundred dollars to five thousand and up. Every one of them ends up on a robot, in a lab, or on a trailer heading to a competition.</td></tr><tr><th>Open text<code>sponsors.open_text</code></th><td>This level is open.</td></tr><tr><th>Open link<code>sponsors.open_link</code></th><td>/sponsors/support-us</td></tr><tr><th>Open link text<code>sponsors.open_link_text</code></th><td>Be the first to support us here</td></tr></table></section></div><div class="band"><div class="bandhead"><span>3</span><h2>Platinum</h2><code>[platinum]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Name<code>platinum.name</code></th><td>Platinum</td></tr><tr><th>Amount<code>platinum.amount</code></th><td>$5,000 and above</td></tr><tr><th>Perk<code>platinum.perk</code></th><td>Large logo on the competition robot, on every banner we travel with, and an appreciation plaque.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>4</span><h2>Gold</h2><code>[gold]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Name<code>gold.name</code></th><td>Gold</td></tr><tr><th>Amount<code>gold.amount</code></th><td>$1,000 &ndash; $4,999</td></tr><tr><th>Perk<code>gold.perk</code></th><td>Medium logo on the competition robot, and on the banners we take to competitions and events.</td></tr></table></section><section class="slot"><h3>Sponsor 1</h3><figure><img src="images/solidworks.svg" alt=""><figcaption><code>solidworks.svg</code><span>vector &mdash; any size</span></figcaption></figure><table><tr><th>Name<code>gold.sponsor[1].name</code></th><td>SolidWorks</td></tr><tr><th>Image alt<code>gold.sponsor[1].image_alt</code></th><td>SolidWorks</td></tr><tr><th>Link<code>gold.sponsor[1].link</code></th><td>https://www.solidworks.com/</td></tr></table></section><section class="slot"><h3>Sponsor 2</h3><figure><img src="images/knecht-home-center.png" alt=""><figcaption><code>knecht-home-center.png</code><span>200 &times; 200px</span></figcaption></figure><table><tr><th>Name<code>gold.sponsor[2].name</code></th><td>Knecht Home Center</td></tr><tr><th>Image alt<code>gold.sponsor[2].image_alt</code></th><td>Knecht Home Center, a Mead Lumber company</td></tr><tr><th>Link<code>gold.sponsor[2].link</code></th><td>https://meadlumber.com/locations/knecht-home-center-of-rapid-city/</td></tr></table></section></div><div class="band"><div class="bandhead"><span>5</span><h2>Silver</h2><code>[silver]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Name<code>silver.name</code></th><td>Silver</td></tr><tr><th>Amount<code>silver.amount</code></th><td>$500 &ndash; $999</td></tr><tr><th>Perk<code>silver.perk</code></th><td>Small logo on the competition robot for the year, in front of every team we compete against.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>6</span><h2>Bronze</h2><code>[bronze]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Name<code>bronze.name</code></th><td>Bronze</td></tr><tr><th>Amount<code>bronze.amount</code></th><td>$100 &ndash; $499</td></tr><tr><th>Perk<code>bronze.perk</code></th><td>Logo on this page, and updates on the team and its competitions twice a year.</td></tr></table></section><section class="slot"><h3>Sponsor 1</h3><figure><img src="images/polymaker.png" alt=""><figcaption><code>polymaker.png</code><span>200 &times; 200px</span></figcaption></figure><table><tr><th>Name<code>bronze.sponsor[1].name</code></th><td>Polymaker</td></tr><tr><th>Image alt<code>bronze.sponsor[1].image_alt</code></th><td>Polymaker</td></tr><tr><th>Link<code>bronze.sponsor[1].link</code></th><td>https://polymaker.com/</td></tr></table></section></div><div class="band"><div class="bandhead"><span>7</span><h2>Thanks</h2><code>[thanks]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>thanks.eyebrow</code></th><td>And everyone else</td></tr><tr><th>Heading<code>thanks.heading</code></th><td>Support that does not fit a level</td></tr><tr><th>Paragraph<code>thanks.paragraph</code></th><td><ol class="lines"><li>We are a student organization and a non-profit, so the team runs on school funding, fundraisers, and outside help. A box of filament, a length of aluminum, or an afternoon on somebody's machine keeps a build moving just as surely as a check does.</li><li>We are part of the South Dakota Mines <strong>CAMP</strong> program, and we thank them for their support.</li></ol></td></tr></table></section></div><div class="band"><div class="bandhead"><span>8</span><h2>Contact bar</h2><code>[contact_bar]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>contact_bar.heading</code></th><td>Put your name on the robot</td></tr><tr><th>Body<code>contact_bar.body</code></th><td>Support starts at $100, and every level puts a company in front of the students, schools, and teams we meet at national competitions. Tell us what you have in mind and we will send you the details.</td></tr><tr><th>Primary button text<code>contact_bar.primary_button_text</code></th><td>How sponsorship works</td></tr><tr><th>Primary button link<code>contact_bar.primary_button_link</code></th><td>/sponsors/support-us</td></tr><tr><th>Secondary button text<code>contact_bar.secondary_button_text</code></th><td>Email the team</td></tr><tr><th>Secondary button link<code>contact_bar.secondary_button_link</code></th><td>mailto:Robotics@mines.sdsmt.edu</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  
+</main>

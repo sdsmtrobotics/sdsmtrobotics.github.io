@@ -1,0 +1,141 @@
+####################################################################
+#  RESOURCES PAGE  (sdsmtrobotics.github.io/resources)
+#
+#  Everything you can see as text on the resources page is in this
+#  file. Change it here, then run:      ./build.py
+#
+#  This page is a signpost. The four pages it points at have their
+#  own folders next to this one:
+#
+#      content/resources/software-and-guides/
+#      content/resources/links/
+#      content/resources/super-robo-time/
+#      content/resources/robo-parts/
+#
+#  Not sure which setting is which? Open  map.html  in this folder.
+#  It shows every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/resources.html, not from here.
+[meta]
+description = "Software, guides, parts references and team links for the South Dakota Mines Rocker Robotics Team."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# No banner photo here, like the calendar and sponsors pages. The
+# whole point of this page is the four cards below it, and a photo
+# across the top would push them off the first screen. The setting
+# stays so a photo can be added later without touching any HTML.
+[page_head]
+image   = ""
+eyebrow = "Everything you need, in one place"
+heading = "Resources"
+body    = "The software we use, the guides we wrote, the parts we keep reaching for, and where the team's files live. Most of it is useful whether or not you are on the team."
+
+
+# --- THE FOUR SECTIONS: the cards in the middle -------------------
+# icon - any Font Awesome 4.7 name, without the "fa-" prefix.
+#        Browse them at https://fontawesome.com/v4/icons/
+# holds - the short list under the description. Leave it out and the
+#        card just shows its sentence.
+[sections]
+eyebrow = "Start here"
+heading = "Four places to look"
+intro   = "If you are new and not sure which one you want, <strong>Software and Guides</strong> is the one to open first &mdash; it is where the How to Robot Book lives."
+
+[[sections.card]]
+icon      = "laptop"
+heading   = "Software and Guides"
+body      = "Every program the team uses, with the download link and a guide for each one. This is also where the How to Robot Book is &mdash; an introduction to mobile robotics written by members of the team, as a series of lab exercises."
+holds     = [
+  "How to Robot Book",
+  "Git, ROS and OpenCV",
+  "Fusion 360, SOLIDWORKS, Eagle",
+  "VS Code and Mathcad",
+]
+link      = "/resources/software-and-guides"
+link_text = "Open software and guides"
+
+[[sections.card]]
+icon      = "cogs"
+heading   = "Robo Parts"
+body      = "A reference for the parts that turn up in project after project &mdash; which motor, which encoder, which motor controller &mdash; with the datasheet, the CAD and the library for each. Worth reading before ordering anything."
+holds     = [
+  "Motors and encoders",
+  "Motor controllers",
+  "Radios",
+  "Microcontroller pinouts",
+]
+link      = "/resources/robo-parts"
+link_text = "Open the parts reference"
+
+[[sections.card]]
+icon      = "rocket"
+heading   = "Super Robo Time"
+body      = "The annual build event the team runs with UAS and the 3D Print Club: three or four weeks of workdays that end with a robot you built. Everything a team needs during it is on this page."
+holds     = [
+  "Assembly and CAD guides",
+  "Wiring diagram and pinout",
+  "Base code and libraries",
+  "The challenge list",
+]
+link      = "/resources/super-robo-time"
+link_text = "Open Super Robo Time"
+
+[[sections.card]]
+icon      = "link"
+heading   = "Links"
+body      = "Where the team's own files live &mdash; the shared drive, the code, the older archives. Most of these need a Mines account or an invitation from someone on the team."
+holds     = [
+  "Google Drive",
+  "GitLab and GitHub",
+  "The Subversion archive",
+]
+link      = "/resources/links"
+link_text = "Open the links"
+
+
+# --- NOT FILED HERE: the cards near the bottom --------------------
+# Things people arrive on this page looking for that live elsewhere
+# on the site. external = true opens the link in a new tab.
+[elsewhere]
+eyebrow = "Also worth knowing"
+heading = "Not filed under Resources"
+intro   = "Three things people often come to this page for that are somewhere else on the site."
+
+[[elsewhere.card]]
+icon      = "github"
+heading   = "The team's code"
+body      = "The Arduino libraries linked from the parts reference, and a good deal else besides, are public on GitHub. Anyone can read them; team members can push to them."
+link      = "https://github.com/sdsmt-robotics"
+link_text = "sdsmt-robotics on GitHub"
+external  = true
+
+[[elsewhere.card]]
+icon      = "wrench"
+heading   = "How the robots were built"
+body      = "The write-ups for each robot cover what was tried, what worked and what did not. They are the closest thing the team has to a record of its own mistakes."
+link      = "/projects"
+link_text = "See the robots"
+
+[[elsewhere.card]]
+icon      = "calendar"
+heading   = "When we are in the lab"
+body      = "Meetings, workdays and competition dates. Nothing on this page needs booking &mdash; turn up to a workday and someone will show you where things are."
+link      = "/calendar"
+link_text = "Open the calendar"
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Cannot find what you are after?"
+body                  = "If something you needed was not here, it is worth asking &mdash; a lot of what the team knows has never been written down, and whoever answers can usually point you at the person who does know."
+primary_button_text   = "Email the team"
+primary_button_link   = "mailto:Robotics@mines.sdsmt.edu"
+secondary_button_text = "Ask on Discord"
+secondary_button_link = "https://discord.gg/pehkuYRxh6"

@@ -1,0 +1,73 @@
+####################################################################
+#  SETTINGS EVERY PAGE SHARES
+#
+#  Almost nothing belongs in here. Each page's words live in its own
+#  content/<page>/config.toml - this file is only for the handful of
+#  things the header and footer show on EVERY page, which no single
+#  page's config could decide on its own.
+#
+#  Change something here, then run:      ./build.py
+#  It rebuilds all 60-odd pages, because all of them use it.
+####################################################################
+
+
+# --- THE YEAR IN THE FOOTER ---------------------------------------
+#
+#  Every page's footer ends with "(c) <year> Rocker Robotics Team".
+#  It lives here because all 56 pages have to agree on it - it used to
+#  be typed into each page's source separately, which is how the album
+#  and news-post pages ended up showing no year at all.
+#
+#  Change it once each January, then run ./build.py.
+#
+#  This sits above the first [table] on purpose: a bare key written
+#  below one belongs to that table, not to the file.
+#
+year = 2026
+
+
+# --- THE SCOREBOARD BUTTON IN THE HEADER --------------------------
+#
+#  The pumpkin chunkin scoreboard reads its numbers straight out of a
+#  Google Sheet, and that same sheet decides whether the button to
+#  reach it appears in the header at all.
+#
+#  HOW TO TURN THE BUTTON ON AND OFF
+#  Put a cell in the sheet reading  Visible  with  TRUE  or  FALSE
+#  in the cell beside it. (A single cell saying "Visible: TRUE" works
+#  just as well.) TRUE and the button appears on every page; FALSE,
+#  or no such cell at all, and it does not. Nothing needs rebuilding
+#  and nothing needs committing - change the cell, then load any page
+#  of the site, and the button is already right.
+#
+#  A page open in front of you when you flip the cell does not change
+#  by itself - the header is only worked out as a page loads. Refresh
+#  it. The scoreboard page's own table is the part that re-reads the
+#  sheet on a timer.
+#
+#  BE CLEAR ABOUT WHAT THAT FLAG DOES
+#  It hides the BUTTON, not the numbers. The scoreboard page is still
+#  sitting at /pumpkin for anyone who knows the address, and the
+#  sheet's own address is in the page source, because the visitor's
+#  browser is what fetches it. Do not put anything in that sheet that
+#  would matter if a stranger read it.
+#
+[scoreboard]
+
+# Paste the sheet's link here. Either kind works:
+#   - the normal share link from the Share button, as long as the
+#     sheet is shared with "Anyone with the link - Viewer"
+#   - the link from File > Share > Publish to the web
+# Leave it empty ("") and the button never appears and the page says
+# it is not set up yet - which is the right state in the off-season.
+sheet_url = "https://docs.google.com/spreadsheets/d/1ERmUiAcvz-Iu8231oYioi5gi_4SQw0VKQasv3c7Vn3w/edit?usp=sharing"
+
+# Which tab of the workbook holds the scores. Leave empty for the
+# first tab. Otherwise open the tab in Google Sheets and copy the
+# number after "gid=" in the address bar.
+gid = ""
+
+# What the button says, and where it goes. Worth dating during the
+# event - "2026 Pumpkin" tells a visitor the numbers are current.
+nav_label = "Pumpkin"
+nav_link  = "/pumpkin"

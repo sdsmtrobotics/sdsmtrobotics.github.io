@@ -1,0 +1,173 @@
+####################################################################
+#  ROBOT WRITE-UP: AVC Car
+#  Lives at  sdsmtrobotics.github.io/projects/avc
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The self-driving car the team built for the National Robotics Challenge Autonomous Vehicle Competition: a Traxxas chassis, a Jetson Nano, and a full run recorded for a virtual competition."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "AVC Car"
+years = "January 2020 &ndash; April 2022"
+tag   = "NRC"
+intro = "A radio-control chassis turned into a self-driving car for the National Robotics Challenge Autonomous Vehicle Competition."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Alex Frye, Rachel Lauer, Logan Vojta, Samuel Ryckman, Seth Snyder"],
+  ["Purpose",  "To autonomously traverse a racecourse."],
+  ["Cost",     "~$800"],
+  ["Features", "ROS and fusion of multiple sensors"],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["CAD Model", "https://workbench.grabcad.com/workbench/projects/gczgCg2B8dCAbjKXKaCgpGbq1kBhXTb54oMDiS_w6XMp0L#/space/gcpVGRjnHs9xF9sF473iMKi3FITTZ766NTtMP_oPplg7qB", "(GrabCAD)"],
+  ["Code",      "https://github.com/sdsmt-robotics/nrc-avc-2020", "(GitHub)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "This bot was built and programmed for competing in the National Robotics Challenge (NRC) Autonomous Vehicle Competition (AVC). The purpose of this competition is to build and program a self-driving car that will navigate a course in the shortest time possible. Points are awarded for speed and also for successfully navigating through obstacles.",
+]
+
+[[robot.block]]
+heading = "Mechanical"
+text = [
+  "This robot was built on an old Traxxas RC car chassis that we had from a previous competition. This chassis is built for high speeds and difficult terrain. As such, it was extremely capable for handling the course.",
+  "The chassis was in need of repair as some parts were damaged from previous use. So the first step was replacing these components. We decided that even though we wholeheartedly trust our programming team, upgrading these parts to aluminum instead of plastic would be a good idea in case the car should ever accidentally drive into something.",
+  "Once these repairs were completed, the next challenge was coming up with a mounting solution for the electronics. Originally, the plan was to replace the old car topper with a custom 3D printed one. But due to time constraints, some maneuvering was done to allow the electronics to fit within the original plastic topper.",
+  "The electronics are mounted to 3D printed mounting plates. These are attached to an aluminum brace which is supported by the original mounts for the plastic topper. The topper is then held on by bolts which go through some 3D printed standoffs which support the electronics platform.",
+]
+
+[[robot.block]]
+heading = "Electrical"
+text = [
+  "This system is run primarily off of a Nvidia Jetson Nano. This is a small powerful single board computer. An Arduino BLE is used to interface with the various sensors and motors. Also, the BLE has a built-in IMU. Besides this IMU, the bot also relies on a GPS and a motor tachometer for measuring speed and position. A full diagram of the system is shown below.",
+]
+image   = "electrical-diagram.png"
+caption = "The full electrical system, from the two batteries to the servos."
+
+[[robot.block]]
+heading = "Programming"
+text = [
+  "For programming, there were two main components: the low-level functionality which would run on the Arduino, and the higher-level ROS functionality to run on the Jetson. Additionally, early on in the project we were planning on implementing computer vision code with OpenCV. Eventually, it was decided we could navigate the course successfully using only the other sensors, so we dedicated our resources towards those efforts.",
+  "The Arduino&rsquo;s main purpose on the bot is to control the motors and interface with the sensors. Both the main drive motor and the steering servos are controlled by PWM signals. The Arduino is connected to the tachometer and the built-in IMU. It takes values from these devices and makes them available to the Jetson. The communications between the Jetson and the Arduino are done over UART. The Arduino also regulates the speed of the main motor using a PID loop with feedback from the tachometer. The speed estimates from the tachometer are not very precise, but they are good enough for some coarse speed control.",
+  "On the Jetson side, a sensor fusion algorithm is used to combine and weight the feedback from all the various sensors. Based on the inputs, it is able to determine the car&rsquo;s current state on the course. The bot has preset waypoints on the course and is programmed to drive from one to the next. To help nail down the correct pathfinding algorithms and controls for driving, simulations within ROS were performed.",
+]
+
+# The old page ended this section with "A full recap can be found on the 2021
+# NRC Competition page", linking to /news/2021-nrc-competition. No such page
+# was ever published, so the sentence is left out rather than pointing
+# visitors at nothing.
+[[robot.block]]
+heading = "Results"
+text = [
+  "This bot was not taken to competition due to it being moved to virtual. But we were able to successfully complete a full run and record it for our submission. The run was not exactly blazing fast, but the bot did make it through all of the obstacles.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-racer.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "AVC car album"
+body      = "The car on the bench and out on the course."
+link      = "/gallery/2020-avc-car"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "newspaper-o"
+heading   = "The year it was built"
+body      = "What the pandemic did to the 2020 season, and what the team finished anyway."
+link      = "/news/2020-competition-cancellation-and-recap-of-year"
+link_text = "Read the recap"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "Spinnybot"
+body      = "The combat robot built for the same NRC competition, in the same two years."
+link      = "/projects/spinnybot"
+link_text = "See the robot"

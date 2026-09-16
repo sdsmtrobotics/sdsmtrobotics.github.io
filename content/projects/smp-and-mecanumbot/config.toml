@@ -1,0 +1,161 @@
+####################################################################
+#  ROBOT WRITE-UP: Surface Mobility Platform and Mecanumbot
+#  Lives at  sdsmtrobotics.github.io/projects/smp-and-mecanumbot
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The two ROS platforms the team keeps for learning, research and demos: an all-terrain Surface Mobility Platform with independent suspension, and a large mecanum-drive robot."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "Surface Mobility Platform and Mecanumbot"
+years = "January 2015 &ndash; August 2015"
+tag   = "Platforms"
+intro = "Two robots the team keeps around for learning, research and demos: an all-terrain chassis with independent suspension, and a large mecanum-drive platform with room inside for whatever is being tried next."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Ian Carlson, Scott Logan, Christopher Smith"],
+  ["Purpose",  "Learning and research, functional examples, demos"],
+  ["Features", "All terrain suspension system, large mecanum-drive robot"],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["Detailed design documentation", "https://github.com/LostOracle/BigBookOfRobotics/blob/master/DesignDoc.pdf", "(PDF on GitHub)"],
+  ["ROS packages",                  "https://github.com/smd-ros-devel", "(GitHub)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "The SMPs and Mecanumbot were developed for three primary uses:",
+]
+list = [
+  "Learning and research",
+  "Functional examples",
+  "Demos",
+]
+
+[[robot.block]]
+text = [
+  "The Surface Mobility Platform (SMP) is based on an all terrain chassis developed by Gears Educational Systems. The design incorporates independent suspension for the left and right sides of the robot. This chassis was modified by adding the silver motor-housings and beefier motors for more power.",
+  "The Mecanum frame was built by a senior design team during a previous year. It uses four large mecanum wheels for omni-directional travel. The chassis is primarily hollow on the inside providing lots of room for any additional electrical systems.",
+  "Both robots use nearly identical parts for the electrical system. Also, the two robots have identical ROS architecture with the exception of the drivers used to control the motor controllers. More information about the electrical or ROS aspects of these robots can be found in the detailed design document linked at the top of this page.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "05-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "06-photo.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "SMP and Mecanumbot album"
+body      = "Both platforms, in the lab and out on the grass."
+link      = "/gallery/smp-and-mecanumbot"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "code"
+heading   = "Our code"
+body      = "The ROS packages for these platforms, and everything since."
+link      = "https://github.com/sdsmt-robotics"
+link_text = "Browse on GitHub"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "Every robot"
+body      = "The whole shelf, newest first."
+link      = "/projects"
+link_text = "Back to the robots"

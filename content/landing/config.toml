@@ -1,0 +1,142 @@
+####################################################################
+#  LANDING PAGE  (the front page at sdsmtrobotics.github.io)
+#
+#  Everything you can see as text on the landing page is in this
+#  file. Change it here, then run:      ./build.py
+#
+#  Images live in the images/ folder next to this file. To swap one
+#  out, drop the new photo in there and put its filename below.
+#
+#  Not sure which image is which? Open  map.html  in this folder.
+#  It shows every photo and every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break.
+####################################################################
+
+
+# --- browser tab + search results ---------------------------------
+[meta]
+title       = "Home"
+description = "Rocker Robotics is a multidisciplinary competition robotics team at South Dakota Mines in Rapid City, building autonomous and remote-operated machines from scratch."
+
+
+# --- HERO: the big photo and headline at the top ------------------
+# Update this at the start of each season.
+[hero]
+image     = "hero.jpg"          # wide landscape photo, 2000px or wider
+eyebrow   = "This season"       # small gold label above the headline
+heading   = "Pumpkin Chunkin 2026"
+body      = "We are building a trebuchet for the Great Downtown Pumpkin Festival &mdash; <strong>Saturday, September 19</strong>, Main Street Square, Rapid City."
+
+primary_button_text   = "Follow the build"
+primary_button_link   = "/news"
+secondary_button_text = "Join the team"
+secondary_button_link = "#join"
+
+
+# --- ROBOTS: the row of three cards -------------------------------
+[robots]
+eyebrow = "What we build"
+heading = "Our latest robots"
+intro   = "Every year we pick a competition and design, build, and program a machine for it from scratch &mdash; mechanical, electrical, and software, all in house."
+
+# Each [[robots.card]] block below is one card, shown left to right.
+# Add a block to add a card; delete one to remove it.
+#
+#   image  - filename in images/. Leave as "" to show a
+#            "photos coming soon" placeholder instead.
+#   link   - page the card opens. Leave as "" for no link.
+
+[[robots.card]]
+name       = "RoboSub"
+tag        = "2025&ndash;26"
+blurb      = "Our first autonomous underwater vehicle, taking the team below the surface for the first time and into a new class of competition."
+image      = ""
+link       = ""
+link_text  = "Details coming soon"
+
+[[robots.card]]
+name       = "Sumobot 2025"
+tag        = "2024&ndash;25"
+blurb      = "A 20&nbsp;lb autonomous sumobot built for the National Robotics Challenge &mdash; find the opponent, and push it out of the ring."
+image      = "robot-sumobot.jpg"
+link       = "/projects/sumobot-2025"
+link_text  = "View details"
+
+[[robots.card]]
+name       = "IGVC"
+tag        = "2022&ndash;24"
+blurb      = "A fully autonomous ground vehicle for the Intelligent Ground Vehicle Competition &mdash; lidar, stereo vision, and lane following over two years of entries."
+image      = "robot-igvc.jpg"
+link       = "/projects/igvc"
+link_text  = "View details"
+
+
+# --- FEATURE: the full-width photo band ---------------------------
+[feature_band]
+image       = "feature.jpg"     # wide landscape photo, 2000px or wider
+heading     = "Multidisciplinary by design"
+body        = "Autonomous ground vehicles, combat robots, underwater vehicles, and a trebuchet that throws pumpkins down Main Street. Our robots are built from scratch, so they need mechanical design, electronics, and software in equal measure &mdash; and every major is welcome on the team."
+button_text = "More about us"
+button_link = "/about"
+
+# The three numbers along the bottom of the photo band.
+[[feature_band.stat]]
+value = "4"
+label = "Competition series"
+
+[[feature_band.stat]]
+value = "10+"
+label = "Years competing"
+
+[[feature_band.stat]]
+value = "2"
+label = "Labs in McLaury"
+
+
+# --- JOIN US: the three info cards --------------------------------
+[join_us]
+eyebrow = "Get involved"
+heading = "Get to know us"
+intro   = "No experience required. Show up to a meeting or a workday and we will find you something to build."
+
+# icon - any Font Awesome 4.7 name, without the "fa-" prefix.
+#        Browse them at https://fontawesome.com/v4/icons/
+
+[[join_us.card]]
+icon      = "users"
+heading   = "About the team"
+body      = "We are the South Dakota Mines Rocker Robotics Team, part of the Mines CAMP program. Design starts in the fall semester and competition follows in the spring."
+link      = "/about"
+link_text = "Learn more"
+
+# This card shows a table instead of a paragraph. Update the times here.
+[[join_us.card]]
+icon      = "calendar"
+heading   = "When we meet"
+link      = "/calendar"
+link_text = "See the calendar"
+rows      = [
+  ["Meetings", "Thursdays, 4:04&nbsp;pm &mdash; M306"],
+  ["Workdays", "Wednesdays, 5:00&nbsp;pm"],
+  ["",         "Saturdays, 12:00&nbsp;pm"],
+  ["Labs",     "McLaury 101 &amp; 107"],
+]
+
+[[join_us.card]]
+icon      = "graduation-cap"
+heading   = "Outreach"
+body      = "We run demos at middle school events, festivals, and Mines events, and mentor FIRST Lego League teams around the Black Hills."
+link      = "/gallery"
+link_text = "See what we do"
+
+
+# --- SPONSOR BAR: the dark band near the bottom -------------------
+[sponsor_bar]
+heading               = "Become part of our sponsor community"
+body                  = "Sponsorship keeps our robots on the field &mdash; funding parts, materials, and travel to competition, and putting your name in front of the engineers graduating out of South Dakota Mines."
+primary_button_text   = "Support us"
+primary_button_link   = "/sponsors/support-us"
+secondary_button_text = "Contact us"
+secondary_button_link = "mailto:Robotics@mines.sdsmt.edu"

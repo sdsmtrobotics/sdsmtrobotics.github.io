@@ -1,0 +1,216 @@
+####################################################################
+#  ROBOT WRITE-UP: Spinnybot
+#  Lives at  sdsmtrobotics.github.io/projects/spinnybot
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The 3 lb combat robot that is its own weapon: a full-body spinner turning at 500 rpm, with custom PID motor controllers and an LED arrow to show which way it is driving."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "Spinnybot"
+years = "September 2019 &ndash; April 2022"
+tag   = "NRC"
+intro = "A 3&nbsp;lb beetleweight combat robot that is its own weapon: the whole chassis spins at around 500&nbsp;rpm, and drives while it does it."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Alex Gronlund, Joseph Allen, Samuel Ryckman, Dustin Richards, Landon Lamoreaux, Christian Weaver, Erick Eickhoff"],
+  ["Purpose",  "Compete in the NRC Combat Robot Competition"],
+  ["Cost",     "$750ish"],
+  ["Features", "Driving while spinning really fast, lightweight design, custom PID motor controllers."],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["CAD models",                     "https://workbench.grabcad.com/workbench/projects/gcDUWyolBm-7X4hkjSHDAVwPzHKK0SsGJueHwewQIQdvJ-#/space/gcx4g17flDqrJ8bOFwb8rWHYhIXk7LinDgN9jG-S6oZxwm", "(GrabCAD)"],
+  ["Main code and PCB",              "https://github.com/sdsmt-robotics/nrc-combat-2020", "(GitHub)"],
+  ["Motor controller code and PCB",  "https://github.com/sdsmt-robotics/MotorSpeedController", "(GitHub)"],
+  ["Design review slides",           "https://docs.google.com/presentation/d/1n9pNYOr1bhKZR7h_VIULX_EbOxlsOeezkEhRFCdRV-4/edit?usp=sharing", "(Google Slides)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "This robot was constructed to compete in the Combat Robot event at the 2020 NRC competition. The goal of this competition is to construct a 14&quot; x 14&quot; x 14&quot; 3lb beetleweight robot. Two robots fight head-to-head in an enclosed 8&rsquo;x8&rsquo; arena until one of the bots becomes immobilized.",
+  "The robot we designed for this was a full-body spinning robot. It is circular and the entire robot is designed to spin at approximately 500rpm. The primary weapon is a tooth sticking out of the side to hit the other robots.",
+]
+
+[[robot.block]]
+heading = "Mechanical"
+text = [
+  "Mechanically, the idea behind this design was to put as much mass as possible behind the weapon so that we could maximize damage. With a weight limit of 3lbs, if mass is split between the weapon and drivetrain there would be a tradeoff between weapon effectiveness and controllability of the robot depending on how the mass was split between the two. By making the entire robot the weapon, all the mass is simultaneously part of both the weapon and the drivetrain.",
+  "For the chassis, the main components and the selected materials are as follows:",
+]
+list = [
+  "Outer ring: spring steel",
+  "Interior insert: polystyrene foam",
+  "Motor housing: aluminum",
+  "Tooth: titanium",
+  "Foam retainer: carbon fiber",
+]
+
+[[robot.block]]
+text = [
+  "This design was tested for durability and effectiveness with a prototype constructed from similar materials and dimensions. In the testing, the design held up quite well despite using weaker materials, and the weapon proved very effective.",
+  "In Fall of 2020, we began machining the motor mounts and some of the other components. But any further progress came to a standstill as the university was moved to virtual learning and the competition was canceled due to the Covid-19 pandemic. Production of the mechanical components continued in Spring of 2021. Alex machined the titanium tooth over break, and Dr. Koontz of CAMP assisted with producing the wheel hubs, foam inserts, and finishing the motor mounts.",
+  "For the foam retainers, originally the plan was to produce a thin polycarbonate grid. But we realized this didn&rsquo;t provide much protection or support to the foam and we had some weight to spare. So we moved to a composite panel instead. To produce this, we received help from CAPE lab who assisted with doing the layup. After this, we waterjetted out the retainers with help from Todd Curtis of AMP lab.",
+]
+
+[[robot.block]]
+heading = "Electrical and programming"
+text = [
+  "The planned electrical system for this robot is shown in the diagram below. Brushless motors with integrated drivers were chosen for the primary drive motors. An ESP32 was chosen as the main microcontroller since it is fairly powerful and commonly available at low prices. The IMU used was the ICM-20649. This is a wide range IMU that can accommodate angular rotation rates up to 667 rpm. For controlling the robot, the Xbee remote controllers our team developed would be used.",
+]
+image   = "electrical-diagram.png"
+caption = "The planned electrical system, from the battery to the two drive motors."
+
+# The old page said the awkward PID results could be seen "in the videos in the
+# gallery above". Those videos were on the old server and never made it into
+# this repository, so that phrase is left out of the paragraph below.
+[[robot.block]]
+text = [
+  "A unique feature of the control system is the power switch. We initially considered using two metal strips that would be screwed together to power on the bot. But in the spirit of never going with the easy option, we decided to implement two capacitive touch buttons that would toggle the power on and off. This solution would ideally be easier to use and potentially more reliable since it wouldn't be as prone to mechanical failure.",
+  "Because the robot would be constantly rotating, the direction the bot would drive could not be shown by any fixed point on the chassis. Instead, the direction of driving would be indicated by LED strips which would change colors through the course of rotation to create an &ldquo;arrow&rdquo; of sorts pointing in the direction the bot would drive. As the LED strips would rotate through the angles, they would light up for most of the rotation as red and then switch to blue at the &ldquo;0&rdquo; angle.",
+  "The main portions of the control system (the microcontroller, IMU, voltage regulators, xBee, and power switching) were designed into a single custom PCB. This was done to conserve space and reduce the number of free components inside of the battlebot. This also reduced and simplified the wiring greatly. This was desirable, since wire connections tend to be a main point of failure in environments with large amounts of vibration or impact.",
+  "Since the robot would be spinning at a high rate of speed, very accurate motor control was needed to achieve reliable movement. To make this happen, the team decided to develop a custom motor speed controller. The device would be controlled through SPI communications from the main control board and would manage the speed of the motor using a PID algorithm. The controller would read the speed of the motor through quadrature outputs from a magnetic motor encoder. All of the components of the speed controller would be built onto a single board which would be mounted on the rear of the motor. The controller used on the board was an Atmega328p.",
+  "Getting the motor controller to work as intended was quite challenging. The kinematics required to get the robot to translate while rotating results in a speed profile for the motors which is a sinusoid that oscillates at the rate of chassis rotation. To achieve this, the PID controller had to be tuned very aggressively, resulting in not-so-pretty results with a free-spinning wheel. However, when running on the ground, the controllers ran the motors well enough to produce acceptable translation while spinning at the desired rpm.",
+  "To test the full control system, in the 2019&ndash;2020 semesters we assembled a simple test chassis with some spare parts resembling the components that would eventually be used. This test chassis was successfully able to translate while rotating at a low rpm. The next year, the team assembled a more refined test chassis. This one was capable of spinning at even higher speeds (around 200rpm) but was limited by the imbalance of the mounted components. Even though these test chassis were not able to obtain the full speed, they did prove the concept was feasible.",
+  "Another test was isolated testing with the IMU. This involved setting up the microcontroller, the IMU, and the LED strip on a piece of foam and spinning it at various speeds to see if the IMU could track the current angle. The LED strip would be illuminated in the same manner as what would be done on the final chassis. This setup gave an easy way to troubleshoot and refine the IMU code in a more controlled environment.",
+  "Once the mechanical components were finished and the custom PCBs were assembled, a fair amount of work on the code was still required to get the bot working as intended. Even though we had tested individual components extensively, there were still issues that arose when the code was run with the full system. These were worked through, but in a somewhat rushed manner (some of the final changes were actually made between rounds of the competition). But in the end, the control system and programming mostly worked as intended.",
+]
+
+# The old page ended this section with "A full recap can be found on the 2021
+# NRC Competition page", linking to /news/2021-nrc-competition. No such page
+# was ever published, so the sentence is left out rather than pointing
+# visitors at nothing.
+[[robot.block]]
+heading = "Results"
+text = [
+  "In Fall of 2021, we brought the bot to competition. The design held up well and performed as expected for the most part.",
+]
+
+[[robot.block]]
+heading = "Plans for the future"
+text = [
+  "Even though we were happy with the bot&rsquo;s performance at the competition, there is always room for improvement. Should we decide to compete again next year, we would like to shore up some of the weak points such as the connection from the composite retainer into the motor mounts and the materials directly behind the tooth. Also, even though the foam insert does a good job of absorbing impact energy, it isn't especially resilient and does deteriorate more rapidly than what would be ideal. We would like to look into a nylon insert with topology optimization to conserve weight and give us strength in the locations we really need it. Also, we would like to look into some larger motors. We typically had plenty of battery left after the matches, and more power is always more fun.",
+]
+
+[[robot.block]]
+heading = "Acknowledgements"
+text = [
+  "We had a lot of help with producing this bot and would like to thank a few individuals and groups in particular.",
+]
+list = [
+  "<strong>Dr. Ryan Koontz and CAMP:</strong> played a vital role in helping us machine parts for the bot. Labs were inaccessible this semester, so he assisted with finishing the motor mounts, machining the foam inserts, and making the wheel hubs.",
+  "<strong>Dr. Veluswamy and CAPE lab:</strong> lended time, tools, and materials for producing the composite foam retainers. We had ordered some materials for doing this, but they didn&rsquo;t work out. So they graciously donated the materials to redo it.",
+  "<strong>Todd Curtis and AMP lab:</strong> set up time on the waterjet on very short notice to get the carbon fiber retainers cut out.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-bb.png"
+caption = ""
+
+[[robot.photo]]
+image   = "02-controllerprototype.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-electricalprototype.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-mechanicalprototype.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "Spinnybot albums"
+body      = "The prototypes, the machining, and the finished bot in the arena."
+link      = "/gallery/2022-spinnybot"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "newspaper-o"
+heading   = "The year it was built"
+body      = "What the pandemic did to the 2020 season, and what the team finished anyway."
+link      = "/news/2020-competition-cancellation-and-recap-of-year"
+link_text = "Read the recap"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "AVC car"
+body      = "The self-driving car built for the same NRC competition, in the same two years."
+link      = "/projects/avc"
+link_text = "See the robot"

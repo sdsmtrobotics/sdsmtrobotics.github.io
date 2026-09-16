@@ -1,0 +1,227 @@
+####################################################################
+#  NEWS WRITE-UP: Winter 2025 Newsletter
+#  Lives at  sdsmtrobotics.github.io/news/winter-2025-newsletter
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[post.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every write-up shares - the link back to the news
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/posts/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the headline below.
+[meta]
+description = "The winter 2025 newsletter: how the mechanical, electrical and computer science sub-teams got the NRC sumobot ready for Marion, Ohio, plus the T-Shirt Cannon, the trebuchet and the lab."
+
+
+# --- THE STORY ----------------------------------------------------
+#   title  - the headline. Also the browser tab title.
+#   date   - the date line under the headline.
+#   tag    - the small gold label above the headline.
+#   intro  - the sentence under the headline. Links are allowed.
+#   image  - a banner photo behind the headline: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the story starts higher up.
+#
+#   Keep title, date and intro in step with this story's card on the
+#   news page, which is set in content/news/config.toml.
+[post]
+title = "Winter 2025 Newsletter"
+date  = "March 10, 2025"
+tag   = "Newsletter"
+intro = "Our winter newsletter: how the mechanical, electrical, and computer science sub-teams got the NRC sumobot ready for Marion, Ohio, plus the outreach we ran alongside it."
+image = ""
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[post.block]] is one piece of the story and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown full width
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[post.block]]
+heading = "Welcome!"
+text = [
+  "This past semester consisted of starting work on designing, building, and programming our robot for our competition this year. In this newsletter, we also cover some of our community involvement where we share our love for robotics. We have outlined the progress made by our mechanical, electrical, and computer science sub-teams in getting the robots ready.",
+]
+
+[[post.block]]
+heading = "About the Team"
+text = [
+  "The South Dakota Mines Rocker Robotics Team is located on the South Dakota School of Mines campus in Rapid City, South Dakota, and is dedicated to introducing students to robotics. Instead of being tied to a particular competition, we give ourselves the freedom to decide on which competition(s) to attend year by year. Partially as a result of this, we build most of our parts &mdash; from machining metal to designing custom circuit boards.",
+  "We are a multidisciplinary team that welcomes anyone, but we are composed mostly of mechanical, electrical, and computer engineering majors, as well as computer science. Besides all of the technical skills that our team members develop, we also provide plenty of opportunities to advance leadership and project management skills. Our members can apply these skills within our organization via elected officer positions such as President, Vice-President, Treasurer, Secretary, Outreach Coordinator, and Historian.",
+]
+image   = "team-photo.png"
+caption = "The team, winter 2025."
+
+[[post.block]]
+heading = "NRC Sumo Bot"
+text = [
+  "This year the team is competing at the National Robotics Challenge (NRC) in Marion, Ohio. The competition will take place from April 3rd through the 5th. The goal is to design a robot that fits within a 20&rdquo; x 20&rdquo; x 20&rdquo; box and is less than 20 pounds that will autonomously push the opponent out of the arena. The team will also complete a document detailing the design process of our robot for the judges. To use time effectively, those working on the competition robot were split into three sub-teams with Mechanical, Electrical, and Computer Science focuses. More about what each sub-team has accomplished is shared below.",
+]
+
+[[post.block]]
+heading = "Mechanical Team"
+text = [
+  "The mechanical sub-team is focused on designing and building the chassis, drivetrain, and outer shell of the robot. We utilize CAD software to design the robot to the specifications of the competition and hold multiple design reviews with professionals before building the final design.",
+]
+image   = "sumobot-cad.png"
+caption = "The current CAD design."
+
+[[post.block]]
+text = [
+  "Our approach this year is to construct a robust and straightforward robot that allows for any necessary redesign after testing. The design is hexagonal shaped wedge so the enemy robot will slide off of ours if attacking from the side. It is also mirrored to allow either side to act as front or back. The mechanical team is currently moving into the building phase after completing the prototype robot for the computer science team to practice with. The plan this year is to have the test chassis working in addition to the final robot in order to practice matches with.",
+]
+image   = "test-chassis.png"
+caption = "The test chassis."
+
+[[post.block]]
+heading = "Electrical Team"
+text = [
+  "The electrical sub team's responsibilities consist of powering the various components and connecting them to establish communication between the systems. This year, the team designed a total of five boards: two for the Sumo Bot, two for the T-Shirt Cannon, and an improved version of our existing E-Stop board.",
+  "The power distribution board was designed to draw power directly from our battery and supply 12V to the motors and 5V to the logic board and various sensors. It mitigates noise and back current, protecting our battery and other connected components. It is engineered to handle the sudden increase in current demand the Neo motors require when encountering resistance.",
+]
+image   = "power-distribution-board.png"
+caption = "The power distribution board."
+
+[[post.block]]
+text = [
+  "Our sumo robot's main logic board processes sensor data, powers 5V/3.3V sensors, and handles CAN motor control. It uses an ATSAM3X8EA microcontroller and provides extra IO pins, a serial port for debugging, and serial communication. Currently, it supports four 1D LiDARs, four line sensors, two LED sets, one IMU (Inertial Measurement unit), and one optical sensor.",
+]
+image   = "logic-board.png"
+caption = "The logic board."
+
+[[post.block]]
+heading = "Computer Science Team"
+text = [
+  "The competition will start with two robots oriented in one of four different orientations. Our robot will begin spinning looking for the opponent with the TFmini LiDAR sensors mounted on either side. Once the opposing bot has been detected, one of our mirrored sides will be set as the front. If we lose sight of the opponent, we will continue spinning until we detect them again. Two LiDARs mounted a set distance apart allow us to determine if the opponent is directly in front of us or more to the side. We use that in addition to the distance provided to pursue the opponent.",
+  "We&rsquo;re also using line sensors to detect the edge of the arena. These will be placed near each wheel. Their job is to ensure the bot avoids driving out of the ring by quickly reacting when the edge is detected. An optical flow sensor will also be used to measure the bot&rsquo;s current velocity. We will be implementing this sensor along with an IMU to be able to determine our orientation and position as well as if our opponent is pushing us out of the ring.",
+]
+image   = "algorithm-overview.png"
+caption = "An overview of the algorithm."
+
+[[post.block]]
+heading = "Trebuchet"
+text = [
+  "Once again, the team participated in the annual Pumpkin Chunkin&rsquo; competition during the Rapid City Pumpkin Festival. This year we fixed some issues with the old trebuchet but overall left the design alone. The wood on the trebuchet was starting to bend and crack in a few spots along with the arm rubbing the sides as it fired, so we knew this would be its last year. The trebuchet performed as well as in previous years, if not better. The team won the competition with a total score of 1069.34 points! There are plans to redesign the trebuchet for next year once competition work is finished.",
+]
+image   = "trebuchet-team.png"
+caption = "The team with the trebuchet."
+
+[[post.block]]
+heading = "T-Shirt Cannon"
+text = [
+  "This year, the team resumed the T-Shirt Cannon project, focusing on designing the chassis and custom electrical boards. The chassis, inspired by last year&rsquo;s Intelligent Ground Vehicle Competition, features a split beam for added support and mounting points. The current drivetrain is a fixed-wheel tank drive for simplicity, with plans to upgrade to front-wheel swerve steering if time allows. A linear actuator enables adjustable firing angles for the cannon, with mounts and testing expected to be completed soon.",
+]
+image   = "cannon-chassis-cad.png"
+caption = "CAD model for the chassis."
+
+[[post.block]]
+image   = "cannon-pressure-system.png"
+caption = "The cannon and pressure system."
+
+[[post.block]]
+text = [
+  "Two boards are being designed for the cannon. The logic board reads controller input to manage robot movement, while the control board (or &lsquo;spag board&rsquo;) handles pneumatics and LED controls. Originally a breadboard setup, the spag board now consolidates onto a PCB to manage relays for loading, firing, and bleeding the pneumatics. It also controls LEDs to display pressure gauge levels and showcase the cannon.",
+]
+image   = "spag-board.png"
+caption = "The &lsquo;spag board&rsquo;."
+
+[[post.block]]
+image   = "cannon-logic-board.png"
+caption = "The control board."
+
+[[post.block]]
+text = [
+  "In addition to design and manufacturing, we will also be checking and repairing connections for the pressure system, and adding a fresh coat of paint to make the cannon look even cooler!",
+]
+
+[[post.block]]
+heading = "Lab Updates"
+text = [
+  "We have been working towards getting a desktop CNC for our tool room. It will significantly increase our manufacturing abilities and allow us to do more in-house manufacturing. Those abilities include more precise manufacturing and replacing uses of tools no longer allowed in our work space. We have also completely redesigned the layout of the lab space and reorganized it. It is much more conducive to working now as things are more organized and cleaned up.",
+]
+image   = "lab.png"
+caption = "The lab, after the reorganisation."
+
+[[post.block]]
+heading = "Community Outreach"
+text = [
+  "This past semester, we engaged with the community through various outreach events. At Go To Mines, team members helped the Electrical Engineering and Computer Science department showcase projects and answer questions from prospective students and families. We demonstrated our robots at Summer Nights downtown and introduced robotics to scouts at the Girl Scouts&rsquo; BIG Event. Additionally, we supported the local First Lego League competition by building arenas, judging, and providing assistance wherever needed.",
+]
+
+[[post.block]]
+heading = "That&rsquo;s it for Now"
+text = [
+  "Thank you so much for your support! We are glad we could share our progress with you, and we look forward to creating more amazing robots!",
+  "A special thanks to our sponsors as well, what we do would not be possible without all the help and support we have received from all of you!",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear on the page.
+#
+#  There is no photo band on this page: every picture in the
+#  newsletter belongs beside the paragraph it illustrates, in the
+#  story above. Add [[post.photo]] blocks here and the band appears,
+#  with the heading set in content/posts/config.toml.
+#
+#    image   - a filename in the images/ folder next to this file.
+#    caption - shown under the photo when it is opened full size,
+#              and read out to screen readers.
+# ------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[post.link]]
+icon      = "cogs"
+heading   = "The 2025 sumobot"
+body      = "The 20&nbsp;lb autonomous sumobot this newsletter was written around."
+link      = "/projects/sumobot-2025"
+link_text = "See the robot"
+
+[[post.link]]
+icon      = "picture-o"
+heading   = "2025 Sumobot album"
+body      = "The build, the shell, and the CAD behind it."
+link      = "/gallery/2025"
+link_text = "Open the album"
+
+[[post.link]]
+icon      = "heart"
+heading   = "Our sponsors"
+body      = "The people and companies who make a season like this possible."
+link      = "/sponsors"
+link_text = "See the sponsors"

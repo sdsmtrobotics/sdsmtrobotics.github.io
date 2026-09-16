@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>calendar - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>calendar page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/calendar">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Page head</h2><code>[page_head]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Eyebrow<code>page_head.eyebrow</code></th><td>Meetings, workdays, and competitions</td></tr><tr><th>Heading<code>page_head.heading</code></th><td>Calendar</td></tr><tr><th>Body<code>page_head.body</code></th><td>Everything the team has scheduled, in one place. Meetings and workdays repeat every week during the semester; competition and outreach dates are added as they are confirmed.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>2</span><h2>Calendar</h2><code>[calendar]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>calendar.eyebrow</code></th><td>The full schedule</td></tr><tr><th>Heading<code>calendar.heading</code></th><td>What is on</td></tr><tr><th>Intro<code>calendar.intro</code></th><td>Click any event for the details. The calendar is public, so you can add it to your own phone or laptop with the button underneath and it will keep itself up to date.</td></tr><tr><th>Calendar id<code>calendar.calendar_id</code></th><td>robotics@mines.sdsmt.edu</td></tr><tr><th>Timezone<code>calendar.timezone</code></th><td>America/Denver</td></tr><tr><th>Default view<code>calendar.default_view</code></th><td>MONTH</td></tr><tr><th>Color<code>calendar.color</code></th><td>7986CB</td></tr><tr><th>Subscribe text<code>calendar.subscribe_text</code></th><td>Add this calendar to your own</td></tr><tr><th>Subscribe note<code>calendar.subscribe_note</code></th><td>Opens Google Calendar and asks whether to subscribe. On an iPhone or Mac, use the same button and choose &ldquo;Add to Calendar&rdquo; when prompted.</td></tr></table></section></div><div class="band"><div class="bandhead"><span>3</span><h2>Upcoming</h2><code>[upcoming]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>upcoming.heading</code></th><td>Next up</td></tr><tr><th>Count<code>upcoming.count</code></th><td>6</td></tr><tr><th>Loading<code>upcoming.loading</code></th><td>Loading the next few events&hellip;</td></tr><tr><th>Failed<code>upcoming.failed</code></th><td>The next few events could not be loaded. Everything is in the calendar above.</td></tr><tr><th>None<code>upcoming.none</code></th><td>Nothing on the calendar right now. Term-time meetings are listed below.</td></tr><tr><th>Api key<code>upcoming.api_key</code></th><td>AIzaSyCoAZJp84r-5Tk-nbqvnGZY2ZYip4vBRno</td></tr></table></section></div><div class="band"><div class="bandhead"><span>4</span><h2>Meet</h2><code>[meet]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Eyebrow<code>meet.eyebrow</code></th><td>If you are new</td></tr><tr><th>Heading<code>meet.heading</code></th><td>Where to start</td></tr><tr><th>Intro<code>meet.intro</code></th><td>The calendar is the exact schedule, but almost everything on it is one of these three. You do not need to sign up for anything &mdash; turn up to any of them.</td></tr></table></section><section class="slot"><h3>Card 1</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>meet.card[1].icon</code></th><td>calendar</td></tr><tr><th>Heading<code>meet.card[1].heading</code></th><td>The weekly rhythm</td></tr><tr><th>Link<code>meet.card[1].link</code></th><td>/about#join</td></tr><tr><th>Link text<code>meet.card[1].link_text</code></th><td>More about joining</td></tr><tr><th>Rows<code>meet.card[1].rows</code></th><td><ol class="lines"><li>Meetings &middot; Thursdays, 4:04&nbsp;pm &mdash; M306</li><li>Workdays &middot; Wednesdays, 5:00&nbsp;pm</li><li> &middot; Saturdays, 12:00&nbsp;pm</li><li>Labs &middot; McLaury 101 &amp; 107</li></ol></td></tr></table></section><section class="slot"><h3>Card 2</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>meet.card[2].icon</code></th><td>map-marker</td></tr><tr><th>Heading<code>meet.card[2].heading</code></th><td>Where to find us</td></tr><tr><th>Body<code>meet.card[2].body</code></th><td>Our main lab is <strong>McLaury 101</strong>, with a second lab in <strong>McLaury 107</strong>. On a workday there is almost always someone in there, whether or not anything is on the calendar.</td></tr><tr><th>Link<code>meet.card[2].link</code></th><td>/about</td></tr><tr><th>Link text<code>meet.card[2].link_text</code></th><td>About the team</td></tr></table></section><section class="slot"><h3>Card 3</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>meet.card[3].icon</code></th><td>trophy</td></tr><tr><th>Heading<code>meet.card[3].heading</code></th><td>Competition season</td></tr><tr><th>Body<code>meet.card[3].body</code></th><td>Design work runs through the fall and competitions follow in the spring. Those dates land on the calendar as soon as they are confirmed, and the travel ones are worth planning around early.</td></tr><tr><th>Link<code>meet.card[3].link</code></th><td>/projects</td></tr><tr><th>Link text<code>meet.card[3].link_text</code></th><td>See the robots</td></tr></table></section></div><div class="band"><div class="bandhead"><span>5</span><h2>Contact bar</h2><code>[contact_bar]</code></div><section class="slot"><h3>Section</h3><div class="noimg">no image in this block</div><table><tr><th>Heading<code>contact_bar.heading</code></th><td>Not sure which one to turn up to?</td></tr><tr><th>Body<code>contact_bar.body</code></th><td>A Wednesday workday is the easiest place to start &mdash; there is no agenda to walk in on, and someone will be in the lab building something. Send us a message and we will tell you what is on this week.</td></tr><tr><th>Primary button text<code>contact_bar.primary_button_text</code></th><td>Email the team</td></tr><tr><th>Primary button link<code>contact_bar.primary_button_link</code></th><td>mailto:Robotics@mines.sdsmt.edu</td></tr><tr><th>Secondary button text<code>contact_bar.secondary_button_text</code></th><td>Join us on Discord</td></tr><tr><th>Secondary button link<code>contact_bar.secondary_button_link</code></th><td>https://discord.gg/pehkuYRxh6</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  
+</main>

@@ -1,0 +1,39 @@
+<!--
+title: Page not found
+page: 404
+content: 404
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, the same as the calendar and resources pages. Someone
+       who lands here took a wrong turn, so the cards that send them back on
+       their way have to be on the first screen rather than under a hero. -->
+  {{include:page-head}}
+
+  <!-- ==================================================== the way out -->
+  <!-- GitHub Pages serves this page for any address that does not exist, at
+       whatever depth the bad link was - /robots/nope as easily as /nope. Every
+       link and asset on it therefore has to be site-absolute, which is what
+       the shared partials already use, and the reason this page is built from
+       them rather than kept as its own hand-written file. -->
+  <section class="band" id="routes">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{routes.eyebrow}}</span>
+        <h2>{{routes.heading}}</h2>
+        <p>{{routes.intro}}</p>
+      </div>
+
+      <div class="grid grid-2">
+        {{#each routes.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          <p>{{body}}</p>
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{include:page-bottom}}

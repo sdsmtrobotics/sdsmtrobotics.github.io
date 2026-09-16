@@ -1,0 +1,154 @@
+####################################################################
+#  NEWS WRITE-UP: 2019 ASME Student Design Competition
+#  Lives at  sdsmtrobotics.github.io/news/2019-asme-student-design-competition
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[post.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every write-up shares - the link back to the news
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/posts/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the headline below.
+[meta]
+description = "B.A.M., the Ball Acquisition Machine, at the Lansing E-Fest for the ASME Pick-and-Place Race: one elimination round won, and one ended by a collision."
+
+
+# --- THE STORY ----------------------------------------------------
+#   title  - the headline. Also the browser tab title.
+#   date   - the date line under the headline.
+#   tag    - the small gold label above the headline.
+#   intro  - the sentence under the headline. Links are allowed.
+#   image  - a banner photo behind the headline: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the story starts higher up.
+#
+#   Keep title, date and intro in step with this story's card on the
+#   news page, which is set in content/news/config.toml.
+[post]
+title = "2019 ASME Student Design Competition"
+date  = "April 6, 2019"
+tag   = "ASME"
+intro = "B.A.M. &mdash; the Ball Acquisition Machine &mdash; at the Lansing E-Fest for the Pick-and-Place Race. It won its first elimination round, then stopped dead after a collision in the second."
+image = ""
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[post.block]] is one piece of the story and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown full width
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[post.block]]
+text = [
+  "This year, the team chose to once again compete in the ASME Student Design Competition. The challenge this year was called &ldquo;Pick-and-Place Race&rdquo;. The purpose of the competition was to collect balls of various sizes from 20cm tubes and dispense them into a 50cm x 50cm scoring area. The field was a 5m x 5m area with 16 balls on stands arranged in a grid. The competition started with a qualifying round where each team ran by themselves. The scores from this round were used to seed positions for the elimination rounds. In the elimination rounds, teams went head to head with the winner advancing to the next round. The full rules can be found <a href=\"https://drive.google.com/file/d/1_l6SL10za4Tx4B-J9OLNjNDz7CLOLdUP/view?usp=sharing\" target=\"_blank\" rel=\"noopener\">here</a>.",
+]
+image   = "field-layout.png"
+caption = "The Pick-and-Place field: 16 balls on stands, with a starting area at either end."
+
+[[post.block]]
+text = [
+  "This year the team chose to go to the E-Fest at Lansing Michigan instead of the one in Pomona California since the date was a few weeks later. This later date was helpful since due to the busy schedules of team members construction of the robot was a bit delayed. The two weeks leading up to the competition were particularly busy as that is when the bulk of the robot was built.",
+  "The robot the team built for competition, <a href=\"/projects/b-a-m\">BAM (or Ball Acquisition Machine)</a>, is an omnidirectional robot with an open area at the front for collecting balls and a corral and doors at the back for dispensing balls. This design is somewhat simple and proved to be quite effective, but it was not the original concept. Through the months of design leading up to competition, the plan was to have a basket at the side of the robot for collecting balls. This basket would raise up on an elevator and dump balls into the storage area. From there balls would be sorted into small and large sizes and released through the doors into the corral. After implementing this design, the team realized that while the elevator was strong enough to raise the basket, it was not strong enough to flip it over the top and dump it. The team attempted many ideas for solving this issue. Some of these gave improvements, but the motion was still not easy to control.",
+  "A larger issue that the team ran into was with the control system. Leading up to competition, the various components had been wired, programmed, and tested individually. But when these components were tested together most of the functionality was broken. The night before competition, the team worked late into the night in the hotel room working on this as well as trying to fix the bugs with the custom wireless controller developed for driving BAM. The team made good progress, but the controller and BAM's control system still had issues.",
+  "Work continued once the team arrived at the competition. BAM was able to drive, and the doors and corral were working, but the lift and basket were not functional. At 30 minutes before the qualifier round, the team decided to take drastic action. The basket was removed from the lift and the sorting grate was taken out of the ball storage area. Then, the front panel was removed and replaced with a piece of cardboard the height of the tubes. The strategy was that the robot could run directly into the tubes and the balls would roll into the storage area. As for the controller, it was partially working at this point but there were still some bugs with the programming. Because of this, the team elected to fall back to version 1 of the controller from the previous year. The revised collection system was quickly tested, and it worked!",
+  "The qualifying round went surprisingly well. Most of the balls were collected giving us a respectable score. This put the team in the upper half of the rankings at the start of the elimination rounds. During the rest of the day and also that night at the hotel room the team refined the new ball collection system and also added some important enhancements such as pretty RGB lights.",
+  "The next day, the elimination rounds began. BAM ran well during the first round of competition and outscored the competition to advance to the next round. That next round of elimination didn't go quite as well, however. Both BAM and the opposing bot collected the first row of balls. Then there was a collision between the two bots and BAM stopped moving. We assume the impact bumped loose a connection or perhaps static exchanged between the bots and shocked the control system. Either way, the other bot collected the remaining balls, won the round, and eliminated us from the competition.",
+  "There were approximately 40 teams at the competition and our team ended up slightly above the middle in the final rankings. The team spent the rest of the time in Michigan enjoying the other events at the E-Fest and the other attractions in the area.",
+  "All in all, it was a successful season. Our team learned a lot and we are ready to start again next season!",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear on the page.
+#
+#    image   - a filename in the images/ folder next to this file.
+#    caption - shown under the photo when it is opened full size,
+#              and read out to screen readers. Empty is fine; the
+#              page falls back to "<headline>, photo 2".
+#
+#  Delete every one of these blocks and the photo band disappears.
+# ------------------------------------------------------------------
+
+[[post.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "04-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "05-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "06-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "07-photo.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[post.link]]
+icon      = "cogs"
+heading   = "B.A.M."
+body      = "The Ball Acquisition Machine, and what it was supposed to do."
+link      = "/projects/b-a-m"
+link_text = "See the robot"
+
+[[post.link]]
+icon      = "picture-o"
+heading   = "2019 ASME album"
+body      = "The photographs from the E-Fest in Lansing."
+link      = "/gallery/2019-asme-competition"
+link_text = "Open the album"
+
+[[post.link]]
+icon      = "newspaper-o"
+heading   = "Everything else"
+body      = "Competition results, outreach and newsletters, newest first."
+link      = "/news"
+link_text = "Back to the news"

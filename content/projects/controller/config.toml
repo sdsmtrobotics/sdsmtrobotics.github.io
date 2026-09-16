@@ -1,0 +1,146 @@
+####################################################################
+#  ROBOT WRITE-UP: Controller
+#  Lives at  sdsmtrobotics.github.io/projects/controller
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The team's first custom controller: an ATMEGA328P and an XBee-Pro 900hp, built for the Soccerbots and meant to drive anything the team builds afterwards."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "Controller"
+years = "October 2017 &ndash; March 2018"
+tag   = "Hardware"
+intro = "The team's first custom controller, built for the <a href=\"/projects/soccerbots\">Soccerbots</a> and designed to drive anything the team built after them."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Ryan Wise, Micah Runner, Zane Brandt, Ellie Burczek"],
+  ["Purpose",  "Control robots using an Xbee"],
+  ["Cost",     "$50ish"],
+]
+
+# There is no `file` list here, so this page shows the details card on
+# its own. The old page did have a Links box - Parts List, CAD Models,
+# Code, Circuit Diagrams and PCB Layouts - but all four pointed at
+# nothing, so there is nothing to carry over. If the files turn up,
+# add them back as:
+#
+#   file = [
+#     ["Parts list", "https://...", "(Google Drive)"],
+#   ]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "Custom controller developed for use with the Soccerbots for the 2018 ASME SDC. Even though the controller was designed for this purpose, the primary goal was to create a controller that could easily be used with any of our robots in the future. Designing it ourselves would give us complete control of how the controller behaves and sends information to the robot.",
+  "The controller used an ATMEGA328P as the controller and an XBee-Pro 900hp for communications. Power was supplied from a 9V battery.",
+  "As would be expected with a first version, there were some bugs and areas for improvement. That said, the controller was very much a success and was used in competition with no issues or loss of connection.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-photo.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "Controller album"
+body      = "The board, the case, and the controller in hand."
+link      = "/gallery/controller"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "Soccerbots"
+body      = "The three robots this controller was built to drive."
+link      = "/projects/soccerbots"
+link_text = "See the robots"
+
+[[robot.link]]
+icon      = "gamepad"
+heading   = "Controller v2"
+body      = "The redesign: better battery life, a charger built in, triggers and bumpers."
+link      = "/projects/controller-v2"
+link_text = "See the hardware"

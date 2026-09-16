@@ -1,0 +1,142 @@
+####################################################################
+#  NEWS WRITE-UP: 2019 Pumpkin Chunkin Competition
+#  Lives at  sdsmtrobotics.github.io/news/2019-pumpkin-chunkin-competition
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[post.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every write-up shares - the link back to the news
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/posts/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the headline below.
+[meta]
+description = "Efficiency work on the trebuchet matched last year's distances with 30% less counterweight, but heavier pumpkins and a cold, rainy day left us in 5th."
+
+
+# --- THE STORY ----------------------------------------------------
+#   title  - the headline. Also the browser tab title.
+#   date   - the date line under the headline.
+#   tag    - the small gold label above the headline.
+#   intro  - the sentence under the headline. Links are allowed.
+#   image  - a banner photo behind the headline: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the story starts higher up.
+#
+#   Keep title, date and intro in step with this story's card on the
+#   news page, which is set in content/news/config.toml.
+[post]
+title = "2019 Pumpkin Chunkin Competition"
+date  = "September 11, 2019"
+tag   = "Pumpkin Chunkin"
+intro = "Efficiency work on the trebuchet got last year's distances out of roughly 30% less counterweight. A cold, rainy day and heavier pumpkins than we had practised with left us in 5th."
+image = ""
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[post.block]] is one piece of the story and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown full width
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[post.block]]
+text = [
+  "This past Saturday, we once again competed in the annual pumpkin chunkin competition. Our team spent the weeks leading up to the competition working on improvements to the trebuchet to increase effeciency. Thanks to these modifications we were able to get it to perform simliar throws to last year using approximately 30% less weight.",
+  "The competition was a very rainy and cold day. Because of this, sadly not many spectators showed up. Also, the competition was limited to just the rounds in the morning wheras in the past the top ranked teams have had additional rounds in the afternoon.",
+  "The trebuchet operated well, but threw different distances than we were expecting. This was largely due to the pumpkins being different weights from what we had practiced with. Our throws were as follows:",
+]
+list = [
+  "100ft target: 150ft",
+  "200ft target: 180ft",
+  "250ft target: 300ft",
+  "Distance throw: 240ft",
+]
+
+[[post.block]]
+text = [
+  "Next year we are going to try to get a better handle on the correlation between pumpkin weight, counterweight, and throw distance. We also plan to reinforce and increase the stability of the trebuchet so that we can more comfortably add more weights.",
+  "Our team ended up in 5th place and Formula won the top prize. Congratulations to them as well as all the other participants!",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear on the page.
+#
+#    image   - a filename in the images/ folder next to this file.
+#    caption - shown under the photo when it is opened full size,
+#              and read out to screen readers. Empty is fine; the
+#              page falls back to "<headline>, photo 2".
+#
+#  Delete every one of these blocks and the photo band disappears.
+# ------------------------------------------------------------------
+
+[[post.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[post.photo]]
+image   = "04-testingarea.jpg"
+caption = "The testing area."
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[post.link]]
+icon      = "picture-o"
+heading   = "2019 Pumpkin Chunkin album"
+body      = "The trebuchet, the testing area, and the day itself."
+link      = "/gallery/2019-pumpkin-chunkin-competition"
+link_text = "Open the album"
+
+[[post.link]]
+icon      = "trophy"
+heading   = "The rebuild"
+body      = "Three years later the whole trebuchet was rebuilt out of 4x4s, and won."
+link      = "/news/2022-trebuchet"
+link_text = "Read the write-up"
+
+[[post.link]]
+icon      = "newspaper-o"
+heading   = "Everything else"
+body      = "Competition results, outreach and newsletters, newest first."
+link      = "/news"
+link_text = "Back to the news"

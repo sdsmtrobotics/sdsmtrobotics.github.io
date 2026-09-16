@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>albums/t-shirt-cannon - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>albums/t-shirt-cannon page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/gallery/t-shirt-cannon">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Album</h2><code>[album]</code></div><section class="slot"><h3>Section</h3><figure><img src="images/01-photo.jpg" alt=""><figcaption><code>01-photo.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Title<code>album.title</code></th><td>T-Shirt Cannon</td></tr><tr><th>Date<code>album.date</code></th><td>August 1, 2020</td></tr><tr><th>Season<code>album.season</code></th><td>2020 &ndash; 2021</td></tr><tr><th>Tag<code>album.tag</code></th><td>Outreach</td></tr><tr><th>Intro<code>album.intro</code></th><td>The robot built to fire team t-shirts into the crowd at Mines events, from the first prototype cannon onwards.</td></tr></table></section><section class="slot"><h3>Photo 1</h3><figure><img src="images/01-photo.jpg" alt=""><figcaption><code>01-photo.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Caption<code>album.photo[1].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 2</h3><figure><img src="images/02-photo.jpg" alt=""><figcaption><code>02-photo.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Caption<code>album.photo[2].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 3</h3><figure><img src="images/03-photo.jpg" alt=""><figcaption><code>03-photo.jpg</code><span>1600 &times; 1067px</span></figcaption></figure><table><tr><th>Caption<code>album.photo[3].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 4</h3><figure><img src="images/04-photo.jpg" alt=""><figcaption><code>04-photo.jpg</code><span>1600 &times; 1067px</span></figcaption></figure><table><tr><th>Caption<code>album.photo[4].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 5</h3><figure><img src="images/05-photo.jpg" alt=""><figcaption><code>05-photo.jpg</code><span>1600 &times; 1200px</span></figcaption></figure><table><tr><th>Caption<code>album.photo[5].caption</code></th><td></td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  <p class="note">Some of the wording on this page &mdash; the link back, the headings around the photos, the band at the bottom &mdash; is shared by every page in <code>content/albums/</code> and is not listed above. Change it once in <code>content/albums/config.toml</code> and every one of them follows.</p>
+</main>

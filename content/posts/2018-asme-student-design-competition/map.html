@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>posts/2018-asme-student-design-competition - what goes where</title>
+<style>
+ :root { --navy:#002554; --gold:#B3A369; --line:#e4e7eb; }
+ * { box-sizing:border-box }
+ body { margin:0; padding:0 0 4rem; background:#f5f6f8; color:#2c3138;
+        font:15px/1.6 'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif }
+ header { background:var(--navy); color:#fff; padding:2.2rem 1.5rem }
+ header div { max-width:1100px; margin:auto }
+ header h1 { margin:0 0 .4rem; font-weight:500; font-size:1.6rem }
+ header p { margin:.3rem 0 0; color:#c3ccd8; max-width:70ch }
+ header code { background:rgba(255,255,255,.14); padding:.1rem .4rem; border-radius:3px }
+ main { max-width:1100px; margin:auto; padding:0 1.5rem }
+ .band { margin-top:2rem; background:#fff; border:1px solid var(--line); border-radius:6px;
+          overflow:hidden }
+ .bandhead { display:flex; align-items:center; gap:.75rem; padding:.9rem 1.25rem;
+              background:var(--navy); color:#fff }
+ .bandhead span { display:grid; place-items:center; width:26px; height:26px; flex:none;
+                   border-radius:50%; background:var(--gold); color:var(--navy);
+                   font-weight:700; font-size:.85rem }
+ .bandhead h2 { margin:0; font-size:1.05rem; font-weight:600; flex:1 }
+ .bandhead code { font-size:.8rem; color:var(--gold) }
+ .slot { display:grid; grid-template-columns:260px 1fr; gap:1.25rem; align-items:start;
+          padding:1.25rem; border-top:1px solid var(--line) }
+ .slot h3 { grid-column:1/-1; margin:0; font-size:.75rem; letter-spacing:.12em;
+             text-transform:uppercase; color:#8b929c }
+ figure { margin:0 }
+ figure img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block;
+               border-radius:4px; background:#e9ecf0 }
+ figure.missing img { outline:2px solid #c0392b }
+ figcaption { margin-top:.4rem; display:flex; justify-content:space-between; gap:.5rem;
+               font-size:.78rem; color:#767c86 }
+ figcaption code { color:var(--navy); font-weight:600 }
+ .noimg { display:grid; place-items:center; aspect-ratio:16/10; border-radius:4px;
+           border:1px dashed #c8cdd4; color:#98a0aa; font-size:.82rem; text-align:center;
+           padding:.5rem }
+ table { width:100%; border-collapse:collapse }
+ th { width:12rem; text-align:left; vertical-align:top; padding:.5rem .75rem .5rem 0;
+       font-weight:600; border-bottom:1px solid var(--line) }
+ th code { display:block; font-weight:400; font-size:.75rem; color:#8b929c }
+ td { vertical-align:top; padding:.5rem 0; border-bottom:1px solid var(--line) }
+ td .lines { margin:0; padding-left:1.2rem }
+ td .lines li { margin-bottom:.4rem }
+ td .lines li:last-child { margin-bottom:0 }
+ .note { margin:2rem 0 0; padding:1rem 1.25rem; background:#fff; border:1px solid var(--line);
+          border-left:3px solid var(--gold); border-radius:4px; color:#5b626b; font-size:.9rem }
+ .note code { color:var(--navy); font-weight:600 }
+ header .links { margin-top:.9rem }
+ header .links a { color:var(--gold); font-weight:600 }
+ @media (max-width:720px) { .slot { grid-template-columns:1fr } }
+</style>
+<header><div>
+  <h1>posts/2018-asme-student-design-competition page &mdash; what goes where</h1>
+  <p>Every photo and every piece of text on the page, in the order they appear.
+     Each row shows the setting name to change in <code>config.toml</code>.</p>
+  <p>To swap a photo: put the new file in <code>images/</code> and set the
+     filename in <code>config.toml</code>. Then run <code>./build.py</code>.</p>
+  <p><strong>This file is generated &mdash; editing it does nothing.</strong></p>
+  <p class="links"><a href="/news/2018-asme-student-design-competition">Open the live page</a> to compare side by side.</p>
+</div></header>
+<main><div class="band"><div class="bandhead"><span>1</span><h2>Post</h2><code>[post]</code></div><section class="slot"><h3>Section</h3><div class="noimg">placeholder shown &mdash; no photo set</div><table><tr><th>Title<code>post.title</code></th><td>2018 ASME Student Design Competition</td></tr><tr><th>Date<code>post.date</code></th><td>March 6, 2018</td></tr><tr><th>Tag<code>post.tag</code></th><td>ASME</td></tr><tr><th>Intro<code>post.intro</code></th><td>Robot soccer in Pomona, California, with three bots in a 50&nbsp;cm cube: one shooter and two defenders with solenoid kickers. A solid mid-table finish against roughly 32 teams in our first year at the competition.</td></tr></table></section><section class="slot"><h3>Block 1</h3><div class="noimg">no image in this block</div><table><tr><th>Text<code>post.block[1].text</code></th><td><ol class="lines"><li>For the 2017-2018 season, the team chose the ASME Student Design Competition as the season's challenge.</li><li>The challenge for the year was robot soccer. Four teams would compete against eachother to score goals using tennis balls. Each team could have any number of robots as long as they all fit within a 50cm cube. The field was comprised of a 5m x 5m playing surface with a team's goal on each wall. Eight tennis balls would start in the middle. Each game consisted of two 5 minute halves. Scoring was as follows:</li></ol></td></tr><tr><th>List<code>post.block[1].list</code></th><td><ol class="lines"><li>Scoring ball into same colored goal: <strong>5pts</strong></li><li>Scoring ball into differenct colored goas: <strong>2pts</strong></li><li>Goal scored on team: <strong>-1pts</strong></li></ol></td></tr></table></section><section class="slot"><h3>Block 2</h3><figure><img src="images/field-layout.png" alt=""><figcaption><code>field-layout.png</code><span>879 &times; 777px</span></figcaption></figure><table><tr><th>Text<code>post.block[2].text</code></th><td><ol class="lines"><li>The complete rules can be found <a href="https://drive.google.com/file/d/1H1pg4VSXc3St6fuMCnHlgxHrEbWVTcjm/view?usp=sharing" target="_blank" rel="noopener">here</a>.</li></ol></td></tr><tr><th>Caption<code>post.block[2].caption</code></th><td>The playing field: a goal on each wall, and eight tennis balls in the middle.</td></tr></table></section><section class="slot"><h3>Block 3</h3><div class="noimg">no image in this block</div><table><tr><th>Text<code>post.block[3].text</code></th><td><ol class="lines"><li>The team developed three robots for use in the competition - one for offense and two for defense. The offensive bot had a tennis ball shooter for scoring balls and the two defensive bots each had a wall for blocking shots and a solenoid kicker. More details about these bots can be found on the <a href="/projects/soccerbots">Soccerbots write-up</a>.</li><li>The competition took place at Pamona California. The team drove there and arrived the day before competition. As is the custom with robotics competitions, the night before was a mad scramble to get things working. All robots were assembled and wired, and the defense bots were running as intended. But the offensive bot was not working. After a few hours and some somewhat aggresive threats directed the way of the offensive bot, of the team did successfully get it running and even had some time to do some practice in the hotel lobby.</li><li>At the competition the next day, things mostly went smoothly. There were approximatly 32 teams at the competition. Through the preliminary rounds, we were fairly successful and generally one of the higher scoring teams. We found that we did have some issues with speed though. Some teams employed the swarm strategy and used a large number of small fast robots. This was difficult for our team to defend against since our robots were mostly on the slower side and we only had three of them. At the end of the qualifying rounds, our score left us near the middle of the pack. Since only the top eight teams continued on, that ended the competition for our team.</li><li>Even though we would have liked to place better, this was still a solid showing considering this was our first year at this competition. The members of our team worked really hard this year and did a great job. We are excited for next year!</li></ol></td></tr></table></section><section class="slot"><h3>Photo 1</h3><figure><img src="images/01-shooterbotshooting.png" alt=""><figcaption><code>01-shooterbotshooting.png</code><span>640 &times; 480px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[1].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 2</h3><figure><img src="images/02-beforeround.jpg" alt=""><figcaption><code>02-beforeround.jpg</code><span>1600 &times; 1200px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[2].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 3</h3><figure><img src="images/03-minesbots.jpg" alt=""><figcaption><code>03-minesbots.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[3].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 4</h3><figure><img src="images/04-minesteams.jpg" alt=""><figcaption><code>04-minesteams.jpg</code><span>1600 &times; 1200px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[4].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 5</h3><figure><img src="images/05-ourbots.jpg" alt=""><figcaption><code>05-ourbots.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[5].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 6</h3><figure><img src="images/06-roboticsteam.jpg" alt=""><figcaption><code>06-roboticsteam.jpg</code><span>1600 &times; 1200px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[6].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 7</h3><figure><img src="images/07-beach.jpg" alt=""><figcaption><code>07-beach.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[7].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Photo 8</h3><figure><img src="images/08-testingshooterbot.jpg" alt=""><figcaption><code>08-testingshooterbot.jpg</code><span>1600 &times; 900px</span></figcaption></figure><table><tr><th>Caption<code>post.photo[8].caption</code></th><td></td></tr></table></section><section class="slot"><h3>Link 1</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>post.link[1].icon</code></th><td>cogs</td></tr><tr><th>Heading<code>post.link[1].heading</code></th><td>The Soccerbots</td></tr><tr><th>Body<code>post.link[1].body</code></th><td>How the shooter and the two defenders were built, in their own write-up.</td></tr><tr><th>Link<code>post.link[1].link</code></th><td>/projects/soccerbots</td></tr><tr><th>Link text<code>post.link[1].link_text</code></th><td>See the robots</td></tr></table></section><section class="slot"><h3>Link 2</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>post.link[2].icon</code></th><td>picture-o</td></tr><tr><th>Heading<code>post.link[2].heading</code></th><td>2018 ASME album</td></tr><tr><th>Body<code>post.link[2].body</code></th><td>The photographs from Pomona, and from the testing before it.</td></tr><tr><th>Link<code>post.link[2].link</code></th><td>/gallery/2018-asme-competition</td></tr><tr><th>Link text<code>post.link[2].link_text</code></th><td>Open the album</td></tr></table></section><section class="slot"><h3>Link 3</h3><div class="noimg">no image in this block</div><table><tr><th>Icon<code>post.link[3].icon</code></th><td>newspaper-o</td></tr><tr><th>Heading<code>post.link[3].heading</code></th><td>Everything else</td></tr><tr><th>Body<code>post.link[3].body</code></th><td>Competition results, outreach and newsletters, newest first.</td></tr><tr><th>Link<code>post.link[3].link</code></th><td>/news</td></tr><tr><th>Link text<code>post.link[3].link_text</code></th><td>Back to the news</td></tr></table></section></div>
+  <p class="note">The top navigation and the footer are not listed here &mdash; they are
+     shared by every page on the site. To change those, edit
+     <code>_partials/header.html</code> and <code>_partials/footer.html</code>.</p>
+  <p class="note">Some of the wording on this page &mdash; the link back, the headings around the photos, the band at the bottom &mdash; is shared by every page in <code>content/posts/</code> and is not listed above. Change it once in <code>content/posts/config.toml</code> and every one of them follows.</p>
+</main>

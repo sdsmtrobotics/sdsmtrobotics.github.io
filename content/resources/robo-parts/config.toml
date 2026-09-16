@@ -1,0 +1,274 @@
+####################################################################
+#  ROBO PARTS  (sdsmtrobotics.github.io/resources/robo-parts)
+#
+#  Everything you can see as text on this page is in this file.
+#  Change it here, then run:      ./build.py
+#
+#  Not sure which setting is which? Open  map.html  in this folder.
+#  It shows every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+#
+#  An "&" inside a web address has to be written "&amp;" here. Some
+#  of the addresses below have several.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/robo-parts.html, not here.
+[meta]
+description = "The motors, encoders, motor controllers, radios and microcontrollers the Rocker Robotics team keeps coming back to, with the datasheet, CAD and Arduino library for each."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# No banner photo, like the resources page this sits under.
+[page_head]
+image     = ""
+back_link = "/resources"
+back_text = "Resources"
+eyebrow   = "What we keep reaching for"
+heading   = "Robo Parts"
+body      = "A compilation of information about the parts the team uses over and over &mdash; what each one is good for, and where its datasheet, CAD model and Arduino library are. Worth reading before ordering anything."
+
+
+# --- THE FILTER BUTTONS -------------------------------------------
+# The row of buttons above the cards. `value` has to match the
+# `category` on the part cards below, and the first one - with an
+# empty value - is the "show everything" button.
+#
+# Add a category here AND set it on the parts that belong to it,
+# otherwise its button shows nothing.
+[[parts.filter]]
+label = "All parts"
+value = ""
+
+[[parts.filter]]
+label = "Motors"
+value = "motor"
+
+[[parts.filter]]
+label = "Encoders"
+value = "encoder"
+
+[[parts.filter]]
+label = "Motor controllers"
+value = "controller"
+
+[[parts.filter]]
+label = "Radios"
+value = "radio"
+
+
+# --- THE PARTS ----------------------------------------------------
+#
+#  Each [[parts.part]] is one card. The settings are:
+#
+#    icon      any Font Awesome 4.7 name, without the "fa-" prefix.
+#              Browse them at https://fontawesome.com/v4/icons/
+#    heading   the part's name, as you would search for it
+#    meta      the small grey line under the name - what it is
+#    category  which filter button shows this card. Must match one
+#              of the `value` settings above.
+#    body      what it is actually like to use. This is the part
+#              worth writing carefully; the datasheet covers the
+#              numbers, and nothing else covers this.
+#    links     the list of links. Each one is
+#              [ "the words", "the address" ] and can take a third
+#              entry, shown in grey after the link.
+#
+#  To add a part, copy a whole [[parts.part]] block. Order on the
+#  page is order in here.
+[parts]
+eyebrow = "The shortlist"
+heading = "Parts we use again and again"
+intro   = "None of this is a rule &mdash; it is what the team has ended up with after a decade of building, and what it learned about each one along the way."
+
+[[parts.part]]
+icon     = "cog"
+heading  = "RS-550"
+meta     = "Brushed DC motor"
+category = "motor"
+body     = "The DC motor to rule them all. Cheap, powerful for its size, and in enough of the team's robots that there is usually a spare in a drawer."
+links    = [
+  ["Specs", "https://motors.vex.com/other-motors/bb-550"],
+  ["CAD",   "https://workbench.grabcad.com/workbench/projects/gcMCAQQrKQrSKwFO6Fc-ST3ptkgyOyBmVsKy1IxMmrPNM9#/space/gczH9gfYhdj1Ms-Age4YZnsXx6dmL7uBfIr8U7Gx8ZZW12/link/1544391", "(GrabCAD)"],
+]
+
+[[parts.part]]
+icon     = "cog"
+heading  = "RB-POL-368"
+meta     = "12&nbsp;V gearmotor with encoder"
+category = "motor"
+body     = "Somewhat expensive small motors, but the encoder is built in &mdash; which is worth a great deal when you want closed-loop control and do not want to mount a separate encoder on the shaft."
+links    = [
+  ["Specs", "https://www.robotshop.com/media/files/pdf2/126-rb-pol-368.pdf", "(PDF)"],
+  ["CAD",   "https://workbench.grabcad.com/workbench/projects/gcMCAQQrKQrSKwFO6Fc-ST3ptkgyOyBmVsKy1IxMmrPNM9#/space/gczH9gfYhdj1Ms-Age4YZnsXx6dmL7uBfIr8U7Gx8ZZW12/link/2179957", "(GrabCAD)"],
+]
+
+[[parts.part]]
+icon     = "tachometer"
+heading  = "CUI rotary encoder"
+meta     = "Capacitive, incremental or absolute"
+category = "encoder"
+body     = "Reasonably cheap and fairly accurate. Capacitive rather than optical, so it puts up with the dust and swarf of a workshop better than most. Comes in an incremental version and a multi-turn absolute one."
+links    = [
+  ["CUI Devices &mdash; rotary encoders", "https://www.cuidevices.com/catalog/motion/rotary-encoders"],
+  ["Digi-Key &mdash; AMT102-V",           "https://www.digikey.com/product-detail/en/cui-devices/AMT102-V/102-1307-ND/827015", "(incremental)"],
+  ["Digi-Key &mdash; AMT213G-V",          "https://www.digikey.com/product-detail/en/cui-devices/AMT213G-V/102-AMT213G-V-ND/10443848", "(multi-turn absolute)"],
+]
+
+[[parts.part]]
+icon     = "tachometer"
+heading  = "Massmind AS5134"
+meta     = "Hall-effect rotary encoder"
+category = "encoder"
+body     = "Cheap and high speed. Hall effect rather than capacitive, so it reads a magnet on the end of the shaft &mdash; which makes it a good fit where there is no room for anything bigger. The team wrote the Arduino library for it."
+links    = [
+  ["Massmind ENC2 page",  "http://techref.massmind.org/techref/io/sensor/pos/enc/ENC2.htm"],
+  ["Arduino library",     "https://github.com/sdsmt-robotics/massmind-AS5134", "(ours)"],
+  ["AS5134 datasheet",    "https://www.mouser.com/datasheet/2/588/AS5134_Datasheet_EN_v4-318114.pdf", "(PDF)"],
+]
+
+[[parts.part]]
+icon     = "microchip"
+heading  = "Roboclaw 2x7A"
+meta     = "Two-channel motor controller"
+category = "controller"
+body     = "Smallish but nice. Drives two motors, closes the loop on encoders itself, and is configured over USB with the vendor's own program rather than by guessing at DIP switches."
+links    = [
+  ["User manual",       "https://downloads.basicmicro.com/docs/roboclaw_user_manual.pdf", "(PDF)"],
+  ["BMStudio",          "http://downloads.basicmicro.com/software/BMStudio/setup.exe", "(USB config, .exe)"],
+  ["Arduino library",   "https://downloads.basicmicro.com/code/arduino.zip", "(.zip)"],
+]
+
+[[parts.part]]
+icon     = "microchip"
+heading  = "Vex Victor SPX"
+meta     = "CAN bus motor controller"
+category = "controller"
+body     = "For largish motors, and it speaks CAN &mdash; so a robot with several of them needs two wires down the chain rather than a pair to every controller. Built for FRC, which is why the example code below exists at all."
+links    = [
+  ["VEX product page",     "https://www.vexrobotics.com/217-9191.html"],
+  ["Arduino example code", "https://drive.google.com/uc?export=download&amp;id=1W-uEAFp4nGJc5fGpmllG1D0LpPFe7rdI", "(ours)"],
+]
+
+[[parts.part]]
+icon     = "microchip"
+heading  = "BTS7960"
+meta     = "High-current PWM H-bridge"
+category = "controller"
+body     = "Cheap but fairly powerful. The module you buy is a pair of half-bridges on a board with a heatsink, and it will pass far more current than the L298N. The team wrote the Arduino library and drew the circuit diagram below."
+links    = [
+  ["Arduino library",   "https://github.com/sdsmt-robotics/wingoneer-BTS7960", "(ours)"],
+  ["Datasheet",         "https://cdn.instructables.com/ORIG/FYD/V3VU/HUL8W2ZW/FYDV3VUHUL8W2ZW.pdf", "(PDF)"],
+  ["Pinout",            "https://cdn.instructables.com/F3W/PCEK/JVH3KZLD/F3WPCEKJVH3KZLD.LARGE.jpg?auto=webp&amp;&amp;frame=1&amp;width=1024&amp;fit=bounds"],
+  ["Circuit diagram",   "/content/resources/robo-parts/images/bts7960-circuit-diagram.jpg", "(ours)"],
+]
+
+[[parts.part]]
+icon     = "microchip"
+heading  = "L298N"
+meta     = "Low-current PWM H-bridge"
+category = "controller"
+body     = "Cheap, low current, and everywhere. It drops well over a volt across itself and gets hot doing it, so it is the wrong answer for anything with real motors &mdash; but it is the right answer for a first robot, and it is what Super Robo Time uses."
+links    = [
+  ["Arduino library", "https://github.com/sdsmt-robotics/L298N", "(ours)"],
+  ["Datasheet",       "https://www.sparkfun.com/datasheets/Robotics/L298_H_Bridge.pdf", "(PDF)"],
+]
+
+[[parts.part]]
+icon     = "wifi"
+heading  = "XBee-Pro 900"
+meta     = "900&nbsp;MHz radio"
+category = "radio"
+body     = "Magical communications device. A pair of them behaves like a serial cable between two robots, or between a robot and a laptop, over a range no Wi-Fi link on a field will match. Configure both ends with XCTU before expecting anything to work."
+links    = [
+  ["Digi-Key &mdash; XBP9B-DMWT-002", "https://www.digikey.com/product-detail/en/digi-international/XBP9B-DMWT-002/602-1301-ND/3594159"],
+  ["XCTU",                            "https://www.digi.com/products/embedded-systems/digi-xbee/digi-xbee-tools/xctu", "(configuration software)"],
+]
+
+
+# --- MICROCONTROLLERS ---------------------------------------------
+#
+#  Same card settings as the parts above, minus `category` - this
+#  grid has no filter buttons over it.
+#
+#  The pinout images are in this folder's images/, so they keep
+#  working whatever happens to the sites they came from. To replace
+#  one, drop the new file in images/ and change the address here to
+#  match: /content/resources/robo-parts/images/<filename>
+[chips]
+eyebrow = "Arduinos"
+heading = "Chips and boards"
+intro   = "The AVR chips the team programs with the Arduino toolchain, and the two boards it uses most. The bare chips are for when a project outgrows a development board and wants its own PCB."
+note    = "Programming a bare ATTiny from the Arduino IDE needs the boards package: <a href=\"https://github.com/SpenceKonde/ATTinyCore\" target=\"_blank\" rel=\"noopener\">SpenceKonde/ATTinyCore</a>."
+
+[[chips.chip]]
+icon    = "microchip"
+heading = "ATmega328p"
+meta    = "The chip in an Arduino Uno"
+body    = "The one to reach for first when a project needs its own board. Everything written for an Uno runs on it unchanged, and it comes in a through-hole package you can solder by hand."
+links   = [
+  ["Pinout",     "/content/resources/robo-parts/images/atmega328p-pinout.png"],
+  ["SMD pinout", "/content/resources/robo-parts/images/atmega328p-smd-pinout.png"],
+  ["Datasheet",  "https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf", "(PDF)"],
+]
+
+[[chips.chip]]
+icon    = "microchip"
+heading = "ATmega2560"
+meta    = "The chip in an Arduino Mega"
+body    = "Far more pins, more flash and more RAM than the 328p, for when a robot has run out of all three. Surface-mount only, so a board using it has to be assembled rather than hand-stuffed."
+links   = [
+  ["SMD pinout", "/content/resources/robo-parts/images/atmega2560-smd-pinout.png"],
+  ["Datasheet",  "https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf", "(PDF)"],
+]
+
+[[chips.chip]]
+icon    = "microchip"
+heading = "ATTiny84"
+meta    = "14-pin AVR"
+body    = "A small chip for a small job &mdash; reading a sensor, driving some lights, sitting on a board where an Arduino would not fit. Twelve usable pins, and it programs from the Arduino IDE with ATTinyCore installed."
+links   = [
+  ["Pinout",    "/content/resources/robo-parts/images/attiny84-pinout.jpg"],
+  ["Datasheet", "https://ww1.microchip.com/downloads/en/DeviceDoc/doc8006.pdf", "(PDF)"],
+]
+
+[[chips.chip]]
+icon    = "microchip"
+heading = "ATTiny85"
+meta    = "8-pin AVR"
+body    = "The smallest of the lot: five usable pins in a package the size of a grain of rice. Worth knowing about for the jobs that genuinely are that small."
+links   = [
+  ["Pinout",    "/content/resources/robo-parts/images/attiny85-pinout.jpg"],
+  ["Datasheet", "https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf", "(PDF)"],
+]
+
+[[chips.chip]]
+icon    = "puzzle-piece"
+heading = "Arduino Uno"
+meta    = "ATmega328p board"
+body    = "The default board. If a project does not have a reason to be something else, it is an Uno, and there are enough of them in the lab to prototype with."
+links   = [
+  ["Pinout", "/content/resources/robo-parts/images/arduino-uno-pinout.png"],
+]
+
+[[chips.chip]]
+icon    = "puzzle-piece"
+heading = "Arduino Mega"
+meta    = "ATmega2560 board"
+body    = "The Uno's larger sibling: many more pins and four hardware serial ports, which is usually the actual reason a robot ends up with one."
+links   = [
+  ["Pinout", "/content/resources/robo-parts/images/arduino-mega-pinout.png"],
+]
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Found something better?"
+body                  = "This page is only as good as the last person who updated it. If you used a part that belongs on here, or found one on here that turned out to be a mistake, say so &mdash; that is how the list stays worth reading."
+primary_button_text   = "Tell us on Discord"
+primary_button_link   = "https://discord.gg/pehkuYRxh6"
+secondary_button_text = "Back to resources"
+secondary_button_link = "/resources"

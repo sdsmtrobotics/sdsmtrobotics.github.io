@@ -1,0 +1,92 @@
+####################################################################
+#  LINKS  (sdsmtrobotics.github.io/resources/links)
+#
+#  Everything you can see as text on this page is in this file.
+#  Change it here, then run:      ./build.py
+#
+#  Not sure which setting is which? Open  map.html  in this folder.
+#  It shows every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/links.html, not from here.
+[meta]
+description = "Where the Rocker Robotics team keeps its files and its code - the shared Google Drive, the Mines GitLab group, GitHub, and the older Subversion archive."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# No banner photo, like the resources page this sits under.
+[page_head]
+image     = ""
+back_link = "/resources"
+back_text = "Resources"
+eyebrow   = "Where the team keeps things"
+heading   = "Links"
+body      = "The team's own servers and shared folders. Most of these need a Mines account or an invitation from somebody already on the team &mdash; if a link turns you away, that is what has happened."
+
+
+# --- THE PLACES: the cards -----------------------------------------
+#
+#  Each [[places.place]] is one card. The settings are:
+#
+#    icon    any Font Awesome 4.7 name, without the "fa-" prefix.
+#            Browse them at https://fontawesome.com/v4/icons/
+#    access  the small grey line under the heading - who can get in.
+#            This is the thing people most want to know before
+#            clicking, so it is worth keeping honest.
+#    body    what is actually stored there
+#    note    an optional warning or caveat, in grey
+#    link    where the button goes. Every card opens in a new tab.
+#
+#  To add a place, copy a whole [[places.place]] block.
+[places]
+eyebrow = "Four places"
+heading = "The team's files and code"
+intro   = "Between them these hold everything the team has made. The two at the top are where current work goes; the two below are archives that still get read."
+
+[[places.place]]
+icon      = "google"
+heading   = "Google Drive"
+access    = "Mines account, plus an invitation"
+body      = "The team's shared drive: documents, presentations, competition paperwork, photos, and most of the guides linked from the software page. It is the default place for anything that is not code."
+link      = "https://drive.google.com/drive/folders/0AAVGWGeMDjwhUk9PVA"
+link_text = "Open the shared drive"
+
+[[places.place]]
+icon      = "gitlab"
+heading   = "GitLab"
+access    = "Mines account"
+body      = "The school's GitLab, under the Rocker Robotics group. Current project code lives here, including the Super Robo Time base code, and it is where work that is not ready to be public goes."
+link      = "https://gitlab.com/sdmines/clubs/rocker-robotics"
+link_text = "Open the GitLab group"
+
+[[places.place]]
+icon      = "github"
+heading   = "GitHub"
+access    = "Public to read"
+body      = "The team's public repositories. The Arduino libraries linked from the parts reference are all here, as is the AVC documentation the ROS setup guides come from. Anyone can read them without an account."
+link      = "https://github.com/sdsmt-robotics"
+link_text = "Open sdsmt-robotics"
+
+[[places.place]]
+icon      = "archive"
+heading   = "Subversion server"
+access    = "Older projects only"
+body      = "The archive from before the team moved to Git. Nothing new goes in here, but a few of the older robots have their only surviving source in it, so it is worth knowing about."
+note      = "This one is served over plain <code>http</code> and is the least likely of the four to still be answering. If it does not load, ask on Discord before assuming the code is gone &mdash; somebody may have a copy."
+link      = "http://svn-browse.m101.xyz/"
+link_text = "Browse the archive"
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Locked out of one of these?"
+body                  = "The Drive and the GitLab group are both invitation-only, and nobody is added automatically when they join the team. Ask and somebody with access will add you."
+primary_button_text   = "Ask on Discord"
+primary_button_link   = "https://discord.gg/pehkuYRxh6"
+secondary_button_text = "Email the team"
+secondary_button_link = "mailto:Robotics@mines.sdsmt.edu"

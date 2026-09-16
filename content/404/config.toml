@@ -1,0 +1,74 @@
+####################################################################
+#  PAGE NOT FOUND (404)
+#  Lives at  sdsmtrobotics.github.io/404.html
+#
+#  GitHub Pages serves this page by itself whenever someone follows
+#  a dead link or mistypes an address. Nothing on the site links to
+#  it, so the only way to see it is to visit an address that does
+#  not exist.
+#
+#  All the words on it are in this file. Change them here, then
+#  run:      ./build.py
+#
+#  Not sure which text is which? Open  map.html  in this folder.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+[meta]
+description = "That page could not be found. Here are the parts of the Rocker Robotics site people look for most."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# No banner photo here on purpose: someone landing on this page took
+# a wrong turn, and the fastest way out is to see the links below
+# without scrolling past a picture first.
+[page_head]
+image   = ""
+eyebrow = "Error 404"
+heading = "That page does not exist"
+body    = "The link that brought you here is broken, or the page has moved since it was written. Nothing is on fire - try one of the places below."
+
+
+# --- THE WAY OUT --------------------------------------------------
+#   The short list of places to send someone who is lost.
+#
+#   Each card block below is one card. To add one, copy a whole
+#   block. To reorder them, move the blocks. `icon` is a Font Awesome
+#   4 name without the "fa-" in front - see assets/vendor/font-awesome
+#   for the ones that ship with the site.
+[routes]
+eyebrow = "Try one of these"
+heading = "Where you were probably going"
+intro   = "The pages people look for most often."
+
+[[routes.card]]
+icon      = "cogs"
+heading   = "Our robots"
+body      = "Every robot the team has built, competition by competition."
+link      = "/projects"
+link_text = "See the robots"
+
+[[routes.card]]
+icon      = "newspaper-o"
+heading   = "News"
+body      = "Competition results, build updates, and what the team has been up to."
+link      = "/news"
+link_text = "Read the news"
+
+[[routes.card]]
+icon      = "camera"
+heading   = "Gallery"
+body      = "Photos from competitions, workdays, and outreach events."
+link      = "/gallery"
+link_text = "Browse the photos"
+
+[[routes.card]]
+icon      = "users"
+heading   = "Join the team"
+body      = "Who we are, where we meet, and how to get involved."
+link      = "/about"
+link_text = "About the team"

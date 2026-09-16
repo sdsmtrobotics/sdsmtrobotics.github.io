@@ -1,0 +1,79 @@
+####################################################################
+#  PHOTO ALBUM: Controller
+#  Lives at  sdsmtrobotics.github.io/gallery/controller
+#
+#  All the words on this album page are in this file. Change them
+#  here, then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file, in the
+#  order they appear below. To add one, drop the file in there and
+#  copy a [[album.photo]] block. To reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every album page shares - the link back to the
+#  gallery, the heading above the photos, the band at the bottom -
+#  is one folder up, in  content/albums/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the album title below.
+[meta]
+description = "The first custom controller, built around an ATMEGA328P and an XBee radio so it could drive any of our robots."
+
+
+# --- THE ALBUM ----------------------------------------------------
+#   title  - the album name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   date   - the date line under the heading.
+#   season - the school year, shown after the date.
+#   tag    - the small gold label over the banner.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - the banner photo behind the heading: a filename from
+#            images/. Set it to "" for a plain navy band instead.
+#
+#   Keep title, date and intro in step with this album's card on the
+#   gallery page, which is set in content/gallery/config.toml.
+[album]
+title  = "Controller"
+date   = "April 1, 2017"
+season = "2016 &ndash; 2017"
+tag    = "Hardware"
+intro  = "The first custom controller, built around an ATMEGA328P and an XBee radio so it could drive any of our robots."
+image  = "01-photo.jpg"
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOS, in the order they appear on the page.
+#
+#    image   - a filename in the images/ folder next to this file.
+#    caption - shown under the photo when it is opened full size,
+#              and read out to screen readers. Empty is fine; the
+#              page falls back to "<album title>, photo 3".
+#
+#  The banner at the top is chosen separately, in [album] above.
+#  It is usually the first photo, but any of them will do.
+#
+#  There is no separate thumbnail: the same file is used for the
+#  grid and for the full-size view.
+# ------------------------------------------------------------------
+
+[[album.photo]]
+image   = "01-photo.jpg"
+caption = ""
+
+[[album.photo]]
+image   = "02-photo.jpg"
+caption = ""
+
+[[album.photo]]
+image   = "03-photo.jpg"
+caption = ""
+
+[[album.photo]]
+image   = "04-photo.jpg"
+caption = ""

@@ -1,0 +1,111 @@
+<!--
+title: Calendar
+page: calendar
+content: calendar
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo on this page, unlike the other sub-pages: the grid
+       below is the whole point of the page, and a hero would push it off
+       the first screen. .page-head with no .has-image is a plain navy band. -->
+  {{include:page-head}}
+
+  <!-- ================================================ calendar + next up -->
+  <section class="band" id="calendar">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{calendar.eyebrow}}</span>
+        <h2>{{calendar.heading}}</h2>
+        <p>{{calendar.intro}}</p>
+      </div>
+
+      <div class="calendar-layout">
+
+        <!-- the Google Calendar grid ------------------------------------ -->
+        <div class="calendar-main reveal">
+          <div class="calendar-frame">
+            <iframe
+              title="Rocker Robotics team calendar"
+              src="https://calendar.google.com/calendar/embed?src={{calendar.calendar_id}}&amp;ctz={{calendar.timezone}}&amp;mode={{calendar.default_view}}&amp;color=%23{{calendar.color}}&amp;wkst=1&amp;bgcolor=%23ffffff&amp;showTitle=0&amp;showPrint=0&amp;showTz=0&amp;showCalendars=0"
+              loading="lazy"></iframe>
+          </div>
+
+          <div class="calendar-subscribe">
+            <a class="btn btn-sm btn-outline"
+               href="https://calendar.google.com/calendar/render?cid={{calendar.calendar_id}}"
+               target="_blank" rel="noopener">
+              <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+              {{calendar.subscribe_text}}
+            </a>
+            <p>{{calendar.subscribe_note}}</p>
+          </div>
+        </div>
+
+        <!-- the next few events, fetched in the browser ------------------ -->
+        <!-- Progressive enhancement, same bargain as the filter bars on the
+             other pages: the list is built by site.js from the same Google
+             Calendar the grid shows. With JS off, or if Google cannot be
+             reached, the note below stays put and the grid beside it is
+             still the complete schedule - so nothing here is ever the only
+             route to a piece of information. -->
+        <aside class="calendar-side reveal"
+               data-upcoming
+               data-calendar-id="{{calendar.calendar_id}}"
+               data-api-key="{{upcoming.api_key}}"
+               data-timezone="{{calendar.timezone}}"
+               data-count="{{upcoming.count}}"
+               data-failed="{{upcoming.failed}}"
+               data-none="{{upcoming.none}}">
+          <h3>{{upcoming.heading}}</h3>
+          <ol class="upcoming" data-upcoming-list hidden></ol>
+          <p class="upcoming-note" data-upcoming-note>{{upcoming.loading}}</p>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== where to start -->
+  <section class="band band-alt" id="meet">
+    <div class="shell">
+      <div class="band-head center reveal">
+        <span class="eyebrow">{{meet.eyebrow}}</span>
+        <h2>{{meet.heading}}</h2>
+        <p>{{meet.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each meet.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          {{#if body}}
+          <p>{{body}}</p>
+          {{/if}}
+          {{#if rows}}
+          <ul class="meet-list">
+            {{#each rows}}
+            <li><span class="when">{{this.0}}</span> <span>{{this.1}}</span></li>
+            {{/each}}
+          </ul>
+          {{/if}}
+          <a class="card-link" href="{{link}}">{{link_text}} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

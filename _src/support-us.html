@@ -1,0 +1,88 @@
+<!--
+title: Support Us
+page: sponsors
+content: support-us
+output: sponsors/support-us.html
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, the same as the sponsors page this sits under. The
+       back link goes above the heading, in the flow, so it never lands on
+       top of the title on a narrow screen. -->
+  {{include:page-head}}
+
+  <!-- ============================================================= why -->
+  <section class="band" id="why">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{why.eyebrow}}</span>
+        <h2>{{why.heading}}</h2>
+        {{#each why.paragraph}}
+        <p>{{this}}</p>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== needs -->
+  <section class="band band-alt" id="needs">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{needs.eyebrow}}</span>
+        <h2>{{needs.heading}}</h2>
+        <p>{{needs.intro}}</p>
+      </div>
+
+      <div class="grid grid-3">
+        {{#each needs.card}}
+        <div class="info-card reveal">
+          <i class="icon fa fa-{{icon}}" aria-hidden="true"></i>
+          <h3>{{heading}}</h3>
+          <p>{{body}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== levels -->
+  <!-- Lowest level first, so the page reads as a ladder from the cheapest
+       way in. The sponsors page shows the same four the other way up,
+       because there it is a list of who has already given. -->
+  <section class="band" id="levels">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{levels.eyebrow}}</span>
+        <h2>{{levels.heading}}</h2>
+        <p>{{levels.intro}}</p>
+      </div>
+
+      <div class="grid grid-2">
+        {{#each levels.card}}
+        <div class="info-card tier-{{level}} reveal">
+          <h3>{{name}}</h3>
+          <p class="info-card-meta">{{amount}}</p>
+          <ul class="benefit-list">
+            {{#each benefit}}
+            <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

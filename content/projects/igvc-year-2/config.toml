@@ -1,0 +1,185 @@
+####################################################################
+#  ROBOT WRITE-UP: IGVC 2024
+#  Lives at  sdsmtrobotics.github.io/projects/igvc-year-2
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "The second year of the team's Intelligent Ground Vehicle, rebuilt around SLAM and a cost map. It did not qualify at the 2024 competition."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "IGVC 2024"
+years = "September 2023 &ndash; June 2024"
+tag   = "IGVC"
+intro = "The second year at the Intelligent Ground Vehicle Competition, with the autonomy rebuilt around SLAM and a cost map. The robot did not qualify."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Josiah Huntington, Landon Lamoreaux, Jacob Decker, Alexis Englund, Kaylee Herndon, Bennet Outland, Zane Wilson, Heath Buer, Steven Duong, Ethan Miller, Sam Ryckman, Daron Graf, Michael Klingelhoefer, Devon Hamm, Aden Muzzey, Chase Reinertson, Sierra Rodewald"],
+  ["Purpose",  "To compete at the IGVC competition in 2024."],
+  ["Cost",     "~$2000"],
+  ["Features", "2 Realsense D435 cameras, 1 Hokuyo 2D lidar. Can autonomously navigate an obstacle course. Top speed: 5 mph."],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["Design report", "https://drive.google.com/file/d/1MfIhP6hbMEW6ixx_ki-W2dDG-IKdhnUf/view?usp=sharing", "(Google Drive)"],
+  ["Code",          "https://gitlab.com/sdmines/clubs/rocker-robotics/IGVC/igvc-autonomy-controls", "(GitLab)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "The main objective with this competition is to build a robot that can autonomously navigate around a course staying in-between white lines and avoiding obstacles in its path. You can visit the competition website at <a href=\"http://www.igvc.org/\" target=\"_blank\" rel=\"noopener\">igvc.org</a>.",
+]
+
+[[robot.block]]
+heading = "How we did"
+text = [
+  "During the competition, we failed to qualify. Our design report is in the links at the top of this page.",
+]
+
+[[robot.block]]
+heading = "Software"
+text = [
+  "The software portion of this competition was the most difficult part of the challenge. The main problems we were faced with were obstacle detection and path planning around those obstacles. To detect obstacles we used a Hokuyo 2D scanning lidar and 2 Intel Realsense D435 depth cameras. The general algorithm used was to determine what pixels have white lines using image thresholding, then convert those pixels to 3D points in the world in front of the robot. We then add all the points the lidar hits to the obstacle list. We then use a SLAM algorithm to create a map and localize the robot in it. Next we can create a cost map around all the obstacles and build a path that navigates forwards through the cost map to avoid all the obstacles. This path is then converted to a forward velocity and turn angle which are both passed to our drive control system that controls each individual motor to drive the robot in the desired direction.",
+]
+image   = "costmap-path.png"
+caption = "Sample cost map with navigation."
+
+# The old page put a picture of the final chassis here, captioned "CAD model of
+# the final chassis." The file it pointed at - projects/igvc-year-2/Picture1.png
+# - was already a 404 on the live server and is not in the mirror, so the block
+# is text only. If the render turns up, drop it in images/ and add
+#   image   = "chassis-cad.png"
+#   caption = "CAD model of the final chassis."
+# to the block below.
+[[robot.block]]
+heading = "Mechanical"
+text = [
+  "The mechanical sub-team focused on making the robot's frame, chassis, drivetrain, and outer shell. The frame consists of several pieces of 1 &frac12;&rdquo; T-Slot put together in an &ldquo;I&rdquo; shape. This provides much of the support for the drivetrain and electronic components, as well as the payload. Throughout the frame, aluminum brackets and plates are used to help provide support, along with mounting points for other components. The T-Slot also allows the chassis to be modular, allowing elements to be moved and adjusted as needed.",
+  "The steering system that was designed is one of the mechanical innovations for this robot. The setup for the steering is similar to a dual-Ackerman system, with the added ability to strafe at a 45-degree angle. Through a set of curved linkages and a rack and pinion system, the turning radius of the robot was decreased to just under 3&rsquo;. This system also works in tandem with the wheel mounts. Each wheel mount is connected to a linkage by a bolt, which is turned using both the linkages and a set of bearings. While each wheel is driven independently, they are turned simultaneously within pairs.",
+  "Inspired by Japanese Kei Trucks, the outer shell provides aesthetics, some water resistance, and sensor mounts. The cab was made in several sections, using large-bed 3D printers. Attached to the top is a piece of T-slot that further increases modularity and allows the positions of the sensors to be adjusted as needed. In the bed, there is also a frame to hold the payload, and at the back, a panel for the start and e-stop switches.",
+]
+
+[[robot.block]]
+heading = "Electrical"
+text = [
+  "The electrical side of this project mainly dealt with power distribution and establishing the communication system. The robot was powered by a single 4-cell, 20,000 mAh lithium-ion battery. The battery voltage went to the motors directly and was stepped down to 12V and 5V rails for our computers and sensors. The sensor communication and power distribution was done using a custom PCB that held our STM32 microcontroller and connection points for our sensors and controller area network (CAN) bus for controlling our motors. The STM32 was connected over USB to our more powerful Jetson computers. Another custom PCB was designed for our emergency stop system. This one board design could be used as either a remote or receiver. When the emergency stop button was pressed either on the robot or on the wireless remote, the receiver board would open a relay, cutting power to our drive motors and bringing the robot to a stop. The wireless communication between the two e-stop boards was done with Raspberry Pi Picos and 915 MHz radio modules.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-igvcfancy.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "02-igvcchasy.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "03-igvcmeal.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "04-igvcsetupcompressed.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "05-igvcwheelcompressed.jpg"
+caption = ""
+
+[[robot.photo]]
+image   = "06-igvcworkingcompressed.jpg"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "2024 IGVC album"
+body      = "The chassis, the wheels, the setup, and the long days in Michigan."
+link      = "/gallery/2024-igvc"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "IGVC 2023"
+body      = "The first year of this robot, and the write-up on how it was built."
+link      = "/projects/igvc"
+link_text = "See the robot"
+
+[[robot.link]]
+icon      = "newspaper-o"
+heading   = "The first trip"
+body      = "How the 2023 competition went, on the same course a year earlier."
+link      = "/news/2023-igvc-competition"
+link_text = "Read the write-up"

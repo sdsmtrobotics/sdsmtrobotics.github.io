@@ -1,0 +1,154 @@
+####################################################################
+#  ROBOT WRITE-UP: Swervebot
+#  Lives at  sdsmtrobotics.github.io/projects/swervebot
+#
+#  All the words on this page are in this file. Change them here,
+#  then run:      ./build.py
+#
+#  The photos are in the images/ folder next to this file. To add
+#  one, drop the file in there and copy a [[robot.photo]] block. To
+#  reorder them, move the blocks.
+#
+#  Not sure which photo is which? Open  map.html  in this folder.
+#
+#  The wording every robot page shares - the link back to the robots
+#  page, the headings, the band at the bottom - is one folder up,
+#  in  content/projects/config.toml.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title is built from the robot's name below.
+[meta]
+description = "A differential swerve drive designed for the 2019 ASME Student Design Competition: two motors per wheel, no third motor for steering, and mostly 3D printed."
+
+
+# --- THE ROBOT ----------------------------------------------------
+#   name   - the robot's name. Also the browser tab title, and the
+#            heading at the top of the page.
+#   years  - the date line under the heading.
+#   tag    - the small gold label above the name.
+#   intro  - the sentence under the heading. Links are allowed.
+#   image  - a banner photo behind the name: a filename from
+#            images/. Left empty on purpose, so the page opens on a
+#            plain navy band and the write-up starts higher up.
+#
+#   Keep name, years and intro in step with this robot's card on the
+#   robots page, which is set in content/robots/config.toml.
+[robot]
+name  = "Swervebot"
+years = "November 2018 &ndash; January 2019"
+tag   = "ASME"
+intro = "A differential swerve drive drawn up for the 2019 ASME competition: two motors per wheel, no third motor for steering, and almost all of it 3D printed."
+image = ""
+
+# The rows in the Details card at the top of the page: a label and
+# what goes beside it. Add a row, delete one, or reorder them freely.
+# The date is not in here because it is already under the heading.
+fact = [
+  ["Built by", "Samuel Ryckman"],
+  ["Purpose",  "Drivetrain idea for 2019 E-Fest Student Design Competition"],
+  ["Features", "Omnidirectional driving, compact, and might have even worked."],
+]
+
+# The links in the Files and code card beside it: the words to show,
+# where they go, and an optional note that follows in grey.
+file = [
+  ["Parts list", "https://drive.google.com/open?id=1yQ6sbmA72I1PJnes_5qAr-n-V4XMDgf1", "(Google Drive)"],
+  ["CAD model",  "https://workbench.grabcad.com/workbench/projects/gchhLV_W6PDW1e95mdNcHpIaTNFo00mKQyv3qScORcmWfo#/space/gcmagp96tLXe_i_esbxxvLTwmTP3JXPfawklODXosHTMzA/folder/6895771", "(GrabCAD)"],
+]
+
+
+# ------------------------------------------------------------------
+#  THE WRITE-UP, in the order it appears on the page.
+#
+#  Each [[robot.block]] is one piece of it and can hold any of:
+#
+#    heading - a sub-heading above the block
+#    text    - the paragraphs, one entry per paragraph
+#    list    - a bulleted list, one entry per bullet
+#    image   - a filename in images/, shown in the column
+#    caption - the line under that image
+#
+#  Leave out what a block does not need. To move a picture, move its
+#  block; to split a run of paragraphs around one, start a new block.
+# ------------------------------------------------------------------
+
+[[robot.block]]
+text = [
+  "Swervebot is a drivetrain idea we had for the 2019 ASME Student Design Competition. Its main feature is a differential swerve drive system for omnidirectional motion. A standard swerve drive robot works by rotating wheels about their vertical axis so that they face in the direction the robot needs to move. This differential swerve drive design is more efficient since it does not require an additional motor for rotating the wheels (both motors are used for driving the robot).",
+  "Each wheel is built inside of a differential with two DC motors serving as the inputs. When the motors are turning in equal directions with equal speed, the wheel will rotate about its vertical axis. When the motors run with equal speed and opposite directions, the wheels will spin but not rotate about their vertical axis. In summary:",
+]
+list = [
+  "Motors run in same direction &rarr; wheel pivots.",
+  "Motors run in opposite directions &rarr; wheel spins.",
+  "In general, the motion of the wheel is based on the difference between the two motors.",
+]
+
+[[robot.block]]
+text = [
+  "As it stands, the design is mostly complete and seems feasible. It uses 3D printed parts (orange pieces) for most of the components to reduce cost and difficulty of manufacturing. The wheel differentials are constructed using five rings. Each ring moves independently and has a set of ball bearings running in a groove between it and the next ring.",
+  "The primary concern with this design was whether the 3D printed components could hold up to usage at high speeds with large amounts of torque. A prototype bearing connection was printed and the motion was fairly smooth and held up to large amounts of pressure. No testing was done on the gear connections though.",
+  "The concept was eventually scrapped due to time limitations. We do still hope to finish this at some point though since it is a neat design.",
+]
+
+
+# ------------------------------------------------------------------
+#  THE PHOTOGRAPHS, in the order they appear in the grid.
+#
+#    image   - a filename in images/
+#    caption - shown under the photo in the overlay. Optional.
+# ------------------------------------------------------------------
+
+[[robot.photo]]
+image   = "01-swervebot-1.png"
+caption = ""
+
+[[robot.photo]]
+image   = "02-swervebot-2.png"
+caption = ""
+
+[[robot.photo]]
+image   = "03-swervebot-3.png"
+caption = ""
+
+[[robot.photo]]
+image   = "04-swervebot-4.png"
+caption = ""
+
+
+# ------------------------------------------------------------------
+#  WHERE THIS CARRIES ON: the cards at the foot of the page.
+#
+#    icon      - a Font Awesome name, without the "fa-" in front
+#    heading   - the card title
+#    body      - a sentence under it. Optional.
+#    link      - where the card goes
+#    link_text - the words on the link
+#
+#  Delete every one of these blocks and the band disappears.
+# ------------------------------------------------------------------
+
+[[robot.link]]
+icon      = "picture-o"
+heading   = "Swervebot album"
+body      = "The renders of the drivetrain, inside and out."
+link      = "/gallery/swervebot"
+link_text = "Open the album"
+
+[[robot.link]]
+icon      = "cogs"
+heading   = "B.A.M."
+body      = "The robot the team took to the 2019 competition instead."
+link      = "/projects/b-a-m"
+link_text = "See the robot"
+
+[[robot.link]]
+icon      = "newspaper-o"
+heading   = "The 2019 season"
+body      = "How the ASME Pick-and-Place Race went in Lansing."
+link      = "/news/2019-asme-student-design-competition"
+link_text = "Read the write-up"

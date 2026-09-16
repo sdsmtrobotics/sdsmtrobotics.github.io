@@ -1,0 +1,114 @@
+<!--
+title: Pumpkin
+page: pumpkin
+content: pumpkin
+-->
+{{include:page-top}}
+  <!-- ======================================================= page head -->
+  <!-- No banner photo, like the calendar: the numbers are the whole point
+       of the page and a hero would push them off the first screen. Someone
+       is reading this on a phone in a field. -->
+  {{include:page-head}}
+
+  <!-- ==================================================== the scoreboard -->
+  <!-- Everything below the heading is drawn by site.js from the Google
+       Sheet named in content/site/config.toml. The page ships with none of
+       the numbers in it, because the sheet changes throw by throw and a
+       built-in copy would be wrong within the minute.
+
+       That makes this the one part of the site with no no-JavaScript
+       fallback of its own, so the <noscript> below hands over the sheet
+       itself rather than leaving a visitor with nothing. -->
+  <section class="band" id="scores">
+    <div class="shell">
+      <div class="band-head reveal">
+        <span class="eyebrow">{{board.eyebrow}}</span>
+        <h2>{{board.heading}}</h2>
+        <p>{{board.intro}}</p>
+      </div>
+
+      <div class="scoreboard reveal"
+           data-scoreboard
+           data-sheet="{{site.scoreboard.sheet_url}}"
+           data-gid="{{site.scoreboard.gid}}"
+           data-type-label="{{sheet.type_row_label}}"
+           data-target-label="{{sheet.target_row_label}}"
+           data-team-label="{{sheet.team_row_label}}"
+           data-unit="{{sheet.unit}}"
+           data-dq-column="{{sheet.dq_column_label}}"
+           data-dq-out="{{sheet.dq_out_answer}}"
+           data-dq-text="{{table.dq_label}}"
+           data-refresh="{{sheet.refresh_seconds}}"
+           data-highlight="{{sheet.highlight_top}}"
+           data-low-wins="{{sheet.low_score_wins}}"
+           data-team-heading="{{table.team_heading}}"
+           data-total-heading="{{table.total_heading}}"
+           data-threw-prefix="{{table.threw_prefix}}"
+           data-podium="{{podium.show}}"
+           data-points-label="{{podium.points_label}}"
+           data-text-loading="{{messages.loading}}"
+           data-text-failed="{{messages.failed}}"
+           data-text-empty="{{messages.empty}}"
+           data-text-unset="{{messages.unset}}"
+           data-text-updated="{{messages.updated}}"
+           data-text-entries="{{messages.entries}}"
+           data-text-entries-one="{{messages.entries_one}}">
+
+        <!-- the one-line state: loading, then replaced by the count, or by
+             whichever message above explains why there is no table -->
+        <p class="scoreboard-status" data-scoreboard-status role="status">
+          {{messages.loading}}
+        </p>
+
+        <!-- shown only when the sheet's Visible cell says FALSE -->
+        <div class="scoreboard-closed" data-scoreboard-closed hidden>
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <h3>{{messages.hidden_heading}}</h3>
+          <p>{{messages.hidden_body}}</p>
+          <a class="btn btn-sm btn-outline" href="{{messages.hidden_link}}">{{messages.hidden_link_text}}</a>
+        </div>
+
+        <div class="podium-wrap" data-scoreboard-podium hidden>
+          <h3 class="podium-heading">{{podium.heading}}</h3>
+          <ol class="podium" data-scoreboard-podium-list></ol>
+        </div>
+
+        <div class="table-wrap" data-scoreboard-table hidden></div>
+
+        <div class="scoreboard-foot" data-scoreboard-foot hidden>
+          <p class="scoreboard-updated" data-scoreboard-updated></p>
+          <button class="btn btn-sm btn-outline" type="button" data-scoreboard-refresh>
+            <i class="fa fa-refresh" aria-hidden="true"></i> {{messages.refresh}}
+          </button>
+        </div>
+
+        <noscript>
+          <p class="scoreboard-noscript">
+            {{messages.noscript}}
+            {{#if site.scoreboard.sheet_url}}
+            <a href="{{site.scoreboard.sheet_url}}" target="_blank" rel="noopener">{{messages.noscript_link_text}}</a>
+            {{/if}}
+          </p>
+        </noscript>
+
+      </div>
+
+      {{#if board.footnote}}
+      <p class="scoreboard-note reveal">{{board.footnote}}</p>
+      {{/if}}
+    </div>
+  </section>
+
+  <!-- ============================================================= cta -->
+  <section class="cta">
+    <div class="shell">
+      <h2 class="reveal">{{contact_bar.heading}}</h2>
+      <p class="reveal">{{contact_bar.body}}</p>
+      <div class="cta-actions reveal">
+        <a class="btn btn-solid" href="{{contact_bar.primary_button_link}}">{{contact_bar.primary_button_text}}</a>
+        <a class="btn btn-ghost" href="{{contact_bar.secondary_button_link}}">{{contact_bar.secondary_button_text}}</a>
+      </div>
+    </div>
+  </section>
+
+{{include:page-bottom}}

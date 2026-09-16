@@ -1,0 +1,134 @@
+####################################################################
+#  SUPPORT US PAGE  (sdsmtrobotics.github.io/sponsors/support-us)
+#
+#  This is the page that asks. Everything you can see as text on it
+#  is in this file. Change it here, then run:      ./build.py
+#
+#  The list of companies who have already said yes is a different
+#  page, edited in  content/sponsors/config.toml.
+#
+#  Not sure which setting is which? Open  map.html  in this folder.
+#  It shows every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+# The browser tab title comes from _src/support-us.html, not here.
+[meta]
+description = "How to sponsor the South Dakota Mines Rocker Robotics Team: what the money pays for, and what a company gets at each of the four levels."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# No banner photo here, the same as the sponsors page it sits under.
+[page_head]
+image     = ""
+back_link = "/sponsors"
+back_text = "Our sponsors"
+eyebrow   = "Sponsorship"
+heading   = "Support us"
+body      = "Robots are expensive, and a student team has no revenue. Here is what support pays for, what it gets a company in return, and how to start the conversation."
+
+
+# --- WHY: the first block of text ---------------------------------
+[why]
+eyebrow = "Where the money goes"
+heading = "Why we ask"
+
+# Each line below is one paragraph. Add a line to add a paragraph.
+paragraph = [
+  "Building robots is amazing work. It is also an expensive way to spend a year. We are a non-profit student organization, so the team runs on school funding, fundraisers, and outside assistance &mdash; and without the last of those, a season can end before it reaches a competition.",
+  "The competitions we enter are national. The robot that carries a company's logo is seen by students, faculty, and teams from across the country, and then by everyone who meets it at a festival, a school, or an event back home in Rapid City.",
+]
+
+
+# --- WHAT WE NEED: the three cards --------------------------------
+[needs]
+eyebrow = "What helps"
+heading = "Three ways to support the team"
+intro   = "Money is the flexible one, but it is not the only one. Parts and equipment are just as welcome, and often reach a build faster."
+
+# icon - any Font Awesome 4.7 name, without the "fa-" prefix.
+#        Browse them at https://fontawesome.com/v4/icons/
+
+[[needs.card]]
+icon    = "usd"
+heading = "Funds"
+body    = "Entry fees, the trailer and the fuel to get a robot to competition, and the parts a design needs that nobody has donated. This is the support that goes wherever the season needs it most."
+
+[[needs.card]]
+icon    = "wrench"
+heading = "Equipment"
+body    = "Tools, test gear, and machines for the lab. Equipment outlasts the students who use it &mdash; a donated instrument is still earning its keep ten teams later."
+
+[[needs.card]]
+icon    = "cubes"
+heading = "Parts and materials"
+body    = "Motors, sensors, electronics, filament, aluminum, and stock to cut. If your company makes it or stocks it, we can almost certainly build with it."
+
+
+# --- THE LEVELS: the four cards -----------------------------------
+# These are the levels shown on the sponsors page, in the same words.
+# If you change an amount or a benefit here, change it there too:
+# content/sponsors/config.toml sets the short version of each level.
+[levels]
+eyebrow = "Sponsor incentives"
+heading = "What each level gets"
+intro   = "Support runs for the year it is given, and every level includes everything below it."
+
+# Each [[levels.card]] block is one level, lowest first.
+#
+#   level   - platinum, gold, silver or bronze. Sets the colour of the
+#             stripe across the top of the card; any other word gets
+#             the team's gold.
+#   benefit - one line per benefit, shown as a list.
+
+[[levels.card]]
+level   = "bronze"
+name    = "Bronze"
+amount  = "$100 &ndash; $499"
+benefit = [
+  "Company logo on the sponsors page of this website.",
+  "Updates on the team and its competitions twice a year, for as long as the support runs.",
+]
+
+[[levels.card]]
+level   = "silver"
+name    = "Silver"
+amount  = "$500 &ndash; $999"
+benefit = [
+  "Company name and logo, small, on the robots we take to competition for the year.",
+  "Everything at the Bronze level.",
+]
+
+[[levels.card]]
+level   = "gold"
+name    = "Gold"
+amount  = "$1,000 &ndash; $4,999"
+benefit = [
+  "Company name and logo, medium, on the robots we take to competition for the year.",
+  "Company name and logo on the banners we take to competitions and events for the year.",
+  "Everything at the Silver level.",
+]
+
+[[levels.card]]
+level   = "platinum"
+name    = "Platinum"
+amount  = "$5,000 and above"
+benefit = [
+  "Company name and logo, large, on the robots we take to competition for the year.",
+  "An appreciation plaque.",
+  "Everything at the Gold level.",
+]
+
+
+# --- CONTACT BAR: the dark band at the bottom ---------------------
+[contact_bar]
+heading               = "Start the conversation"
+body                  = "Email the team and tell us what you are thinking &mdash; a level, a pallet of something useful, or a question about where it would end up. We will send you the details and, if you want them, photos of the robot it paid for."
+primary_button_text   = "Email the team"
+primary_button_link   = "mailto:Robotics@mines.sdsmt.edu"
+secondary_button_text = "See our sponsors"
+secondary_button_link = "/sponsors"

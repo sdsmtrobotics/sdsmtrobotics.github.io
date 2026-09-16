@@ -1,0 +1,219 @@
+####################################################################
+#  PUMPKIN SCOREBOARD PAGE  (sdsmtrobotics.github.io/pumpkin)
+#
+#  The words on the scoreboard page are in this file. Change them
+#  here, then run:      ./build.py
+#
+#  THE SCORES THEMSELVES ARE NOT IN THIS FILE and never will be.
+#  They come straight out of the team's Google Sheet, live, while
+#  the event is running. Type a throw into the sheet and it is on
+#  the page a minute later - nothing to rebuild, nothing to commit.
+#
+#  THE LINK TO THAT SHEET IS NOT IN THIS FILE EITHER. It lives in
+#  content/site/config.toml, because the button in the header needs
+#  it on every page, not just this one. Read that file first - it is
+#  also where the Visible TRUE/FALSE switch is explained.
+#
+#  Not sure which setting is which? Open  map.html  in this folder.
+#  It shows every block of text in page order.
+#
+#  You can use basic HTML in any text below - <strong>bold</strong>,
+#  <em>italics</em>, <br> for a line break, <a href="...">links</a>.
+####################################################################
+
+
+# --- search results and link previews -----------------------------
+[meta]
+description = "Live results from the pumpkin chunkin trebuchet competition, straight from the team's scoring sheet at the field."
+
+
+# --- PAGE HEAD: the band at the top -------------------------------
+# No banner photo here on purpose. Somebody reading this is standing
+# in the field waiting for the next throw, and a photo would push the
+# numbers below the fold on their phone.
+[page_head]
+image   = ""
+eyebrow = "Pumpkin chunkin"
+heading = "Trebuchet Scoreboard"
+body    = "Every round as it is measured and written down, straight from the scoring sheet at the field. The page keeps itself up to date, so you can leave it open."
+
+
+# --- THE BAND THE TABLE SITS IN -----------------------------------
+[board]
+eyebrow = "Live results"
+heading = "This year's standings"
+intro   = "Teams throw at a target distance in each accuracy round &mdash; the closer to the mark, the more points. Tap any heading to sort by it."
+
+# Small print under the table. Leave empty ("") for none.
+footnote = "Scores are as recorded by the judges at the field. A round still being measured or reviewed will not be here yet."
+
+
+# --- HOW TO READ THE SHEET ----------------------------------------
+# The page finds its way around the sheet by looking for the labels
+# down the left-hand column, not by counting rows and columns. That
+# is what lets you add teams, delete teams, or add another round
+# without touching any of this.
+#
+#   ROWS   Add or remove teams freely. Every row under the "Team"
+#          label that has a name in the first column is a team, and
+#          the page stops at the bottom of the sheet. Blank rows and
+#          any working-out kept below the table are ignored.
+#
+#   ROUNDS Add a column pair and put the round's type in the
+#          "Rnd Type:" row and its distance in the "Rnd Dist:" row,
+#          and a new column appears on the page. Each round is two
+#          columns: what was thrown, then the points it earned.
+#
+#   TOTAL  The column between the team names and the first round.
+#          If it is ever left empty, the page adds the rounds up
+#          itself rather than showing a blank.
+#
+#   DQ     The column of TRUE/FALSE tickboxes off the end of the
+#          rounds. See the block at the bottom of this section - it
+#          decides which of the two takes a team out of the running.
+[sheet]
+
+# The labels in the sheet's first column that mark the two heading
+# rows and the start of the teams. Only change these if somebody
+# renames them in the sheet. A trailing ":" is ignored either way.
+type_row_label   = "Rnd Type"
+target_row_label = "Rnd Dist"
+team_row_label   = "Team"
+
+# Written after each round's distance in the column headings.
+# Use "" if the numbers should stand on their own.
+unit = "ft"
+
+# How often to re-read the sheet, in seconds. 60 is a good live
+# setting. Use 0 to load once and leave it to the Refresh button.
+# Google caches the sheet for a couple of minutes, so anything under
+# about 30 does not actually get you fresher numbers.
+refresh_seconds = 60
+
+# How many teams to mark as the leaders: 3 gives gold, silver and
+# bronze on the table and fills the podium above it. 0 turns both off.
+highlight_top = 3
+
+# Leave false while the highest total wins. Set it to true only if
+# the scoring is ever changed so that the LOWEST total wins.
+low_score_wins = false
+
+
+# --- DISQUALIFIED TEAMS -------------------------------------------
+#  The sheet has a column headed DQ with TRUE or FALSE against each
+#  team. A team the column takes out of the running has the word DQ
+#  printed where its total would be, keeps every round it threw in
+#  the table, and is left off the podium and out of the placings
+#  altogether - it cannot hold a medal it has been disqualified from.
+#
+#  WHICH ANSWER MEANS THE TEAM IS OUT
+#  dq_out_answer below. It is set to "true", which is how the sheet
+#  is written and how the heading reads: TRUE in a team's DQ cell
+#  means that team is disqualified. If the column is ever turned
+#  round, change this one word to "false" and run ./build.py.
+#  Nothing else needs touching.
+#
+#  A blank cell never disqualifies anybody, whichever way round the
+#  column is, and neither does a cell nobody can read as TRUE or
+#  FALSE. A team nobody has ruled on yet is a team that is still in.
+#  (Typing DQ straight into the cell works too.)
+#
+#  HOW THE PAGE FINDS THE COLUMN - AND WHY THE HEADING IS NOT ENOUGH
+#  Every other part of the sheet is found by the label above it, so
+#  dq_column_label is the heading to look for. But the heading in
+#  that column does not survive the trip: the cells under it are
+#  tickboxes, Google types the whole column as TRUE/FALSE when it
+#  hands the sheet over, and a word sitting in a column of tickboxes
+#  is dropped on the way out. The word DQ IS in the sheet - the page
+#  is simply never sent it.
+#
+#  So the page falls back to finding the column by what is in it: a
+#  spare column, outside the rounds, holding nothing but TRUE and
+#  FALSE against the teams. No score ever looks like that. This is
+#  what is actually finding the column today, and it goes on working
+#  if the column is moved or the heading is changed.
+#
+#  Keep the heading in the sheet anyway - it is what tells the next
+#  person what the column is for, and if the tickboxes are ever
+#  replaced by typed-out words the heading starts working again.
+dq_column_label = "DQ"
+dq_out_answer   = "true"
+
+
+# --- THE COLUMN HEADINGS THE SHEET DOES NOT SUPPLY ----------------
+# The team and total columns have no headings of their own in the
+# sheet, so they are named here.
+[table]
+team_heading  = "Team"
+total_heading = "Total"
+
+# Printed in place of the total for a disqualified team. Short is
+# better - it sits in a narrow column on a phone.
+dq_label = "DQ"
+
+# Shown under a round's points when the throw went past the target,
+# so "232" with "threw 264" under it reads as an overthrow.
+threw_prefix = "threw"
+
+
+# --- THE PODIUM ---------------------------------------------------
+# The cards above the table showing who is leading.
+[podium]
+show    = true
+heading = "Leading teams"
+
+# Written after the total on each card. Use "" for none.
+points_label = "pts"
+
+
+# --- WHAT THE PAGE SAYS WHEN THERE IS NO TABLE --------------------
+# Every one of these is a state the page can genuinely end up in, so
+# they are all worth reading once before an event.
+[messages]
+
+# While the sheet is being fetched.
+loading = "Loading the latest scores&hellip;"
+
+# The sheet could not be reached - no signal in the field, or Google
+# having a bad day. The page keeps trying on its own after this.
+failed = "Could not reach the scoring sheet just now. It will keep trying &mdash; or use the Refresh button."
+
+# The sheet was read fine but no team has a score in it yet.
+empty = "No scores recorded yet. Teams appear here as their rounds are measured."
+
+# No sheet link has been set in content/site/config.toml at all.
+unset = "The scoreboard is not set up yet. Check back when the competition is on."
+
+# The sheet's Visible cell says FALSE. This is the off-season state,
+# and the one a visitor sees if they kept the link from last year.
+hidden_heading   = "The scoreboard is closed"
+hidden_body      = "Results are only shown while the competition is running. Come back on the day &mdash; or read how previous years went."
+hidden_link      = "/news"
+hidden_link_text = "Past competitions"
+
+# Under the table. {time} is replaced by the time it last loaded.
+updated = "Updated {time}"
+
+# Above the table. {count} becomes the number of teams. The second one is
+# used when there is exactly one, which does happen for the first few
+# minutes of an event.
+entries     = "{count} teams scored"
+entries_one = "{count} team scored"
+
+# The button that re-reads the sheet by hand.
+refresh = "Refresh"
+
+# Only ever seen with JavaScript switched off, when the page cannot
+# build the table at all and the sheet itself is the best we can do.
+noscript           = "This scoreboard needs JavaScript to read the scoring sheet."
+noscript_link_text = "Open the scoring sheet directly"
+
+
+# --- THE BAND AT THE VERY BOTTOM ----------------------------------
+[contact_bar]
+heading = "Want to build the next one?"
+body    = "The trebuchet is designed, welded, and tuned by students. No experience needed to start &mdash; come to a meeting and find out where you fit."
+primary_button_text   = "Join the team"
+primary_button_link   = "/calendar"
+secondary_button_text = "See our robots"
+secondary_button_link = "/projects"
