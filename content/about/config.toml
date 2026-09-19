@@ -35,7 +35,7 @@ body    = "We are the South Dakota Mines Rocker Robotics Team &mdash; a multidis
 [who_we_are]
 image     = "team.jpg"          # portrait or landscape, 1200px or wider
 image_alt = "The Rocker Robotics team on the steps of the Mines engineering building"
-caption   = "The team outside the engineering building on the Mines campus."
+caption   = "The team outside the McLaury building on the Mines campus."
 eyebrow   = "The team"
 heading   = "A student team, building from scratch"
 
@@ -51,13 +51,13 @@ paragraph = [
 [what_we_do]
 image     = "lab.jpg"
 image_alt = "Team members measuring a robot frame in the lab, with computer vision code on a monitor in the foreground"
-caption   = "A working session in McLaury 101."
+caption   = "A workday in McLaury 101."
 eyebrow   = "How a season runs"
 heading   = "Design in the fall, compete in the spring"
 
 paragraph = [
-  "Design starts during the fall semester and competition follows in the spring. In between are the workdays: machining and fabrication, wiring, CAD revisions, and long evenings spent getting the software to agree with the hardware.",
-  "Alongside the competition robot there are seasonal builds &mdash; most visibly the trebuchet we run at the Great Downtown Pumpkin Festival on Main Street.",
+  "Design starts during the fall semester and competition follows in the spring. In between are the workdays: machining and fabrication, wiring, CAD revisions, and software.",
+  "Alongside the competition robot there are seasonal builds &mdash; most visibly the trebuchet we bring to the Great Downtown Pumpkin Festival.",
 ]
 
 # The row of labels under the text. Add or remove freely.
@@ -77,7 +77,7 @@ discipline = [
 [competitions]
 eyebrow = "Where we compete"
 heading = "The competitions we enter"
-intro   = "Four series over the past decade, on the ground, in the ring, and now under water."
+intro   = "We compete in many different syles of competition from a 3lb to an autonomous submarine."
 
 # Each [[competitions.card]] block below is one card.
 #
@@ -122,14 +122,14 @@ link_text = "See the photos"
 [outreach]
 image     = "outreach.jpg"
 image_alt = "Team members demonstrating a robot to a group of school students sitting on the floor"
-caption   = "A demo at an East Middle School event."
+caption   = "A demo at an Middle School event."
 eyebrow   = "Outreach"
 heading   = "Robots in front of people"
 link      = "/gallery"
 link_text = "See what we do"
 
 paragraph = [
-  "We take part in outreach whenever we can. That has meant demos at middle school events, festivals, and Mines events, and mentoring FIRST Lego League teams around the Black Hills.",
+  "We take part in outreach whenever we can. That has meant demos at middle school events, festivals, and Mines events.",
   "It is some of the best work we do. A robot on the floor of a school gym draws more questions in an afternoon than a poster ever will.",
 ]
 
@@ -147,27 +147,27 @@ name = "Devon Hamm"
 
 [[officers.person]]
 role = "Vice President"
-name = "Alexis Englund"
-
-[[officers.person]]
-role = "Treasurer"
-name = "Sierra Rodewald"
-
-[[officers.person]]
-role = "Secretary"
-name = "Kaylee Herndon"
-
-[[officers.person]]
-role = "Historian"
 name = "Dean Morgan"
 
 [[officers.person]]
-role = "Outreach"
-name = "Ethan Miller"
+role = "Treasurer"
+name = "Dale Burks"
 
 [[officers.person]]
-role = "Officer Mentors"
-name = "Micheal Klingelhoefer, Steven Duong"
+role = "Secretary"
+name = "Gavin Fisher"
+
+[[officers.person]]
+role = "Historian"
+name = "Chris Bayer"
+
+[[officers.person]]
+role = "Outreach"
+name = "Rease Hammerquist"
+
+[[officers.person]]
+role = "Safety"
+name = "Aria Lane"
 
 [[officers.person]]
 role = "Advisor"
@@ -211,7 +211,7 @@ link_text = "Email the team"
 
 # --- CONTACT BAR: the dark band near the bottom -------------------
 [contact_bar]
-heading               = "Come build something with us"
+heading               = "Come join us"
 body                  = "Turn up to a meeting or a workday, tell us what you are curious about, and we will put a tool in your hand."
 primary_button_text   = "See the calendar"
 primary_button_link   = "/calendar"
